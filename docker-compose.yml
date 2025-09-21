@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./backend
+    env_file:
+      - ./.env
+    environment:
+      - SQLITE_DB_PATH=/data/werbisci-app.db
+    volumes:
+      - backend_data:/data
+    ports:
+      - "8000:8000"
+  frontend:
+    build: ./frontend
+    env_file:
+      - ./.env.frontend
+    ports:
+      - "5173:80"
+volumes:
+  backend_data:

@@ -1,0 +1,42 @@
+:root {
+  --bg: #0b0c10;
+  --panel: #111318;
+  --text: #e6e6e6;
+  --muted: #a0a0a0;
+  --primary: #3b82f6;
+  --primary-contrast: #ffffff;
+  --border: #2a2d35;
+  --focus: #fde047;
+}
+
+html, body, #root { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; font-size: 16px; }
+
+.app-shell { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+.sidebar { background: var(--panel); border-right: 1px solid var(--border); padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.brand a { color: var(--text); text-decoration: none; font-weight: 700; font-size: 18px; }
+.nav { display: flex; flex-direction: column; gap: 8px; }
+.nav a { color: var(--text); text-decoration: none; padding: 8px 10px; border-radius: 6px; }
+.nav a.active { background: #1a1d24; }
+
+.topbar { height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; border-bottom: 1px solid var(--border); background: var(--panel); position: sticky; top: 0; }
+.content { padding: 24px; }
+
+.btn { appearance: none; border: 1px solid var(--border); background: #1a1d24; color: var(--text); padding: 8px 12px; border-radius: 6px; cursor: pointer; }
+.btn:focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.role-badge { background: #1f2937; border: 1px solid var(--border); color: var(--muted); border-radius: 999px; padding: 4px 10px; margin-right: 8px; font-size: 12px; }
+
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 20px; color: var(--text); box-shadow: 0 8px 30px rgba(0,0,0,.3); }
+.field { display: grid; gap: 6px; margin: 12px 0; }
+.field input { background: #0f1218; color: var(--text); border: 1px solid var(--border); padding: 10px 12px; border-radius: 8px; font-size: 16px; }
+.field input:focus { outline: 3px solid var(--focus); outline-offset: 2px; }
+.error { color: #f87171; margin-bottom: 8px; }
+
+@media (max-width: 900px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar { position: sticky; top: 0; z-index: 10; }
+}
+
+
+

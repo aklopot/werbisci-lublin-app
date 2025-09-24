@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from app.core.deps import get_db, require_user
 from app.modules.addresses.repositories import AddressRepository
 from .envelope import EnvelopeOptions, generate_envelope_pdf
+from .labels import generate_labels_pdf
 
 
 router = APIRouter(prefix="/api/print", tags=["print"])
@@ -28,6 +29,22 @@ def print_envelope(
         address,
         EnvelopeOptions(bold=bold, font_size=font_size),
     )
+    return Response(content=pdf_bytes, media_type="application/pdf")
+
+
+@router.get("/labels", response_class=Response)
+def print_labels(
+    font_size: int = Query(default=11, ge=8, le=24),
+    db: Session = Depends(get_db),
+    _: object = Depends(require_user),
+) -> Response:
+    repo = AddressRepository()
+    # Fetch addresses with label_marked=True
+    # Large upper limit covers big batches
+    addresses = repo.search(
+        db, label_marked=True, limit=10000, offset=0
+    )
+    pdf_bytes = generate_labels_pdf(addresses, font_size=font_size)
     return Response(content=pdf_bytes, media_type="application/pdf")
 
 

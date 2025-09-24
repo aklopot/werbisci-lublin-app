@@ -47,6 +47,18 @@ class AddressRepository:
         db.refresh(address)
         return address
 
+    def list_all(self, db: Session) -> List[Address]:
+        """Return all addresses ordered by last_name, first_name.
+
+        Intended for export operations where we need the full dataset.
+        """
+        stmt: Select[tuple[Address]] = select(Address).order_by(
+            Address.last_name.asc(),
+            Address.first_name.asc(),
+            Address.id.asc(),
+        )
+        return list(db.scalars(stmt).all())
+
     def update(
         self,
         db: Session,

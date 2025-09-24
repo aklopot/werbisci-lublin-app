@@ -3,8 +3,12 @@ import type { Address } from './types'
 import { createAddress, deleteAddress, listAddresses, searchAddresses, updateAddress } from './api'
 import { ContactForm } from './ContactForm'
 import { EnvelopePreview } from './EnvelopePreview'
+import { LabelsPreview } from './LabelsPreview'
+import { useAuth } from '../../app/auth'
+import { fetchBlob } from '../../app/api'
 
 export const ContactsListPage: React.FC = () => {
+  const { currentUser, token } = useAuth()
   const [data, setData] = useState<Address[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -17,6 +21,7 @@ export const ContactsListPage: React.FC = () => {
   const [editing, setEditing] = useState<Address | null>(null)
   const [previewOpen, setPreviewOpen] = useState(false)
   const [previewAddressId, setPreviewAddressId] = useState<number | null>(null)
+  const [labelsOpen, setLabelsOpen] = useState(false)
 
   const refresh = useCallback(async () => {
     setLoading(true)
@@ -60,6 +65,29 @@ export const ContactsListPage: React.FC = () => {
     setPreviewOpen(true)
   }, [])
 
+  const onLabelsClick = useCallback(() => {
+    setLabelsOpen(true)
+  }, [])
+
+  const canExport = currentUser?.role === 'manager' || currentUser?.role === 'admin'
+
+  const downloadFile = useCallback(async (path: string, filename: string, accept: string) => {
+    try {
+      const url = token ? `${path}?token=${encodeURIComponent(token)}` : path
+      const blob = await fetchBlob(url, { headers: { Accept: accept } })
+      const link = document.createElement('a')
+      const objUrl = URL.createObjectURL(blob)
+      link.href = objUrl
+      link.download = filename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(objUrl)
+    } catch (err: any) {
+      alert(err?.message ?? 'Błąd pobierania pliku')
+    }
+  }, [token])
+
   const onDelete = useCallback(async (row: Address) => {
     if (!confirm(`Usunąć kontakt ${row.first_name} ${row.last_name}?`)) return
     try {
@@ -89,6 +117,14 @@ export const ContactsListPage: React.FC = () => {
           <span>Tylko oznaczone etykietą</span>
         </label>
         <button className="btn" onClick={refresh} disabled={loading}>Odśwież</button>
+        <button className="btn" onClick={onLabelsClick}>Etykiety (3×7)</button>
+        {canExport && (
+          <div style={{ display: 'inline-flex', gap: 8 }}>
+            <button className="btn" onClick={() => downloadFile('/api/addresses/export.csv', 'addresses.csv', 'text/csv')}>CSV</button>
+            <button className="btn" onClick={() => downloadFile('/api/addresses/export.ods', 'addresses.ods', 'application/vnd.oasis.opendocument.spreadsheet')}>ODS</button>
+            <button className="btn" onClick={() => downloadFile('/api/addresses/export.pdf', 'addresses.pdf', 'application/pdf')}>PDF</button>
+          </div>
+        )}
         <div style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
           <button className="btn" onClick={goPrev} disabled={!canPrev}>«</button>
           <span>offset {offset}</span>
@@ -150,6 +186,11 @@ export const ContactsListPage: React.FC = () => {
         open={previewOpen}
         addressId={previewAddressId}
         onClose={() => setPreviewOpen(false)}
+      />
+
+      <LabelsPreview
+        open={labelsOpen}
+        onClose={() => setLabelsOpen(false)}
       />
     </div>
   )

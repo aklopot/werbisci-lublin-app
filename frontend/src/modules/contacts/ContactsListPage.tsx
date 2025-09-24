@@ -6,6 +6,7 @@ import { EnvelopePreview } from './EnvelopePreview'
 import { LabelsPreview } from './LabelsPreview'
 import { useAuth } from '../../app/auth'
 import { fetchBlob } from '../../app/api'
+import { PageHeader } from '../../app/ui/PageHeader'
 import { DropdownMenu } from '../../app/ui/DropdownMenu'
 
 export const ContactsListPage: React.FC = () => {
@@ -107,10 +108,31 @@ export const ContactsListPage: React.FC = () => {
 
   return (
     <div className="content">
-      <div className="page-header">
-        <h2>Kontakty</h2>
-        <button className="btn primary" onClick={onAddClick}>Dodaj kontakt</button>
-      </div>
+      <PageHeader
+        title="Kontakty"
+        actions={(
+          <>
+            <DropdownMenu
+              buttonLabel="Etykiety"
+              buttonAriaLabel="Menu etykiet"
+              groups={[{ label: 'Druk i podgląd', items: [{ label: 'Etykiety (3×7) – podgląd i PDF', onSelect: onLabelsClick }]}]}
+            />
+            {canExport && (
+              <DropdownMenu
+                buttonLabel="Eksportuj"
+                buttonAriaLabel="Menu eksportu danych"
+                groups={[{
+                  items: [
+                    { label: 'Eksport CSV', onSelect: () => downloadFile('/api/addresses/export.csv', 'addresses.csv', 'text/csv') },
+                    { label: 'Eksport ODS', onSelect: () => downloadFile('/api/addresses/export.ods', 'addresses.ods', 'application/vnd.oasis.opendocument.spreadsheet') },
+                    { label: 'Eksport PDF', onSelect: () => downloadFile('/api/addresses/export.pdf', 'addresses.pdf', 'application/pdf') },
+                  ],
+                }]} />
+            )}
+            <button className="btn primary" onClick={onAddClick}>Dodaj kontakt</button>
+          </>
+        )}
+      />
       <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
         <input className="input" placeholder="Szukaj (imię, nazwisko, adres)" value={search} onChange={e => { setSearch(e.target.value); setOffset(0) }} />
         <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
@@ -118,28 +140,7 @@ export const ContactsListPage: React.FC = () => {
           <span>Tylko oznaczone etykietą</span>
         </label>
         <button className="btn" onClick={refresh} disabled={loading}>Odśwież</button>
-        <DropdownMenu
-          buttonLabel="Druk i eksport"
-          buttonAriaLabel="Menu drukowania i eksportu"
-          groups={[
-            {
-              label: 'Druk i podgląd',
-              items: [
-                { label: 'Etykiety (3×7) – podgląd i PDF', onSelect: onLabelsClick },
-              ],
-            },
-            ...(canExport ? [
-              {
-                label: 'Eksport danych',
-                items: [
-                  { label: 'Eksport CSV', onSelect: () => downloadFile('/api/addresses/export.csv', 'addresses.csv', 'text/csv') },
-                  { label: 'Eksport ODS', onSelect: () => downloadFile('/api/addresses/export.ods', 'addresses.ods', 'application/vnd.oasis.opendocument.spreadsheet') },
-                  { label: 'Eksport PDF', onSelect: () => downloadFile('/api/addresses/export.pdf', 'addresses.pdf', 'application/pdf') },
-                ],
-              },
-            ] : []),
-          ]}
-        />
+        {/* Toolbar remains focused on filtrowanie i paginację */}
         <div style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
           <button className="btn" onClick={goPrev} disabled={!canPrev}>«</button>
           <span>offset {offset}</span>

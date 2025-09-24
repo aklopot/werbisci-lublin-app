@@ -133,7 +133,7 @@ export const ContactsListPage: React.FC = () => {
           </>
         )}
       />
-      <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center', minHeight: '52px' }}>
         <input className="input" placeholder="Szukaj (imię, nazwisko, adres)" value={search} onChange={e => { setSearch(e.target.value); setOffset(0) }} />
         <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
           <input type="checkbox" checked={filterLabel === true} onChange={e => { setFilterLabel(e.target.checked ? true : 'any'); setOffset(0) }} />

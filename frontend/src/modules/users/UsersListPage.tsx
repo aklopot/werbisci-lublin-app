@@ -5,6 +5,7 @@ import { UserRoleSelect } from './UserRoleSelect'
 import { UserCreateDialog } from './UserCreateDialog'
 import { useAuth } from '../../app/auth'
 import { Navigate } from 'react-router-dom'
+import { PageHeader } from '../../app/ui/PageHeader'
 
 export const UsersListPage: React.FC = () => {
   const { currentUser } = useAuth()
@@ -63,11 +64,11 @@ export const UsersListPage: React.FC = () => {
 
   return (
     <div className="content">
-      <div className="page-header">
-        <h2>Użytkownicy</h2>
-        <UserCreateDialog onCreated={onCreated} />
-      </div>
-      <div className="toolbar">
+      <PageHeader
+        title="Użytkownicy"
+        actions={<UserCreateDialog onCreated={onCreated} />}
+      />
+      <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center', minHeight: '52px' }}>
         <input className="input" placeholder="Szukaj (imię, login, email)" value={search} onChange={e => setSearch(e.target.value)} />
         <button className="btn" onClick={refresh} disabled={loading}>Odśwież</button>
       </div>

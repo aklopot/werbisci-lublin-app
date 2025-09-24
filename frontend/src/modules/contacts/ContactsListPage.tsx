@@ -6,6 +6,7 @@ import { EnvelopePreview } from './EnvelopePreview'
 import { LabelsPreview } from './LabelsPreview'
 import { useAuth } from '../../app/auth'
 import { fetchBlob } from '../../app/api'
+import { DropdownMenu } from '../../app/ui/DropdownMenu'
 
 export const ContactsListPage: React.FC = () => {
   const { currentUser, token } = useAuth()
@@ -117,14 +118,28 @@ export const ContactsListPage: React.FC = () => {
           <span>Tylko oznaczone etykietą</span>
         </label>
         <button className="btn" onClick={refresh} disabled={loading}>Odśwież</button>
-        <button className="btn" onClick={onLabelsClick}>Etykiety (3×7)</button>
-        {canExport && (
-          <div style={{ display: 'inline-flex', gap: 8 }}>
-            <button className="btn" onClick={() => downloadFile('/api/addresses/export.csv', 'addresses.csv', 'text/csv')}>CSV</button>
-            <button className="btn" onClick={() => downloadFile('/api/addresses/export.ods', 'addresses.ods', 'application/vnd.oasis.opendocument.spreadsheet')}>ODS</button>
-            <button className="btn" onClick={() => downloadFile('/api/addresses/export.pdf', 'addresses.pdf', 'application/pdf')}>PDF</button>
-          </div>
-        )}
+        <DropdownMenu
+          buttonLabel="Druk i eksport"
+          buttonAriaLabel="Menu drukowania i eksportu"
+          groups={[
+            {
+              label: 'Druk i podgląd',
+              items: [
+                { label: 'Etykiety (3×7) – podgląd i PDF', onSelect: onLabelsClick },
+              ],
+            },
+            ...(canExport ? [
+              {
+                label: 'Eksport danych',
+                items: [
+                  { label: 'Eksport CSV', onSelect: () => downloadFile('/api/addresses/export.csv', 'addresses.csv', 'text/csv') },
+                  { label: 'Eksport ODS', onSelect: () => downloadFile('/api/addresses/export.ods', 'addresses.ods', 'application/vnd.oasis.opendocument.spreadsheet') },
+                  { label: 'Eksport PDF', onSelect: () => downloadFile('/api/addresses/export.pdf', 'addresses.pdf', 'application/pdf') },
+                ],
+              },
+            ] : []),
+          ]}
+        />
         <div style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
           <button className="btn" onClick={goPrev} disabled={!canPrev}>«</button>
           <span>offset {offset}</span>

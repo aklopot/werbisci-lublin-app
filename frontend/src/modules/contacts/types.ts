@@ -30,13 +30,11 @@ export interface AddressUpdateInput {
 
 export interface AddressSearchQuery {
   q?: string
-  first_name?: string
-  last_name?: string
-  city?: string
-  street?: string
   label_marked?: boolean
   limit?: number
   offset?: number
+  sort_field?: string
+  sort_direction?: string
 }
 
 

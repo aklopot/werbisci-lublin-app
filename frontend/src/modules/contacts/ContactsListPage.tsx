@@ -15,9 +15,11 @@ export const ContactsListPage: React.FC = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [search, setSearch] = useState('')
-  const [filterLabel, setFilterLabel] = useState<boolean | 'any'>('any')
+  const [filterLabel, setFilterLabel] = useState<'all' | 'with_label' | 'without_label'>('all')
   const [limit, setLimit] = useState(50)
   const [offset, setOffset] = useState(0)
+  const [sortField, setSortField] = useState<string>('id')
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc')
 
   const [dialogOpen, setDialogOpen] = useState(false)
   const [editing, setEditing] = useState<Address | null>(null)
@@ -29,11 +31,20 @@ export const ContactsListPage: React.FC = () => {
     setLoading(true)
     setError(null)
     try {
-      if (search.trim() || filterLabel !== 'any') {
-        const items = await searchAddresses({ q: search.trim() || undefined, label_marked: filterLabel === 'any' ? undefined : Boolean(filterLabel), limit, offset })
+      if (search.trim() || filterLabel !== 'all') {
+        const labelFilter = filterLabel === 'all' ? undefined : filterLabel === 'with_label'
+        const searchQuery = {
+          q: search.trim() || undefined,
+          label_marked: labelFilter,
+          limit,
+          offset,
+          sort_field: sortField,
+          sort_direction: sortDirection
+        }
+        const items = await searchAddresses(searchQuery)
         setData(items)
       } else {
-        const items = await listAddresses(limit, offset)
+        const items = await listAddresses(limit, offset, sortField, sortDirection)
         setData(items)
       }
     } catch (err: any) {
@@ -41,7 +52,7 @@ export const ContactsListPage: React.FC = () => {
     } finally {
       setLoading(false)
     }
-  }, [search, filterLabel, limit, offset])
+  }, [search, filterLabel, limit, offset, sortField, sortDirection])
 
   useEffect(() => { refresh() }, [refresh])
 
@@ -106,6 +117,27 @@ export const ContactsListPage: React.FC = () => {
   const goPrev = useCallback(() => { if (canPrev) setOffset(o => Math.max(0, o - limit)) }, [canPrev, limit])
   const goNext = useCallback(() => { if (canNext) setOffset(o => o + limit) }, [canNext, limit])
 
+  const handleSort = useCallback((field: string) => {
+    if (sortField === field) {
+      setSortDirection(prev => prev === 'asc' ? 'desc' : 'asc')
+    } else {
+      setSortField(field)
+      setSortDirection('asc')
+    }
+    setOffset(0)
+  }, [sortField])
+
+  const getSortIcon = (field: string) => {
+    if (sortField !== field) return <span style={{ color: '#0056b3', fontWeight: 'bold' }}>↕️</span>
+    return sortDirection === 'asc' ? <span style={{ color: '#0056b3', fontWeight: 'bold' }}>↑</span> : <span style={{ color: '#0056b3', fontWeight: 'bold' }}>↓</span>
+  }
+
+  const clearAllFilters = useCallback(() => {
+    setSearch('')
+    setFilterLabel('all')
+    setOffset(0)
+  }, [])
+
   return (
     <div className="content">
       <PageHeader
@@ -135,11 +167,18 @@ export const ContactsListPage: React.FC = () => {
       />
       <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center', minHeight: '52px' }}>
         <input className="input" placeholder="Szukaj (imię, nazwisko, adres)" value={search} onChange={e => { setSearch(e.target.value); setOffset(0) }} />
-        <label style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-          <input type="checkbox" checked={filterLabel === true} onChange={e => { setFilterLabel(e.target.checked ? true : 'any'); setOffset(0) }} />
-          <span>Tylko oznaczone etykietą</span>
-        </label>
+        <select 
+          className="input" 
+          value={filterLabel} 
+          onChange={e => { setFilterLabel(e.target.value as 'all' | 'with_label' | 'without_label'); setOffset(0) }}
+          style={{ minWidth: '180px' }}
+        >
+          <option value="all">Wszystkie kontakty</option>
+          <option value="with_label">Z etykietą</option>
+          <option value="without_label">Bez etykiety</option>
+        </select>
         <button className="btn" onClick={refresh} disabled={loading}>Odśwież</button>
+        <button className="btn" onClick={clearAllFilters} disabled={loading}>Wyczyść filtry</button>
         {/* Toolbar remains focused on filtrowanie i paginację */}
         <div style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
           <button className="btn" onClick={goPrev} disabled={!canPrev}>«</button>
@@ -152,14 +191,62 @@ export const ContactsListPage: React.FC = () => {
         <table className="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Imię</th>
-              <th>Nazwisko</th>
-              <th>Ulica</th>
-              <th>Nr m.</th>
-              <th>Miasto</th>
-              <th>Kod</th>
-              <th>Etykieta</th>
+              <th 
+                style={{ cursor: 'pointer', userSelect: 'none', position: 'relative' }}
+                onClick={() => handleSort('id')}
+                title="Kliknij aby sortować"
+              >
+                ID {getSortIcon('id')}
+              </th>
+              <th 
+                style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => handleSort('first_name')}
+                title="Kliknij aby sortować"
+              >
+                Imię {getSortIcon('first_name')}
+              </th>
+              <th 
+                style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => handleSort('last_name')}
+                title="Kliknij aby sortować"
+              >
+                Nazwisko {getSortIcon('last_name')}
+              </th>
+              <th 
+                style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => handleSort('street')}
+                title="Kliknij aby sortować"
+              >
+                Ulica {getSortIcon('street')}
+              </th>
+              <th 
+                style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => handleSort('apartment_no')}
+                title="Kliknij aby sortować"
+              >
+                Nr m. {getSortIcon('apartment_no')}
+              </th>
+              <th 
+                style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => handleSort('city')}
+                title="Kliknij aby sortować"
+              >
+                Miasto {getSortIcon('city')}
+              </th>
+              <th 
+                style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => handleSort('postal_code')}
+                title="Kliknij aby sortować"
+              >
+                Kod {getSortIcon('postal_code')}
+              </th>
+              <th 
+                style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => handleSort('label_marked')}
+                title="Kliknij aby sortować"
+              >
+                Etykieta {getSortIcon('label_marked')}
+              </th>
               <th>Akcje</th>
             </tr>
           </thead>
@@ -180,9 +267,9 @@ export const ContactsListPage: React.FC = () => {
                   <td>{row.postal_code}</td>
                   <td>{row.label_marked ? 'tak' : ''}</td>
                   <td>
-                    <button className="btn" onClick={() => onEditClick(row)}>Edytuj</button>
-                  <button className="btn" onClick={() => onEnvelopeClick(row)}>Koperta</button>
-                    <button className="btn danger" onClick={() => onDelete(row)}>Usuń</button>
+                    <button className="btn" onClick={() => onEnvelopeClick(row)}>Koperta</button>
+                    <button className="btn" onClick={() => onEditClick(row)} style={{ marginLeft: '2px' }}>Edytuj</button>
+                    <button className="btn danger" onClick={() => onDelete(row)} style={{ marginLeft: '2px' }}>Usuń</button>
                   </td>
                 </tr>
               ))

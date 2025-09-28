@@ -21,9 +21,17 @@ def list_addresses(
     _: object = Depends(require_user),
     limit: int = Query(default=50, ge=1, le=500),
     offset: int = Query(default=0, ge=0),
+    sort_field: str = Query(default="id"),
+    sort_direction: str = Query(default="asc"),
 ) -> List[Address]:
     repo = AddressRepository()
-    return repo.list(db, limit=limit, offset=offset)
+    return repo.list(
+        db,
+        limit=limit,
+        offset=offset,
+        sort_field=sort_field,
+        sort_direction=sort_direction
+    )
 
 
 @router.post(
@@ -57,25 +65,21 @@ def search_addresses(
     db: Session = Depends(get_db),
     _: object = Depends(require_user),
     q: str | None = Query(default=None),
-    first_name: str | None = Query(default=None),
-    last_name: str | None = Query(default=None),
-    city: str | None = Query(default=None),
-    street: str | None = Query(default=None),
     label_marked: bool | None = Query(default=None),
     limit: int = Query(default=50, ge=1, le=500),
     offset: int = Query(default=0, ge=0),
+    sort_field: str = Query(default="id"),
+    sort_direction: str = Query(default="asc"),
 ) -> List[Address]:
     service = AddressService()
     return service.search(
         db,
         q=q,
-        first_name=first_name,
-        last_name=last_name,
-        city=city,
-        street=street,
         label_marked=label_marked,
         limit=limit,
         offset=offset,
+        sort_field=sort_field,
+        sort_direction=sort_direction,
     )
 
 

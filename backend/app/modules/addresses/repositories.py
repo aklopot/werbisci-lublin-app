@@ -13,11 +13,34 @@ class AddressRepository:
         return db.get(Address, address_id)
 
     def list(
-        self, db: Session, *, limit: int = 50, offset: int = 0
+        self,
+        db: Session,
+        *,
+        limit: int = 50,
+        offset: int = 0,
+        sort_field: str = "id",
+        sort_direction: str = "asc"
     ) -> List[Address]:
+        # Validate sort field
+        valid_fields = [
+            "id", "first_name", "last_name", "street", "apartment_no",
+            "city", "postal_code", "label_marked"
+        ]
+        if sort_field not in valid_fields:
+            sort_field = "id"
+
+        # Get the column to sort by
+        sort_column = getattr(Address, sort_field)
+
+        # Apply sort direction
+        if sort_direction.lower() == "desc":
+            order_clause = sort_column.desc()
+        else:
+            order_clause = sort_column.asc()
+
         stmt = (
             select(Address)
-            .order_by(Address.id.asc())
+            .order_by(order_clause)
             .limit(limit)
             .offset(offset)
         )
@@ -102,24 +125,14 @@ class AddressRepository:
         db: Session,
         *,
         q: str | None = None,
-        first_name: str | None = None,
-        last_name: str | None = None,
-        city: str | None = None,
-        street: str | None = None,
         label_marked: bool | None = None,
         limit: int = 50,
         offset: int = 0,
+        sort_field: str = "id",
+        sort_direction: str = "asc",
     ) -> List[Address]:
         filters: list = []
 
-        if first_name:
-            filters.append(Address.first_name.ilike(f"%{first_name}%"))
-        if last_name:
-            filters.append(Address.last_name.ilike(f"%{last_name}%"))
-        if city:
-            filters.append(Address.city.ilike(f"%{city}%"))
-        if street:
-            filters.append(Address.street.ilike(f"%{street}%"))
         if label_marked is not None:
             filters.append(Address.label_marked == label_marked)
 
@@ -135,10 +148,27 @@ class AddressRepository:
 
         where_expr = and_(*filters) if filters else None
 
+        # Validate sort field
+        valid_fields = [
+            "id", "first_name", "last_name", "street", "apartment_no",
+            "city", "postal_code", "label_marked"
+        ]
+        if sort_field not in valid_fields:
+            sort_field = "id"
+
+        # Get the column to sort by
+        sort_column = getattr(Address, sort_field)
+
+        # Apply sort direction
+        if sort_direction.lower() == "desc":
+            order_clause = sort_column.desc()
+        else:
+            order_clause = sort_column.asc()
+
         stmt: Select[tuple[Address]] = select(Address)
         if where_expr is not None:
             stmt = stmt.where(where_expr)
-        stmt = stmt.order_by(Address.last_name.asc(), Address.first_name.asc())
+        stmt = stmt.order_by(order_clause)
         stmt = stmt.limit(limit).offset(offset)
 
         return list(db.scalars(stmt).all())

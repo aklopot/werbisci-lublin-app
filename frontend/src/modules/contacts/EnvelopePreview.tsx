@@ -83,41 +83,131 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
 
   return (
     <div className="dialog-backdrop" role="dialog" aria-modal="true">
-      <div className="dialog" style={{ width: 900, maxWidth: '95vw' }}>
-        <div className="dialog-header">
-          <h3>Podgląd koperty</h3>
+      <div className="dialog" style={{ width: 1200, maxWidth: '95vw', height: '85vh' }}>
+        {/* Header with title and close button */}
+        <div className="dialog-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderBottom: '1px solid #e0e0e0' }}>
+          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Podgląd koperty</h3>
+          <button 
+            className="btn" 
+            onClick={onClose}
+            style={{ 
+              padding: '8px 16px', 
+              fontSize: '14px',
+              border: '1px solid #dc3545',
+              borderRadius: '4px',
+              backgroundColor: '#dc3545',
+              color: 'white',
+              cursor: 'pointer',
+              fontWeight: '500'
+            }}
+          >
+            Zamknij
+          </button>
         </div>
-        <div className="dialog-body" style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 16 }}>
-          <form onSubmit={e => { e.preventDefault(); loadPreview() }}>
-            <div style={{ display: 'grid', gap: 12 }}>
-              <label style={{ display: 'grid', gap: 6 }}>
-                <span style={{ fontWeight: 600 }}>Pogrubienie</span>
-                <input type="checkbox" checked={bold} onChange={e => setBold(e.target.checked)} />
-              </label>
-              <label style={{ display: 'grid', gap: 6 }}>
-                <span style={{ fontWeight: 600 }}>Rozmiar czcionki (10-36)</span>
-                <input className="input" type="number" min={10} max={36} step={1} value={fontSize} onChange={e => setFontSize(Number(e.target.value))} />
-              </label>
-              <div style={{ display: 'flex', gap: 8 }}>
-                <button className="btn" type="submit" disabled={!canSubmit || loading}>Odśwież podgląd</button>
-                <button className="btn" type="button" onClick={onPrint} disabled={!blobUrl}>Drukuj</button>
-                <button className="btn primary" type="button" onClick={onSavePdf} disabled={!canSubmit}>Zapisz PDF</button>
-              </div>
-              {error && <div className="error">{error}</div>}
+        
+        {/* Compact controls */}
+        <div style={{ padding: '12px 20px', borderBottom: '1px solid #e0e0e0', backgroundColor: '#fafbfc' }}>
+          <form onSubmit={e => { e.preventDefault(); loadPreview() }} style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <input 
+                type="checkbox" 
+                checked={bold} 
+                onChange={e => setBold(e.target.checked)}
+                style={{ transform: 'scale(1.05)' }}
+              />
+              <span style={{ fontWeight: 500, fontSize: '13px' }}>Pogrubienie</span>
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontWeight: 500, fontSize: '13px' }}>Rozmiar czcionki:</span>
+              <input 
+                className="input" 
+                type="number" 
+                min={10} 
+                max={36} 
+                step={1} 
+                value={fontSize} 
+                onChange={e => setFontSize(Number(e.target.value))}
+                style={{ width: 60, padding: '4px 6px', fontSize: '13px' }}
+              />
+            </label>
+            <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
+              <button 
+                className="btn" 
+                type="submit" 
+                disabled={!canSubmit || loading}
+                style={{ padding: '6px 12px', fontSize: '13px' }}
+              >
+                {loading ? 'Ładowanie...' : 'Odśwież podgląd'}
+              </button>
+              <button 
+                className="btn" 
+                type="button" 
+                onClick={onPrint} 
+                disabled={!blobUrl}
+                style={{ padding: '6px 12px', fontSize: '13px' }}
+              >
+                Drukuj
+              </button>
+              <button 
+                className="btn primary" 
+                type="button" 
+                onClick={onSavePdf} 
+                disabled={!canSubmit}
+                style={{ padding: '6px 12px', fontSize: '13px' }}
+              >
+                Zapisz PDF
+              </button>
             </div>
           </form>
-          <div style={{ border: '1px solid #ddd', minHeight: 600 }}>
+          {error && <div className="error" style={{ marginTop: 8, padding: '6px 10px', fontSize: '13px' }}>{error}</div>}
+        </div>
+
+        {/* Preview area with proper scaling */}
+        <div style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f5f5f5', padding: '8px' }}>
+          <div style={{ 
+            height: '100%', 
+            border: '1px solid #ddd', 
+            borderRadius: '4px',
+            backgroundColor: 'white',
+            overflow: 'hidden'
+          }}>
             {loading ? (
-              <div style={{ padding: 16 }}>Ładowanie podglądu…</div>
+              <div style={{ 
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '100%',
+                fontSize: '14px',
+                color: '#666'
+              }}>
+                Ładowanie podglądu…
+              </div>
             ) : blobUrl ? (
-              <iframe ref={iframeRef} title="Podgląd PDF" src={blobUrl} style={{ width: '100%', height: 600, border: 0 }} />
+              <iframe 
+                ref={iframeRef} 
+                title="Podgląd PDF" 
+                src={blobUrl} 
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  border: 0,
+                  borderRadius: '4px',
+                  minHeight: '500px'
+                }} 
+              />
             ) : (
-              <div style={{ padding: 16 }}>Brak podglądu</div>
+              <div style={{ 
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '100%',
+                fontSize: '14px',
+                color: '#666'
+              }}>
+                Brak podglądu
+              </div>
             )}
           </div>
-        </div>
-        <div className="dialog-footer" style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
-          <button className="btn" onClick={onClose}>Zamknij</button>
         </div>
       </div>
     </div>

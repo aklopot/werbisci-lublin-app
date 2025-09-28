@@ -30,8 +30,6 @@ backend/*.db
 *.db
 
 # Secrets & local config
-.env
-.env.*
 *.secret
 *.secrets
 *.key

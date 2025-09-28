@@ -1,0 +1,7 @@
+jak uruchomić
+
+python odt_extract_addresses.py --root "D:\repositories\itsolutions\werbisci\kopia baza\a d r e s y"
+Jeśli nie podasz --out-dir, pliki powstaną w bieżącym katalogu.
+
+lub
+python odt_extract_addresses.py --root "D:\sciezka\do\katalogu\z\odt" --out-dir "D:\gdzie\zapisac"

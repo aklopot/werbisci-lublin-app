@@ -128,8 +128,8 @@ export const ContactsListPage: React.FC = () => {
   }, [sortField])
 
   const getSortIcon = (field: string) => {
-    if (sortField !== field) return <span style={{ color: '#0056b3', fontWeight: 'bold' }}>↕️</span>
-    return sortDirection === 'asc' ? <span style={{ color: '#0056b3', fontWeight: 'bold' }}>↑</span> : <span style={{ color: '#0056b3', fontWeight: 'bold' }}>↓</span>
+    if (sortField !== field) return null
+    return sortDirection === 'asc' ? <span style={{ color: '#666', fontSize: '12px' }}>↑</span> : <span style={{ color: '#666', fontSize: '12px' }}>↓</span>
   }
 
   const clearAllFilters = useCallback(() => {
@@ -166,7 +166,7 @@ export const ContactsListPage: React.FC = () => {
         )}
       />
       <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center', minHeight: '52px' }}>
-        <input className="input" placeholder="Szukaj (imię, nazwisko, adres)" value={search} onChange={e => { setSearch(e.target.value); setOffset(0) }} />
+        <input className="input" placeholder="Szukaj (imię, nazwisko, adres)" value={search} onChange={e => { setSearch(e.target.value); setOffset(0) }} style={{ minWidth: '300px', width: '30%' }} />
         <select 
           className="input" 
           value={filterLabel} 

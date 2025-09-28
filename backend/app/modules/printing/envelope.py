@@ -43,40 +43,28 @@ def _register_unicode_fonts() -> dict[str, str]:
         (
             "AppSans",
             [
-                _get_assets_path() / "DejaVuSans.ttf",
                 Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+                Path("/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"),
                 Path("C:/Windows/Fonts/arial.ttf"),
-                Path(
-                    "/usr/share/fonts/truetype/liberation/"
-                    "LiberationSans-Regular.ttf"
-                ),
+                _get_assets_path() / "DejaVuSans.ttf",
             ],
         ),
         (
             "AppSans-Bold",
             [
-                _get_assets_path() / "DejaVuSans-Bold.ttf",
                 Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"),
+                Path("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"),
                 Path("C:/Windows/Fonts/arialbd.ttf"),
-                Path(
-                    "/usr/share/fonts/truetype/liberation/"
-                    "LiberationSans-Bold.ttf"
-                ),
+                _get_assets_path() / "DejaVuSans-Bold.ttf",
             ],
         ),
         (
             "AppSans-Italic",
             [
-                _get_assets_path() / "DejaVuSans-Oblique.ttf",
-                Path(
-                    "/usr/share/fonts/truetype/dejavu/"
-                    "DejaVuSans-Oblique.ttf"
-                ),
+                Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf"),
+                Path("/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf"),
                 Path("C:/Windows/Fonts/ariali.ttf"),
-                Path(
-                    "/usr/share/fonts/truetype/liberation/"
-                    "LiberationSans-Italic.ttf"
-                ),
+                _get_assets_path() / "DejaVuSans-Oblique.ttf",
             ],
         ),
     ]
@@ -88,8 +76,10 @@ def _register_unicode_fonts() -> dict[str, str]:
                 if p.exists():
                     pdfmetrics.registerFont(TTFont(font_name, str(p)))
                     registered[font_name] = font_name
+                    print(f"Successfully registered font: {font_name} from {p}")
                     break
-            except Exception:
+            except Exception as e:
+                print(f"Failed to register font {font_name} from {p}: {e}")
                 # Try next path
                 continue
 
@@ -100,6 +90,7 @@ def _register_unicode_fonts() -> dict[str, str]:
         "italic": registered.get("AppSans-Italic", "Helvetica-Oblique"),
     }
 
+    print(f"Font mapping: {mapping}")
     _REGISTERED_FONTS = mapping
     return mapping
 

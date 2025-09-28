@@ -1,0 +1,88 @@
+Ustawienie hasła:
+docker compose exec backend python -c "
+from app.core.deps import get_db
+from app.modules.users.models import User
+from app.core.security import hash_password
+from sqlalchemy.orm import Session
+
+db = next(get_db())
+admin = db.query(User).filter(User.login == 'admin').first()
+if admin:
+    admin.password_hash = hash_password('admin123')
+    db.commit()
+    print('Admin password reset to: admin123')
+else:
+    print('Admin user not found')
+"
+
+# 1. Sprawdź czy admin istnieje w bazie
+docker compose exec backend python -c "
+from app.core.deps import get_db
+from app.modules.users.models import User
+from sqlalchemy.orm import Session
+
+db = next(get_db())
+admin = db.query(User).filter(User.login == 'admin').first()
+if admin:
+    print('Admin user exists:', admin.login, admin.email)
+else:
+    print('Admin user does not exist')
+"
+
+# 2. Sprawdź konfigurację .env
+cat .env | grep ADMIN
+
+# ===========================================
+# AKTUALIZACJA APLIKACJI NA SERWERZE
+# ===========================================
+
+# ===========================================
+# PEŁNA AKTUALIZACJA
+# ===========================================
+# Pełna aktualizacja
+docker compose down && git pull && docker compose up -d --build
+
+# Sprawdzenie statusu
+docker compose ps
+
+# Logi
+docker compose logs -f
+
+# 1. Zatrzymaj aplikację
+docker compose down
+
+# 2. Pobierz najnowsze zmiany z repozytorium
+git pull origin main
+
+# 3. Uruchom ponownie z przebudową
+docker compose up -d --build
+
+# 4. Sprawdź status kontenerów
+docker compose ps
+
+# 5. Sprawdź logi (opcjonalnie)
+docker compose logs -f
+
+# ===========================================
+# AKTUALIZACJA TYLKO FRONTEND
+# ===========================================
+
+# Jeśli zmieniłeś tylko frontend:
+docker compose up -d --build frontend
+
+# ===========================================
+# AKTUALIZACJA TYLKO BACKEND
+# ===========================================
+
+# Jeśli zmieniłeś tylko backend:
+docker compose up -d --build backend
+
+# ===========================================
+# BACKUP PRZED AKTUALIZACJĄ
+# ===========================================
+
+# Backup bazy danych
+docker run --rm -v werbisci-lublin-app_backend_data:/data -v $PWD:/backup alpine tar czf /backup/sqlite_backup_$(date +%Y%m%d_%H%M%S).tgz /data
+
+# Backup całego projektu
+tar czf werbisci_backup_$(date +%Y%m%d_%H%M%S).tgz --exclude=node_modules --exclude=__pycache__ .

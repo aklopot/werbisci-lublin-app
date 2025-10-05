@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import type { Address } from './types'
-import { createAddress, deleteAddress, listAddresses, searchAddresses, updateAddress } from './api'
+import { createAddress, deleteAddress, listAddresses, searchAddresses, updateAddress, importAddressesCsv, type ImportResult } from './api'
 import { ContactForm } from './ContactForm'
 import { EnvelopePreview } from './EnvelopePreview'
 import { LabelsPreview } from './LabelsPreview'
@@ -26,6 +26,8 @@ export const ContactsListPage: React.FC = () => {
   const [previewOpen, setPreviewOpen] = useState(false)
   const [previewAddressId, setPreviewAddressId] = useState<number | null>(null)
   const [labelsOpen, setLabelsOpen] = useState(false)
+  const [importLoading, setImportLoading] = useState(false)
+  const [importResult, setImportResult] = useState<ImportResult | null>(null)
 
   const refresh = useCallback(async () => {
     setLoading(true)
@@ -83,6 +85,40 @@ export const ContactsListPage: React.FC = () => {
   }, [])
 
   const canExport = currentUser?.role === 'manager' || currentUser?.role === 'admin'
+  const canImport = canExport // Same permissions as export
+
+  const handleFileImport = useCallback(async (file: File) => {
+    if (!file.name.toLowerCase().endsWith('.csv')) {
+      alert('Proszę wybrać plik CSV')
+      return
+    }
+
+    setImportLoading(true)
+    setImportResult(null)
+    try {
+      const result = await importAddressesCsv(file)
+      setImportResult(result)
+      // Refresh the data to show imported addresses
+      await refresh()
+    } catch (err: any) {
+      alert(err?.message ?? 'Błąd importu')
+    } finally {
+      setImportLoading(false)
+    }
+  }, [refresh])
+
+  const onImportClick = useCallback(() => {
+    const input = document.createElement('input')
+    input.type = 'file'
+    input.accept = '.csv'
+    input.onchange = (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0]
+      if (file) {
+        handleFileImport(file)
+      }
+    }
+    input.click()
+  }, [handleFileImport])
 
   const downloadFile = useCallback(async (path: string, filename: string, accept: string) => {
     try {
@@ -132,6 +168,12 @@ export const ContactsListPage: React.FC = () => {
     return sortDirection === 'asc' ? <span style={{ color: '#666', fontSize: '12px' }}>↑</span> : <span style={{ color: '#666', fontSize: '12px' }}>↓</span>
   }
 
+  const truncateText = (text: string | null, maxLength: number = 15): string => {
+    if (!text) return ''
+    if (text.length <= maxLength) return text
+    return text.substring(0, maxLength - 3) + '(...)'
+  }
+
   const clearAllFilters = useCallback(() => {
     setSearch('')
     setFilterLabel('all')
@@ -149,19 +191,32 @@ export const ContactsListPage: React.FC = () => {
               buttonAriaLabel="Menu etykiet"
               groups={[{ label: 'Druk i podgląd', items: [{ label: 'Etykiety (3×7) – podgląd i PDF', onSelect: onLabelsClick }]}]}
             />
-            {canExport && (
-              <DropdownMenu
-                buttonLabel="Eksportuj"
-                buttonAriaLabel="Menu eksportu danych"
-                groups={[{
-                  items: [
-                    { label: 'Eksport CSV', onSelect: () => downloadFile('/api/addresses/export.csv', 'addresses.csv', 'text/csv') },
-                    { label: 'Eksport ODS', onSelect: () => downloadFile('/api/addresses/export.ods', 'addresses.ods', 'application/vnd.oasis.opendocument.spreadsheet') },
-                    { label: 'Eksport PDF', onSelect: () => downloadFile('/api/addresses/export.pdf', 'addresses.pdf', 'application/pdf') },
-                  ],
-                }]} />
-            )}
             <button className="btn primary" onClick={onAddClick}>Dodaj kontakt</button>
+            {(canImport || canExport) && (
+              <DropdownMenu
+                buttonLabel="Administracja bazy"
+                buttonAriaLabel="Menu administracji bazy danych"
+                groups={[
+                  ...(canImport ? [{
+                    label: 'Import',
+                    items: [
+                      { 
+                        label: 'Import CSV', 
+                        onSelect: onImportClick,
+                        disabled: importLoading
+                      },
+                    ],
+                  }] : []),
+                  ...(canExport ? [{
+                    label: 'Eksport',
+                    items: [
+                      { label: 'Eksport CSV', onSelect: () => downloadFile('/api/addresses/export.csv', 'addresses.csv', 'text/csv') },
+                      { label: 'Eksport ODS', onSelect: () => downloadFile('/api/addresses/export.ods', 'addresses.ods', 'application/vnd.oasis.opendocument.spreadsheet') },
+                      { label: 'Eksport PDF', onSelect: () => downloadFile('/api/addresses/export.pdf', 'addresses.pdf', 'application/pdf') },
+                    ],
+                  }] : []),
+                ]} />
+            )}
           </>
         )}
       />
@@ -187,6 +242,23 @@ export const ContactsListPage: React.FC = () => {
         </div>
       </div>
       {error && <div className="error" style={{ marginBottom: 12 }}>{error}</div>}
+      {importLoading && <div className="info" style={{ marginBottom: 12 }}>Importowanie pliku CSV...</div>}
+      {importResult && (
+        <div className="info" style={{ marginBottom: 12 }}>
+          <strong>Import zakończony:</strong> Zaimportowano {importResult.imported_count} z {importResult.total_rows} rekordów.
+          {importResult.errors.length > 0 && (
+            <div style={{ marginTop: 8 }}>
+              <strong>Błędy:</strong>
+              <ul style={{ marginTop: 4 }}>
+                {importResult.errors.map((error, index) => (
+                  <li key={index}>{error}</li>
+                ))}
+                {importResult.has_more_errors && <li>... i więcej błędów</li>}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
       <div className="table-responsive">
         <table className="table">
           <thead>
@@ -242,6 +314,13 @@ export const ContactsListPage: React.FC = () => {
               </th>
               <th 
                 style={{ cursor: 'pointer', userSelect: 'none' }}
+                onClick={() => handleSort('description')}
+                title="Kliknij aby sortować"
+              >
+                Opis {getSortIcon('description')}
+              </th>
+              <th 
+                style={{ cursor: 'pointer', userSelect: 'none' }}
                 onClick={() => handleSort('label_marked')}
                 title="Kliknij aby sortować"
               >
@@ -252,9 +331,9 @@ export const ContactsListPage: React.FC = () => {
           </thead>
           <tbody>
             {loading ? (
-              <tr><td colSpan={9}>Ładowanie…</td></tr>
+              <tr><td colSpan={10}>Ładowanie…</td></tr>
             ) : data.length === 0 ? (
-              <tr><td colSpan={9}>Brak danych</td></tr>
+              <tr><td colSpan={10}>Brak danych</td></tr>
             ) : (
               data.map(row => (
                 <tr key={row.id}>
@@ -265,6 +344,7 @@ export const ContactsListPage: React.FC = () => {
                   <td>{row.apartment_no ?? ''}</td>
                   <td>{row.city}</td>
                   <td>{row.postal_code}</td>
+                  <td title={row.description || ''}>{truncateText(row.description)}</td>
                   <td>{row.label_marked ? 'tak' : ''}</td>
                   <td>
                     <button className="btn" onClick={() => onEnvelopeClick(row)}>Koperta</button>

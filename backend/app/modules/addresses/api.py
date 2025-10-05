@@ -4,7 +4,9 @@ from typing import List
 from io import StringIO, BytesIO
 import csv
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
+from fastapi import (
+    APIRouter, Depends, HTTPException, Query, Response, status, UploadFile, File
+)
 from sqlalchemy.orm import Session
 
 from app.core.deps import get_db, require_user, require_manager_qh
@@ -54,6 +56,7 @@ def create_address(
             apartment_no=payload.apartment_no,
             city=payload.city,
             postal_code=payload.postal_code,
+            description=payload.description,
         )
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
@@ -105,6 +108,7 @@ def update_address(
             apartment_no=payload.apartment_no,
             city=payload.city,
             postal_code=payload.postal_code,
+            description=payload.description,
             label_marked=payload.label_marked,
         )
     except ValueError as exc:
@@ -138,6 +142,7 @@ def _addresses_as_rows(addresses: List[Address]) -> list[list[str]]:
             a.apartment_no or "",
             a.city,
             a.postal_code,
+            a.description or "",
             "1" if a.label_marked else "0",
         ])
     return rows
@@ -159,6 +164,7 @@ def export_addresses_csv(
         "apartment_no",
         "city",
         "postal_code",
+        "description",
         "label_marked",
     ]
     buf = StringIO(newline="")
@@ -201,6 +207,7 @@ def export_addresses_ods(
         "apartment_no",
         "city",
         "postal_code",
+        "description",
         "label_marked",
     ]
     rows = _addresses_as_rows(items)
@@ -291,3 +298,110 @@ def export_addresses_pdf(
             "Content-Disposition": "attachment; filename=addresses.pdf",
         },
     )
+
+
+@router.post("/import.csv", response_model=dict)
+def import_addresses_csv(
+    file: UploadFile = File(...),
+    db: Session = Depends(get_db),
+    _: object = Depends(require_manager_qh),
+) -> dict:
+    """Import addresses from CSV file. Ignores 'id' column and generates new IDs."""
+    if not file.filename or not file.filename.lower().endswith('.csv'):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="File must be a CSV file"
+        )
+
+    try:
+        # Read file content
+        content = file.file.read().decode('utf-8-sig')  # Handle BOM
+        csv_reader = csv.DictReader(StringIO(content))
+
+        # Validate headers
+        expected_headers = {
+            'first_name', 'last_name', 'street', 'apartment_no',
+            'city', 'postal_code', 'description', 'label_marked'
+        }
+        actual_headers = set(csv_reader.fieldnames or [])
+
+        # Check if all required headers are present
+        # (id is optional and will be ignored)
+        missing_headers = expected_headers - actual_headers
+        if missing_headers:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Missing required columns: {', '.join(missing_headers)}"
+            )
+
+        service = AddressService()
+        imported_count = 0
+        errors = []
+
+        # Start from 2 because header is row 1
+        for row_num, row in enumerate(csv_reader, start=2):
+            try:
+                # Extract data, ignoring 'id' column
+                first_name = row.get('first_name', '').strip()
+                last_name = row.get('last_name', '').strip()
+                street = row.get('street', '').strip()
+                apartment_no = row.get('apartment_no', '').strip() or None
+                city = row.get('city', '').strip()
+                postal_code = row.get('postal_code', '').strip()
+                description = row.get('description', '').strip() or None
+                label_marked = row.get('label_marked', '').strip().lower() in (
+                    '1', 'true', 'yes', 'tak'
+                )
+
+                # Validate required fields
+                if not first_name:
+                    raise ValueError("first_name is required")
+                if not last_name:
+                    raise ValueError("last_name is required")
+                if not street:
+                    raise ValueError("street is required")
+                if not city:
+                    raise ValueError("city is required")
+                if not postal_code:
+                    raise ValueError("postal_code is required")
+
+                # Create address
+                address = service.create(
+                    db,
+                    first_name=first_name,
+                    last_name=last_name,
+                    street=street,
+                    apartment_no=apartment_no,
+                    city=city,
+                    postal_code=postal_code,
+                    description=description,
+                )
+
+                # Update label_marked if needed
+                if label_marked:
+                    service.update(
+                        db,
+                        address,
+                        label_marked=True
+                    )
+
+                imported_count += 1
+
+            except Exception as e:
+                errors.append(f"Row {row_num}: {str(e)}")
+                continue
+
+        return {
+            "imported_count": imported_count,
+            "total_rows": row_num - 1,  # Subtract 1 for header row
+            "errors": errors[:10],  # Limit errors to first 10
+            "has_more_errors": len(errors) > 10
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Error processing CSV file: {str(e)}"
+        )

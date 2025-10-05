@@ -29,6 +29,9 @@ class Address(Base):
     postal_code: Mapped[str] = mapped_column(
         String(20), nullable=False, index=True
     )
+    description: Mapped[str | None] = mapped_column(
+        String(500), nullable=True
+    )
     label_marked: Mapped[bool] = mapped_column(
         Boolean, nullable=False, default=False, index=True
     )

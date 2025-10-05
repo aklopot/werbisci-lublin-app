@@ -34,4 +34,31 @@ export async function deleteAddress(id: number): Promise<void> {
   return fetchJson<void>(`/api/addresses/${id}`, { method: 'DELETE' })
 }
 
+export interface ImportResult {
+  imported_count: number
+  total_rows: number
+  errors: string[]
+  has_more_errors: boolean
+}
+
+export async function importAddressesCsv(file: File): Promise<ImportResult> {
+  const formData = new FormData()
+  formData.append('file', file)
+  
+  const response = await fetch('/api/addresses/import.csv', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Authorization': `Bearer ${localStorage.getItem('auth_token')}`
+    }
+  })
+  
+  if (!response.ok) {
+    const error = await response.text()
+    throw new Error(error || 'Import failed')
+  }
+  
+  return response.json()
+}
+
 

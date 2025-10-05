@@ -24,6 +24,7 @@ export const ContactForm: React.FC<Props> = ({ open, onClose, onSaved, editing }
     apartment_no: '',
     city: '',
     postal_code: '',
+    description: '',
   })
   const [labelMarked, setLabelMarked] = useState<boolean>(false)
   const [loading, setLoading] = useState(false)
@@ -41,10 +42,11 @@ export const ContactForm: React.FC<Props> = ({ open, onClose, onSaved, editing }
         apartment_no: editing.apartment_no ?? '',
         city: editing.city,
         postal_code: editing.postal_code,
+        description: editing.description ?? '',
       })
       setLabelMarked(editing.label_marked)
     } else {
-      setForm({ first_name: '', last_name: '', street: '', apartment_no: '', city: '', postal_code: '' })
+      setForm({ first_name: '', last_name: '', street: '', apartment_no: '', city: '', postal_code: '', description: '' })
       setLabelMarked(false)
     }
   }, [editing])
@@ -73,6 +75,7 @@ export const ContactForm: React.FC<Props> = ({ open, onClose, onSaved, editing }
           apartment_no: form.apartment_no?.trim() || null,
           city: form.city,
           postal_code: form.postal_code,
+          description: form.description?.trim() || null,
           label_marked: labelMarked,
         }
         const saved = await updateAddress(editing.id, payload)
@@ -85,6 +88,7 @@ export const ContactForm: React.FC<Props> = ({ open, onClose, onSaved, editing }
           apartment_no: form.apartment_no?.trim() || undefined,
           city: form.city,
           postal_code: form.postal_code,
+          description: form.description?.trim() || null,
         }
         const created = await createAddress(payload)
         // If label_marked requested on create, do a follow-up update since backend create doesn't accept label_marked
@@ -138,6 +142,16 @@ export const ContactForm: React.FC<Props> = ({ open, onClose, onSaved, editing }
               <input value={form.city} onChange={e => setForm({ ...form, city: e.target.value })} required style={fullWidthInputStyle} />
             </label>
           </div>
+          <label className="field">
+            <span>Opis</span>
+            <textarea 
+              value={form.description ?? ''} 
+              onChange={e => setForm({ ...form, description: e.target.value })}
+              rows={3}
+              style={{ resize: 'vertical', minHeight: '60px' }}
+              placeholder="Dodatkowe informacje o kontakcie..."
+            />
+          </label>
           <label className="field" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
             <input type="checkbox" checked={labelMarked} onChange={e => setLabelMarked(e.target.checked)} />
             <span>Zaznaczony do etykiety</span>

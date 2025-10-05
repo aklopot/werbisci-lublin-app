@@ -1,0 +1,1511 @@
+id,first_name,last_name,street,apartment_no,city,postal_code,label_marked
+1,Barbara,Tor,Jarosławiec,86 A,Sitno,22-424,1
+2,Jadwiga,Tabiś - Dawidowicz,ul. Bursztynowa,41/25,Lublin,20-576,1
+3,Anna,Tadysz,Oziębów,38,Baćkowice,27-552,1
+4,Emil,Tarasiński,ul. Samsonowicza,41/72,Lublin,20-485,1
+5,Danuta,Tchórzewska,Izdebki Błażeje,1,Krzesk,08-111,1
+6,Krystyna,Tchórzewska,ul. Żołnierska,13/51,Lublin,20-801,1
+7,Aneta,Tereszkiewicz,ul. Podwisłocze,34/128,Rzeszów,35-309,1
+8,Bożena,Tereszkiewicz,ul. Broniewskiego,24/99,Rzeszów,35-222,1
+9,Ewa,Terlikowska,ul. Bursztynowa,41/19,Lublin,20-576,1
+10,Joanna,Tkaczuk,Ciechanki,50,Puchaczów,21-013,1
+11,Agnieszka,Tkaczyk,ul. Kresowa,12/8,Lublin,20-215,1
+12,Józefa,Tkaczyk,Głębokie,78,Uścimów,21-109,1
+13,Ewa,Toboła,ul. Wesoła,1,Firlej,21-136,1
+14,Janina,Tomaszewska,ul. Szarych Szeregów,1/18,Lublin,20-047,1
+15,Danuta,Tomczyk,ul. Piłsudskiego,71,Janów Lubelski,23-300,1
+16,Barbara,Tor,Jarosławiec,86 A,Sitno,22-424,1
+17,Maria,Tosik,ul. Polna,7/28,Łask,98-100,1
+18,Elżbieta,Tołubińska,Nowodwór - Piaski,70,Lubartów,21-100,1
+19,Zofia,Trybel,ul. Kościuszki,41/1,Gdańsk Wrzeszcz,80-445,1
+20,Katarzyna,Trepiak,ul. 3-go Maja,10/15,Św i d n i k,21-040,1
+21,Teresa,Trojanowska,ul. Orzeszkowej,2/35,Tarnobrzeg,39-400,1
+22,Wiktor,Tryndoch,ul. Wojska Polskiego,70,Tomaszów Lubelski,22-600,1
+23,Dominika,Trzcińska,ul. Kwiatów Polnych,9,Św i d n i k,21-040,1
+24,Mieczysław,Trześniewski,ul. Dominowska,33,Lublin,20-385,1
+25,Agnieszka,Tujaka,Bazylianówka,81/12A,Lublin,20-144,1
+26,Krystyna,Turska,ul. Wojska Polskiego,5/8,Piaseczno,05-500,1
+27,Aleksandra,Tuszyńska,Bogucin,47 C,Fabianki,87-811,1
+28,Mirosława,Tuszyńska,ul. Hutnicza,6/31,Włocławek,87-800,1
+29,Stanisława,Twarda,ul. Spacerowa,152,Długie,38-530,1
+30,Anna,Tyborczyk,ul. Wazów,1/95,Słupsk,76-200,1
+31,Ewa,Tyborczyk,Aleja 3-go Maja,37/35,Słupsk,76-200,1
+32,Kamil,Tyborczyk,ul. Bogumińska,64,Olza,44-353,1
+33,Kazimiera,Tylec,ul. Suszyckich,135,Boguchwała,36-040,1
+34,Misjonarze,Werbiści,Ł Y S A K Ó W,17,Zaklików,37-470,1
+35,Barbara,Tymosiewicz,J e z i o r o,115,Siemień,21-220,1
+36,Zofia,Tyrpa,ul. Stachiewicza,27/99,Kraków,31-303,1
+37,Paweł,Ujwary,ul. Gorczańska,51,Nowy Targ,34-400,1
+38,Katarzyna,Ujwary - Łaś,ul. Skotnica,1,Nowy Targ,34-400,1
+39,Aleksander,Uliński,ul. Wiatraczna,11/21,Siedlce,08-110,1
+40,Ewa,i Łukasz Urban,ul. Szmaragdowa,16/81,Lublin,20-570,1
+41,Wiesława,Urban,ul. Szmaragdowa,16/81,Lublin,20-570,1
+42,Alicja,Urbańska,ul. Puławska,15/9,Lublin,20-046,1
+43,Zenona,Uzłowska,Plac Dworcowy,3,Międzyrzec Podlaski,21-560,1
+44,Wyrwisz,"Dorota, Łukasz,",ul. 11-go Listopada,66/56,Parczew,21-200,1
+45,Helena,Wachowicz,ul. Polna 3 C/9,,Biłgoraj,23-400,1
+46,Alicja,Wadas,Czarna Góra,136,Czarna,38-710,1
+47,Bożena,Wala,ul. Jastrzębska,147,Wodzisław Śląski,44-304,1
+48,Helena,Waligóra,ul. Krańcowa,80/35,Lublin,20-356,1
+49,Danuta,Wapińska,ul. Bazowa,3,Niedrzwica Duża,24-220,1
+50,Misjonarze,Werbiści,ul. Ostrobramska,90,Warszawa,04-118,1
+51,Zofia,Wasil,ul. Jana Pawła II,13/27,Staszów,28-200,1
+52,Zofia,Wasil,ul. św. Jana Pawła II,14/10,Staszów,28-200,1
+53,Wiesława,Wasilewska,ul. Żarnowiecka,5/16,Lublin,20-630,1
+54,Zofia,Wasiluk,ul. Zygmunta Augusta,17/16,Biała Podlaska,21-500,1
+55,Barbara,Stachniak,ul. Miodowa 45 A M,1,SANDOMIERZ,27-660,1
+56,Marian,Watras,Głusko Duże,39,Karczmiska,24-310,1
+57,Helena,Wawrzak,ul. Kopernika,2/56,Leżajsk,37-300,1
+58,Halina,Wawrzyńczyk,Łuszczów Pierwszy,110,Lublin,20-258,1
+59,Monika,Wegiel,ul. Keniżanki,25,Łódź,93-346,1
+60,Brygida,Wenta,ul. Główna,61,Radom,26-600,1
+61,Stanisława,Wesołowska,ul. Kościelna,20,Sawin,22-107,1
+62,Klementyna,Widlak,ul. Żelazowej Woli 4 -,10,Lublin,20-853,1
+63,Krystyna,Wieleba,ul. Czeska,14/24,Lublin,20-424,1
+64,Iwona,Wielgus,ul. Lawendowa,8,Wólka Abramowicka,20-388,1
+65,Alicja,Wierzbicka,u l. B e m a 8,9,Siedlce,08-110,1
+66,Barbara,Wierzbicka,ul. Wileńska,15/31,Lublin,20-603,1
+67,Celina,Wierzbicka,ul. Konarskiego,10/12,Słupsk,76-200,1
+68,Małgorzata,Wiktorzak,ul. Gen. Sikorskiego,3/104,Lublin,20-814,1
+69,Zofia,Wilk,Groble,63,Jeżowe,37-430,1
+70,Dorota,Wilk - Giza,Zbigniewice Wieś,25,Koprzywnica,27-660,1
+71,Jadwiga,Witak,ul. Zamojska,33/19,Lublin,20-102,1
+72,Elżbieta,Witkowska,ul. Racławicka,29/67,Świdnik,21-040,1
+73,Jadwiga,Witkowska,ul. Konopnickiej,13,Łask,98-100,1
+74,Misjonarze,Werbiści,ul. Górnicza,10,Chełm,22-100,1
+75,Wyrwisz,"Witold, Anna,",Krzywe Koło,10 a,Lubartów,21-100,1
+76,Łucja,Witoń,ul. Asnyka,24/25,Ostrów Wlkp.,63-400,1
+77,Urszula,Więckowska,ul. Wapienna,173,Stróża,23-206,1
+78,Irena,Wiśniecka,ul. Braci Wieniawskich,1/208,Lublin,20-844,1
+79,Ewa,Wiśniewska,ul. Prusa,5/16,Skierniewice,96-100,1
+80,Stanisława,Wiśniewska,Dębowa Kłoda,84,Dębowa Kłoda,21-211,1
+81,Aleksandra,Wodyk,ul. Sikorskiego 17 m,5,Zamość,22-400,1
+82,Ewa,Wojciechowska,Nowy Żabieniec,84,Wilga,08-470,1
+83,Katarzyna,Wojciechowska,ul. Okrzei,6/14,Lublin,20-128,1
+84,Maria,Wojtas,ul. 11-go Listopada,66/47,Parczew,21-200,1
+85,Anna,Wojtyna,ul. ks. Piotra Skargi,1/90,Chełm,22-100,1
+86,Iwona,Wolińska,R u d n i k,64,Lublin,20-258,1
+87,Hanna,Wolny,ul. Powstańców,1,Nowe Chechło,42-622,1
+88,Zofia,Wolska,ul. Różana,27/82,Lublin,20-538,1
+89,Zenobia,Wołowik,Jabłonna Majątek,106,Jabłonna,23-114,1
+90,Grzegorz,Wołłk - Łaniewski,ul. Zamojskiego,48/25,Zamość,22-400,1
+91,Agnieszka,Woźniak,ul. Drewniana,13/2,Lublin,20-305,1
+92,Justyna,Woźniak,ul. Lwowska,26/6,Lublin,20-128,1
+93,Sylwia,i Michał Woźniak,16 Mallow Walk,,,,1
+94,Barbara,Zygmunt Wronka,Zagórzyca,22,Damnica,76-231,1
+95,Małgorzata,Wróblewska,Zdziechowice Drugie,209 A,Zaklików,37-470,1
+96,Adam,Wyleżoł,ul. Gorzycka,35,Czyżowice,44-352,1
+97,Anna,Wyroślak,ul. Rudnicka,13,Lublin,20-140,1
+98,Helena,Wyrwisz,Działyń,33,Simień,21-220,1
+99,Anna,Wysocka,ul. Bolesława Prusa,9,Nałęczów,24-150,1
+100,Adela,Wójcik,ul. Kolorowa,26/19,Lublin,20-802,1
+101,Anna,Wójcik,ul. Perłowa,8/4,Lublin,20-574,1
+102,Grażyna,Wójcik,Kolonia Tarło,92,Niedźwiada,21-104,1
+103,Teresa,Wójcik,Sobianowice,23,Lublin,20-258,1
+104,Teresa,Wójcik,ul. Kopernika,13/25,Świdnik,21-040,1
+105,Iwona,Wójtowicz,Wola Niemiecka,119,Niemce,21-025,1
+106,Leokadia,Wójtowicz,ul. Ogrodowa,16,Bełżyce,24-200,1
+107,Ryszard,Włosek,ul. Husarska,2/54,Lublin,20-555,1
+108,Maria,i Ryszard Zaborkowie,ul. Staffa,22,Lublin,20-454,1
+109,Hanna,Zacharek,ul. Konopnickiej,8/4,Ostrołęka,07-410,1
+110,"Mariusz,","Alicja, Lenka Zacharek",Osiedle Sikorskiego,7/75,Kęty,32-650,1
+111,Krystyna,Zachariasz,ul. Zamojska,50,Biłgoraj,23-400,1
+112,Katarzyna,Zagraba,ul. Dorohucza,156,Trawniki,21-044,1
+113,Iwona,Zając,ul. Hubalczyków,12/427,Słupsk,76-200,1
+114,Zofia,Zakrzewska,ul. Koczergi,25,Parczew,21-200,1
+115,Elżbieta,Zalewska - Kociuba,Trawniki,392,Trawniki,21-044,1
+116,Wiesław,Zamiar,ul. Wyspiańskiego,13/16,Świdnik,21-040,1
+117,Maria,Elżbieta Zaremba,ul. Armii Krajowej,3/127,Łęczna,21-010,1
+118,Krystyna,Zarzeczna,Batorz Drugi,76,Batorz,23-320,1
+119,Andrzej,Zarzeczny,K a r p i ó w k a 7,3,Stróża,23-206,1
+120,Zofia,Zarzycka,Wolica Pierwsza,38,Modliborzyce,23-310,1
+121,Jadwiga,Zaręba – Chylińska,ul. Akacjowa,88,Puszcza Mariańska,96-330,1
+122,Joanna,Zastawna,K o s i n 3,1,Annopol,23-235,1
+123,Jolanta,Zastawna,Kosin,31,Annopol,23-235,1
+124,Bożena,Zawada,ul. Inowłodzka,22 D,Opoczno,26-300,1
+125,Zofia,Zawada,ul. Garbarska,29/1,O s t r ó w L u b.,21-110,1
+126,Barbara,Zawiślak,Motycz,52 a,Motycz,21-030,1
+127,Maria,Załucka,ul. Nowowiejska,22,Tarnobrzeg,39-400,1
+128,Irena,Zborowska,ul. Broniewskiego,84,Łuków,21-400,1
+129,Genowefa,Zdunek,ul. Cmentarna,1,Adamów,21-412,1
+130,Irena,Zdunek,ul. Sikorskiego,16/13,Ostrołęka,07-410,1
+131,Urszula,Zduńczyk,ul. Kowieńska,28,Pisz,12-200,1
+132,Hieronima,i Tadeusz Zgiet,ul. Piłsudskiego,24/20,Le g i o n o w o,05-120,1
+133,Elżbieta,Zielińska,ul. Brzozowa,25,Złocieniec,78-520,1
+134,Kamil,Zieliński,D ę b ó w k a 1,3,Lublin,20-823,1
+135,Szczepan,Zimolzak,ul. Mławska,30,Żuromin,09-300,1
+136,Zofia,Zinkiewicz,ul. Koralowa,5/42,Lublin,20-583,1
+137,Danuta,i Bogusław Ziobrowscy,Kamionka Mała,56,Kamionka Wielka,33-334,1
+138,Lucyna,Zięba,Grabówka,44,Borzechów,24-224,1
+139,Alicja,Ziętek,ul. Boja Żeleńskiego,30,Lublin,20-435,1
+140,Bogumiła,Zołoteńka,ul. Jagiellońska,37/2,Mirów,55-095,1
+141,Janina,Zubrzycka,ul. Wrońska 1 B/153,,Lublin,20-723,1
+142,Monika,Zubrzycka,ul. Poligonowa 2 B/25,,Lublin,20-817,1
+143,Barbara,Zuń,Podlesie,19,Szastarka,23-225,1
+144,Stanisława,Żabicka,ul. Dr. Męcz. Majdanka,40/20,Lublin,20-334,1
+145,Anna,Żarnowska,ul. Fabryczna,5/85,Bełżyce,24-200,1
+146,Dariusz,Cholewa,21 - 040 Świdnik,,Świdnik,21-040,1
+147,Halina,Żołnierczuk - Madej,ul. 3-go Maja,7/23,Lublin,20-078,1
+148,Halina,Żołnierczuk - Madej,ul. 3-go Maja,7/23,Lublin,20-078,1
+149,Regina,Żołopa,ul. Międzyrzecka,41/35,Łuków,21-400,1
+150,Ewa,Żołynia,Wierzchowiska Pierwsze,42,Modliborzyce,23-310,1
+151,Maria,Żołynia,Wierzchowiska Pierwsze,42,Modliborzyce,23-310,1
+152,Jolanta,Żurawska,ul. Wazów,1/48,Słupsk,76-200,1
+153,Wanda,Żurek,ul. Partyzantów,23,Lublin,20-815,1
+154,Jolanta,Żydek,ul. Przyjaźni,4/45,Lublin,20-314,1
+155,Jolanta,Żydek,ul. Jantarowa,29/22,Lublin,20-582,1
+156,Anna,Obara,ul. Matejki,22/12,Tarnobrzeg,39-400,1
+157,Danuta,Oberhauser,Angerstr.,19,Monchengladbach,41238,1
+158,Jacek,Obszański,Rogale,54 A,Majdan Stary,23-414,1
+159,Renata,Ochniowska,ul. Wiśniowa,30,Zamość,22-400,1
+160,Zofia,Ofiarska,ul. Krasińskiego,15/12,Jasło,38-200,1
+161,Sabina,Ojkało,K a r p,6,Sitno,22-424,1
+162,Stanisława,Olejnik,Jaszczów,21,Milejów,21-020,1
+163,Ewa,Oleszak,Wierzchowiska Pierwsze,19,Piaski,21-050,1
+164,Irena,Oleszek,ul. Lubartowska,7/5,Lublin,20-115,1
+165,Iwona,Oleszkiewicz,ul. Pułaskiego,43,Adamów,21-412,1
+166,Dorota,Olko,J e z i o r o,8,Siemień,21-220,1
+167,Janina,Olszak,ul. Moniuszki,7/115,Słupsk,76-200,1
+168,Krystyna,Olszewska,ul. Słowackiego,35/19,Skarżysko-Kamienna,26-110,1
+169,Magdalena,Olszewska,Z a w a d a 2 6,7 D,Zawada,22-450,1
+170,Mariola,Olszewska,ul. Wiślana,7/4,Gliwice,44-119,1
+171,Mirosława,Oniszczuk,ul. Spokojna,10/Mętów,Lublin,20-388,1
+172,Aleksandra,Opolska,LUBENKA,75,Łomazy,21-532,1
+173,Alicja,Opolska,ul. Błońska,16,Markuszów,24-173,1
+174,Katarzyna,Ordutowska,ul. Wąwozowa,13 A,Lublin,20-508,1
+175,Wiesława,Ordyniec,Harnasie,7/62,Lublin,20-857,1
+176,Wiesława,Orzełowska,u l. K r u c z a,9,Głosków,05-503,1
+177,Maria,Osiak,ul. Łapiguz,12,Łuków,21-400,1
+178,Danuta,Osipiuk,ul. Leśna,15/41,Puławy,24-100,1
+179,Jadwiga,Ostrowska,ul. Jaracza,14/14,Ostrołęka,07-409,1
+180,Jadwiga,Otap,Czurny,1/44,Lublin,20-153,1
+181,Regina,Ovcharchyn,P. O. Box,644,U. S. A,53940,1
+182,Krystyna,Owerczuk,ul. Piłsudskiego,57/17,Bychawa,23-100,1
+183,Anna,Ozonek,22 - 351 K r z y w e,82,K r z y w e 82,22-351,1
+184,Stanisława,Ożga,ul. Juranda,5/41,Lublin,20-629,1
+185,Elżbieta,Pacek,ul. Wygodna,16,Lublin,20-384,1
+186,Lidia,Pacek,ul. Żelazna,3/8,Lublin,20-342,1
+187,Wanda,Pacuła,ul. Ks. Popiełuszki,2/36,Lubartów,21-100,1
+188,Anna,Paczkowska,ul. Hetmańska,24/49,Rz e sz ó w,35-045,1
+189,Teresa,Paczos,Dąbrówki,104,Potok Górny,23-423,1
+190,Teresa,Paczos,Piotrowice,110 A,Nałęczów,24-150,1
+191,Maria,Paluszkiewicz,ul. 11-go Listopada,52/12,Parczew,21-200,1
+192,Amelia,Pampuch,ul. Pogodna,7,Munina,37-514,1
+193,Zofia,i Adam Pampuchowie,ul. Św. Królowej Jadwigi,3,Munina,37-514,1
+194,Bronisława,Panek,B ł a ż e k,42,Batorz,23-320,1
+195,Bogumiła,Papiernik,P o d e b ł o c i e,249,Trojanów,08-455,1
+196,Grażyna,Paprocka,Brzeźno Lęborskie,36/1,Ł Ę CZ Y C E,84-218,1
+197,Misjonarze,Werbiści,ul. Św. Faustyny,8,Kraśnik,23-200,1
+198,Misjonarze,Werbiści,ul. Paderewskiego,20,Lublin,20-860,1
+199,Stanisław,Parczewski,ul. Wojska Polskiego,6/2,Włodawa,22-200,1
+200,Janina,Paryga,Jana Pawła II,86/21,Przemyśl,37-700,1
+201,Teresa,Pasierbowicz,ul. Krakowska,88,Niedrzwica Kościelna,24-220,1
+202,Róża,Pasiuk,ul. Kurantowa,4/75,Lublin,20-836,1
+203,Alina,Pastucha,B a t o r z,1/55,Batorz,23-320,1
+204,Urszula,Paszkowska,Czarna Górna,133,Czarna,38-710,1
+205,Teresa,Pater,ul. Skłodowskiej,4/58,Kozienice,26-900,1
+206,Agnieszka,Pawelec,Aleja Pokoju,26,Zwoleń,26-700,1
+207,Justyna,Pawelec,ul. Szwajcarska,9/9,Lublin,20-861,1
+208,Marianna,Pawelec,ul. Modrzewskiego,4,Włodawa,22-200,1
+209,Anna,Pała,ul. Św. Jana Pawła II,17/16,Staszów,28-200,1
+210,Edyta,Pałyga,ul. Konopnickiej,4,Kraśnik,23-204,1
+211,Maria,Pecko,Węgliska,51,Rakszawa,37-111,1
+212,Maria,Pelc,Wólka Pełkińska,260,Wólka Pełkińska,37-511,1
+213,Misjonarze,Werbiści,ul. Franciszkańska,8,Ostróda,14-100,1
+214,Elżbieta,Piasecka,Abramowice Prywatne,60,Lublin,20-388,1
+215,Barbara,Piechnik,P i o t r o w i c e,62 A,Strzyżewice,23-107,1
+216,Irena,Piechota,ul. Kosztowska,42,Mysłowice,41-400,1
+217,Anna,PiECHOWSKA,ul. Zajęcza,44,Dębnica Kaszubska pow. słupski,76-248,1
+218,Genowefa,Piekaś,ul. Kwiatowa,23/8,Lublin,20-425,1
+219,Krystyna,Pietraszek-Włodarczyk,ul. Szafirowa,13/5,Lublin,20-573,1
+220,Małgorzata,Pietruszka,7064 W. Madison Str.,,- 2660,60714,1
+221,Małgorzata,Pietrzak,Bychawska,14/8,Bełżyce,24-200,1
+222,Danuta,Pietrzkiewicz,Dolna,116,Długie,38-530,1
+223,Danuta,Pikul,Z a g r o d y,1,Goraj,23-450,1
+224,Anna,Pindłowska,Nowodwór Piaski,99,Nowodwór,21-100,1
+225,Urszula,Piotrowska-Kosior,ul. Wolińskiego,17/22,Lublin,20-491,1
+226,Bogumiła,i Wiesław Pirożek,ul. 3 - Maja,85,Radymno,37-550,1
+227,Wiesława,Pisiewicz,Wólka Abramowska,90,Goraj,23-450,1
+228,Zenon,Pisiewicz,Wólka Abramowska,90,Goraj,23-450,1
+229,Danuta,Piskała,ul. Pocztowa,5 A,Lubartów,21-100,1
+230,Joanna,Piskorska,Wola Niemiecka,47,Niemce,21-025,1
+231,Zuzanna,Piwowar,Kamionka,312,Kamionka,39-122,1
+232,Michalina,Piwowarska,ul. Sądecka 33 F/4,,Rabka - Zdrój,34-700,1
+233,Gabriela,Pizoń,Batorz I/77,,Batorz,23-320,1
+234,Halina,Pizoń,Batorz II,77,Batorz,23-320,1
+235,Antonina,Pióro - Gałan,ul. Tomaszowska,220,Susiec,22-672,1
+236,Genowefa,Planta-Maślanka,ul. Sadowa,16 A,Skawina,32-050,1
+237,Teresa,Plewka,ul. Kołłątaja,17 D,Puławy,24-100,1
+238,Ewa,Pluta,ul. Kopernika,9/4,Jarosław,37-500,1
+239,Halina,Poczta,ul. Koźmińska,36,Rozdrażew,63-708,1
+240,Danuta,Podstawka,"Marysin, ul. Turkusowa",34,Jastków,21-002,1
+241,Ewa,Poleszak,Wierzchowiska Pierwsze,19,Wierzchowiska,21-050,1
+242,Stanisława,Pomianek,ul. Warszawska 1/3 M,37,Rzeszów,35-205,1
+243,Misjonarze,Werbiści,Z u ł ó w 1,3,Kraśniczyn,22-310,1
+244,Lidia,i Rafał Poręba,Mystków,105,Mystków,33-334,1
+245,Patrycja,Porębska,"TURKA, ul. Bukowa",14/18,Lublin,20-258,1
+246,Radosław,Porębski,"TURKA, ul. Konwaliowa",1/10,Lublin,20-258,1
+247,Mirosława,Potocka-Waćkowska,ul. Lotnicza,4/16,Biała Podlaska,21-500,1
+248,Nina,Potęga,ul. Zacisze 2 m,1,Łódź,90-228,1
+249,Misjonarze,Werbiści,ul. Ostrobramska,90,Warszawa,04-118,1
+250,Janina,Prucnal,ul. Kołłątaja 1 a/2,,Leżajsk,37-300,1
+251,Justyna,Przeszło,Luchów Dolny,104,Tarnogród,23-420,1
+252,Kacper,Przychodzki,Wincentów,52 A,Lubartów,21-100,1
+253,Zofia,Przygórzewska,ul. 1000-lecia,6/1,Lesko,38-600,1
+254,Małgorzata,Ptasińska,ul. Piłsudskiego,28,Chodel,24-350,1
+255,Alina,Puchała,ul. Lubelska,48,Markuszów,24-173,1
+256,Bożena,Pudło,S u l ó w 8,3,Zakrzówek,23-213,1
+257,Radosław,Pukowiec,ul. 1-go Maja,103,Mszana,44-325,1
+258,Halina,Pulińska,ul. Kurantowa,8/85,Lublin,20-836,1
+259,Krystyna,Puślecka,Bruczków,55,Borek Wlkp.,63-810,1
+260,Tatiana,Puźniak,ul. Puławska,15/23,Lublin,20-046,1
+261,Barbara,Pyrzanowska,ul. Wileńska,74/10,Wołomin,05-200,1
+262,Małgorzata,Pyzik,ul. Krzywa,9,Kraśnik,23-200,1
+263,Tadeusz,Półchłopek,ul. Oficerska,4/30,Krosno,38-400,1
+264,Urszula,Płodowska,29 Dunning Place,,,,1
+265,Wiesław,Rachański,ul. Mariańska,29/6,Lublin,20-142,1
+266,Izabela,Radomska,ul. Gościnna,7/20,Lublin,20-532,1
+267,Jerzy,Radwański,ul. Starowiejska,17/26,Radomsko,97-500,1
+268,Elżbieta,Radziewicz,ul. Tuwima,1/59,Świdnik,21-040,1
+269,Krystyna,Radziewicz,ul. Niepodległości,34/6,Świdnik,21-040,1
+270,Misjonarze,Werbiści,I R E N A,72,Zaklików,37-470,1
+271,Maria,Rau,T o k i,72,Nowy Żmigród,38-230,1
+272,Roksana,i Daniel Rak,ul. Szkolna,106,Dukla,38-450,1
+273,Aleksandra,Raszewska,ul. Łąkowa,11,Reda,84-240,1
+274,Teresa,Ratajczyk,ul. 9-go Maja,20,Łask,98-100,1
+275,Oleksandra,Redka,ul. Nowomiejska,24/9,Lublin,20-615,1
+276,Marianna,Rek,ul. Gdyńska 23 A/5,,Świnoujście,72-600,1
+277,Helena,Ribakowska,S ł u p i e 8,6,Modliborzyce,23-310,1
+278,Zdzisław,Rogusz,Orzechowice,96,Orzechowice,37-712,1
+279,Marta,Rojewska,ul. Inżynierska,9/59,Lublin,20-484,1
+280,Agnieszka,Rokita,ul. Majówka,22/36,Starachowice,27-200,1
+281,Janina,Roman,Łąkowa,68,Boguchwała,36-040,1
+282,Zuzanna,Romanek,ŁOSIEŃ,80,Wysokie,23-145,1
+283,Anna,Romańska,Błażejewice,40,Biała Rawska,93-230,1
+284,Józefa,Rosół,ul. Głowackiego,4,Nisko,37-400,1
+285,Adam,Rudnicki,ul. Wojciechowska,21 A,Lublin,20-704,1
+286,Wanda,Rudnik,ul. Spółdzielcza,6/22,Mielec,39-300,1
+287,Milena,Rużuło,ul. Wyżynna,8/66,Lublin,20-560,1
+288,Magda,Rybak,ul. Sucha,14,Lublin,20-341,1
+289,Maria,Rybak,Aleksandrów II,305,Aleksandrów,23-408,1
+290,Anna,Mirosława Rykowska,ul. Sosnowa,9/9,Przasnysz,06-300,1
+291,Elżbieta,Rymut,ul. Rzeszowska,163 B,Dębica,39-200,1
+292,Krystyna,Ryćko,Romanówka,12/17,Garwolin,08-400,1
+293,Anna,Ryś,ul. Kolejowa,96,Jordanów,22-240,1
+294,Jacek,Rząd,ul. Polna,15/48,Puławy,24-100,1
+295,Iwona,Rzędzian,os. Stare Miasto 16 A/9,,Malbork,82-200,1
+296,Bogumiła,Różak,ul. Piłsudskiego,13,Wohyń,21-310,1
+297,Zuzanna,Różalska,ul. Opolska,5,Józefów,24-340,1
+298,Misjonarze,Werbiści,ul. Parkowa,33,Łabunie,22-437,1
+299,Misjonarze,Werbiści,Z u ł ó w 1,3,Kraśniczyn,22-310,1
+300,Klara,Sadkowska,ul. Rokosza,25,Busko Zdrój,28-100,1
+301,Wiesława,Safin,ul. Wola Rusinowska,68,Majdan Królewski,36-110,1
+302,Katarzyna,Sagan,ul. Sikorskiego,17/14,Kraśnik,23-204,1
+303,Helena,Sajak,Jackowiczowej,3,Radom,26-600,1
+304,Magdalena,Samol,Błażek,97,Batorz,23-320,1
+305,Janina,Samuś,ul. Smolki,8/31,Lesko,38-600,1
+306,Leokadia,Sardyś,ul. Chodźki,5/86,Lublin,20-093,1
+307,Joanna,i Maciej Sas,Jarantów,88,Blizanów,62-814,1
+308,Justyna,Sałaciak,Zawoja,1593,Zawoja,34-222,1
+309,Anna,Serefko,ul. Relaksowa,14/91,Lublin,20-819,1
+310,Jagoda,Serwin,ul. Wiklinowa,6/1,Łęczna,21-010,1
+311,Anna,Siatka,23 - 310 Modliborzyce,,Modliborzyce,23-310,1
+312,Zbigniew,Siczek,ul. Staffa,51,Lublin,20-454,1
+313,Alina,Sidor,ul. Zachodnia,46 A,Zakrzówek,23-213,1
+314,Wiktoria,Sidorowska,ul. Nowa,6,Cyców,21-070,1
+315,Iwona,Sienicka,ul. Moniuszki,12/9,Łomża,18-400,1
+316,Krystyna,Sitarz,ul. Wąska,20/7,Zamość,22-400,1
+317,Zofia,Siuty,ul. Łączna,36,Wojbórz,57-442,1
+318,Ewa,Siwerska - Lasak,ul. Wajdeloty,10/57,Lublin,20-604,1
+319,Krystyna,Siwiło,ul. Langiewicza 3 A/23,,Lublin,20-032,1
+320,Alicja,Skalska,ul. Wyżynna,23/28,Lublin,20-560,1
+321,Weronika,Skoczylas,L E J N O,46,Sosnówka,21-230,1
+322,Krystyna,Skorek,ul. Puławska,27/51,Lublin,20-051,1
+323,Halina,Skowron,ul. Filtrowa,54,Puławy,24-100,1
+324,Ireneusz,i Urszula Skowron,ul. Sadowa,1 A,Puławy,24-100,1
+325,Magdalena,Skroban,ul. Zwycięska,3/23A,Lublin,20-555,1
+326,Zofia,Skrobas,ul. Bursztynowa,10/3,Lublin,20-576,1
+327,Anna,Skrzat,ul. Sikorskiego,3/99,Lublin,20-814,1
+328,Alina,Skrzypek,ul. Samsonowicza,33/56,Lublin,20-485,1
+329,Misjonarze,Werbiści,B u d z i s z,20,Dębica,39-200,1
+330,Misjonarze,Werbiści,B u d z i s z,20,Dębica,39-200,1
+331,Zofia,Skuza,ul. Lubuska,62/8,Wrocław,53-514,1
+332,Jadwiga,Skwarzyło,ul. Parkowa,33,Łabunie k/Zamościa,22-437,1
+333,Bożena,i Zbigniew Skwierawscy,ul. Warszawska,48,Kołobrzeg,78-100,1
+334,Katarzyna,Skóra,ul. Klonowa,5,Aleksandrów,23-408,1
+335,Justyna,Smarz,ul. Ustronie,32,Lublin,20-135,1
+336,Sławomir,Smarzewski,ul. Szafirowa,8/31,Lublin,20-573,1
+337,Władysława,Smok,ul. Witosa,35/37,Kraków,30-612,1
+338,Anna,Smolińska,ul. Spółdzielcza,1/67,Radzyń Podlaski,21-315,1
+339,Irena,Smyk,Zalesie,126 B,Łuków,21-400,1
+340,Radosław,Smyk,Zalesie,126 B,Łuków,21-400,1
+341,Leokadia,Smyl,B ł a ż e k,14,Batorz,23-320,1
+342,Zofia,Sobczak,ul. Rogowskiego,5/30,Lublin,20-840,1
+343,Anna,Sobkiewicz,ul. Westerplatte 10 c/4,,Gubin,66-620,1
+344,Marzenna,Sobolewska,ul. Waryńskiego,2/25,Biała Podlaska,21-500,1
+345,Małgorzata,Sobolewska,ul. Kopernika,10/8,Kozienice,26-900,1
+346,Teresa,Sojda,ul. Szkolna,11,Staszów,28-200,1
+347,Anna,Sokołowska,S i e t e r z,325,Kańczuga,37-220,1
+348,Iwona,Sokołowska,ul. Mełgiewska,42 A,Lublin,20-234,1
+349,Iwona,Sokołowska,Os. Boh. Monte Cassino,2/41,Łomża,18-400,1
+350,Bogumiła,Sokół,ul. Kościuszki,40,Zakrzówek,23-213,1
+351,Henryka,Sowa,ul. Zaborska,3,Modliborzyce,23-310,1
+352,Elżbieta,Soćko,ul. Łapiguz,19,Łuków,21-400,1
+353,Michalina,Sołtys,P ł u s y,13,Księżpol,23-415,1
+354,Maria,Sroka - Szmyd,ul. 3-go Maja,10/6,Dębica,39-200,1
+355,Maria,Sroka - Szmyd,ul. Świętosława,178,Dębica,39-200,1
+356,Anna,Stachurska,ul. Kujawska,24,Lublin,20-721,1
+357,Beata,Stachyra,ul. Balladyny,12/168,Lublin,20-601,1
+358,Agnieszka,Staniak,T r a w n i k i,15,Trawniki,21-044,1
+359,Aneta,Stanuch,Al. Racławickie,32/20,Lublin,20-043,1
+360,Łucja,Starczewska,ul. Bernardyńska,21/9,Tarnów,33-100,1
+361,Anna,Stasiak,Szerokie,36 C,Lublin,20-050,1
+362,Zbigniew,Stasiak,ul. Odlewnicza,14/20,Lublin,20-219,1
+363,Teresa,Staszczuk,ul. Kościuszki,9/24,Świdnik,21-040,1
+364,Misjonarze,Werbiści,ul. Zawiszy,11 a,Ziębice,57-220,1
+365,Marian,Stawiarski,ul. Błankowa,10,Piwniczna,33-350,1
+366,Helena,Stefaniak,Rudka Kozłowiecka,38,Niemce,21-025,1
+367,Sylwia,Stefańczuk,ul. Jantarowa,20/27,Lublin,20-582,1
+368,Monika,Sternik,ul. Topolowa,4/57,Lublin,20-352,1
+369,Michał,Stesel,ul. Banacha 12 A/109,,Słupsk,76-200,1
+370,Lucyna,Stopyra,ul. Wróbla,68/4,Lublin,20-719,1
+371,Krystyna,Stropek,ul. Puławska,27/5,Lublin,20-051,1
+372,Alicja,Stępień,ul. Słoneczna,3/11,Szastarka,23-225,1
+373,Anna,Stępień,ul. Pułanki,18/70,Ostrowiec Świętokrzyski,27-400,1
+374,Teresa,Stępień,K ł o d n i c a,62,Wilków,24-313,1
+375,Anna,Stępniowska,ul. Łukasiewicza,168,Rzeszów,35-604,1
+376,Zofia,Suchoń,39 - 215 Czarna Jaźwiny,90,Czarna Jaźwiny 90,39-215,1
+377,Artur,Sujka,Łazy,111,Łuków,21-400,1
+378,Halina,Sulima - Zielik,ul. Wiosenna,3/39,Łęczna,21-010,1
+379,Helena,Sulowska,Batorz II,66,Batorz,23-320,1
+380,Stanisława,Sulowska,Nowe Moczydła,21,Batorz,23-320,1
+381,Barbara,i Piotr Surmaczowie,ul. Szpinalskiego,4/28,Lublin,20-860,1
+382,Teresa,Suska,ul. Sosnowa,13,Zambrów,18-300,1
+383,Anna,Suszek,ul. Graniczna,4/11,Lublin,20-010,1
+384,Marta,Suszek,ul. Klonowa,6,Turka,20-258,1
+385,Waldemar,Suszek,ul. Klonowa,6,Turka,20-258,1
+386,Katarzyna,Sweklej,Wantopol,26,Jabłoń,21-205,1
+387,Maria,Syc,ul. Armii Krajowej,4/139,Tychy,43-100,1
+388,Krystyna,Szafranek,ul. Broniewskiego,15,Lublin,20-448,1
+389,Helena,Szary,ul. Bracka,8/2,Wodzisław Śl.,44-304,1
+390,Anna,Szczecina,al. Batorego 81 c/1,,Nowy Sącz,33-300,1
+391,Halina,Szczepanik,ul. 11-go Listopada,60/29,Parczew,21-200,1
+392,Krystyna,Szczuka,23 - 320 B a t o r z I Nr,72,B a t o r z I Nr 72,23-320,1
+393,Agnieszka,Szczygielska,ul. Szymanowskiego,8,Radzyń Podlaski,21-300,1
+394,Anna,Szczęsna,Krężnica Okrągła,102 A,Bełżyce,24-200,1
+395,Teresa,Szczęsna,ul. Kadłubka,32/42,Szczecin,71-521,1
+396,Alina,Szewc,"ul. Klonowa 6, T u r k a",,Lublin,20-258,1
+397,Anna,Szewczak,20-258 Łuszczów Pierwszy,179,Łuszczów Pierwszy 179,20-258,1
+398,Marianna,Szewczak,Zastawie,164,Goraj,23-450,1
+399,Kazimiera,Szewczuk,ul. Legionów Polskich,107/89,Dąbrowa Górnicza,41-310,1
+400,Bożena,Szewczyk,Gościniec Niepodległości,12,Węgrów,07-100,1
+401,Elżbieta,Maria Szewczyk,ul. Szarych Szeregów,1/18,Lublin,20-047,1
+402,Grażyna,Szkołut,Wólka Abramowska,61,Goraj,23-450,1
+403,Maria,Szkuta - Krymer,ul. Jesionowa,28,Nędza,47-440,1
+404,Maria,Szmyd,ul. 3-go Maja,10/6,Dębica,39-200,1
+405,Bożena,Szostakiewicz,Hostynne Kol.,33 a,Werbkowice,22-500,1
+406,Teresa,Szostakiewicz,ul. Dzika,5,Biała Podlaska,22-500,1
+407,Józefa,Szozda,ul. Kościuszki,152/37,Biłgoraj,23-400,1
+408,Alicja,Szpinek,ul. Okólna,11,Biała Podlaska,21-500,1
+409,Andrzej,i Monika Szponar,ul. Bronowicka 3 B/18,,Lublin,20-301,1
+410,Barbara,Szreder,ul. Powstańców Warszawy,42,Dębica,39-200,1
+411,Ewa,Szura,ul. Armii Krajowej,25/49,Nowy Sącz,33-300,1
+412,Anna,Szymani,ul. Okólna,19,Biała Podlaska,21-500,1
+413,Agnieszka,Szymańska,ul. Bora-Komorowskiego,44/4,Warszawa,03-982,1
+414,Maria,Szymańska,ul. Żwirki i Wigury,8/6,Chełm,22-100,1
+415,Gabriela,Szymczak,ul. Kolejowa,9,Głosków,05-503,1
+416,Marta,Szymczak,ul. Chrobrego,8/10,Lublin,20-611,1
+417,Piotr,Szymura,ul. Paganiniego,5/54,Lublin,20-850,1
+418,Halina,Szyrmer,ul. Puchacza,7/4,Lublin,20-323,1
+419,Krystyna,Szyszkowska - Duda,ul. Wallenroda,6/55,Lublin,20-607,1
+420,Barbara,Słonczyńska,ul. Traugutta,17/12,Tarnów,33-101,1
+421,Jolanta,Słotwińska,22 - 672 S u s i e c,,Susiec,22-672,1
+422,Barbara,Słowik,ul. Batorego,46,Jaworzno,43-602,1
+423,Anna,Słowik Wyrwisz,ul. Witkiewicza,18 G,Zakopane,34-500,1
+424,Hanna,Słyk,ul. Lelewela,10,Żelechów,08-430,1
+425,ul.,Jagiellońska 45,ul. Jagiellońska,45,Lublin,20-806,1
+426,Zofia,Śledzik,ul. Grabarska,41,Opole Lubelskie,24-300,1
+427,Danuta,Śliwińska,ul. Winogrady,22,Poznań,61-663,1
+428,Wiesława,Śliwowska,ul. Ludowa,48/50,Wysokie Mazowieckie,18-200,1
+429,Genewefa,Świder,ul. Króla Augusta,31/36,Rzeszów,35-210,1
+430,Maria,Świerczyńska,ul. Broniewskiego,15,Lublin,20-448,1
+431,Henryka,Świtalska,S i e l c e 6,3,Końskowola,24-130,1
+432,Agata,Kaczorowska,ul. Dulęby,5/5,Lublin,20-357,1
+433,Maria,Kalbarczyk,ul. Różana,18/17,Lublin,20-538,1
+434,Monika,Kalicka,ul. Racławicka,19/53,Świdnik,21-040,1
+435,Maria,Kalińska,ul. Domaniewska 22 m.,23,Warszawa,02-672,1
+436,Helena,Kamieniarz,23 - 275 Gościeradów,,Gościeradów,23-275,1
+437,Janina,Kamińska,ul. Pułaskiego,5/35,Busko - Zdrój,28-100,1
+438,Janina,Kamińska,ul. Robotnicza,4/19,Dębica,39-200,1
+439,Lucyna,Kamińska,ul. Kalinowa,4,Okszów,22-105,1
+440,Małgorzata,Kamińska,ul. Skoczylasa,6,Lublin,20-811,1
+441,Henryk,Kamiński,ul. Bialska,11,Janów Podlaski,21-505,1
+442,Anna,Kania,Wola Wielka,130,Straszęcin,39-218,1
+443,ul.,Jagiellońska 45,ul. Jagiellońska,45,Lublin,20-806,1
+444,Grażyna,Kanty,ul. Boh. Monte Cassino,18/10,Biłgoraj,23-400,1
+445,Marta,Kapica,ul. Okrzei,24/2,Krasnystaw,22-300,1
+446,Emilia,Kapka,Majdan Nowy,20 A,Majdan Stary,23-414,1
+447,Ewa,Kaproń,Wólka Ratajska,143,Godziszów,23-302,1
+448,Grażyna,Kaproń,ul. Wolińskiego,28/59,Lublin,20-491,1
+449,Małgorzata,Kapłon,ul. Osiedlowa,7,Zamość,22-400,1
+450,Małgorzata,Karasek,ul. Słoneczna,22,Prawiedniki,20-515,1
+451,Monika,Karlińska,ul. Wołoska,80/32,Warszawa,02-507,1
+452,Feliksa,Karolczyk,ul. Dolna 3 Maja 3 A/5,,Lublin,20-079,1
+453,Małgorzata,Karpińska,ul. Jana Kiepury,11/32,Lublin,20-838,1
+454,Helena,Karpiński,825 Raiton Ave.,,,,1
+455,Liliana,Karwowska,ul. Zakręt,9 A,Lublin,20-149,1
+456,Barbara,Karłowicz,ul. 1 Maja,4/36,Suwałki,16-400,1
+457,Grażyna,Kasperek,ul. Storczykowa,32,Lublin,20-143,1
+458,Maria,Kasperek,ul. Świętokrzyska,17/4,Lublin,20-867,1
+459,Alicja,Kasprzak - Żeżuła,ul. Piłsudskiego,21,Krasnystaw,22-300,1
+460,Halina,Kawa,ul. Fantastyczna,21/59,Lublin,20-531,1
+461,Adriana,Kawecka,ul. 1-go Maja,43/9,Lublin,20-410,1
+462,Ewelina,Kawęcka,Łada,76,Chrzanów,23-305,1
+463,Piotr,Kazek,ul. Gęsia,28/25,Lublin,20-719,1
+464,Wanda,Kałamarz,ul. Krynicka,6/26A,Rzeszów,35-505,1
+465,Hanna,Kielar,ul. Działkowca,4,Świdnik,21-040,1
+466,Janina,Kieliszek,ul. Bohaterów Warszawy,23/41,Bartoszyce,11-200,1
+467,Lucyna,Kiepas,ul. Strażacka,8,Kotowice - Żarki,42-310,1
+468,Róża,Kieszkiewicz,ul. Synów Pułku,8/35,Warszawa,01-354,1
+469,Alicja,i Tomasz Kiliszek,S t a r e Z a d y b i e,115,Stare Zadybie,08-550,1
+470,Lucyna,Kindzierska,Plac Wolności,12/5,Lwówek Śląski,59-600,1
+471,Tamara,i Wiktor KISIAŁA,Z A L E S I E 6,5,Górki Wielkie,43-436,1
+472,Anna,Kisiel,Antopol,22,Podedwórze,21-222,1
+473,Plac,św. Kingi 1,Plac św. Kingi,1,Stary Sącz,33-340,1
+474,Monika,Klimek - Okulus,Księżomierz Kościelna,17,Księżomierz,23-275,1
+475,Halina,Klocek,ul. Jagodowa,8,Pogwizdów,43-418,1
+476,Bogusława,Knapik,Os. Kościuszkowskie,10/55,Kraków,31-858,1
+477,Agata,Kochanowska,ul. Sas - Zubrzyckiego,5/22,Kraków,30-611,1
+478,Elżbieta,Kociuba,Trawniki,332,Trawniki,21-044,1
+479,Kazimiera,Kociuba,Al. Piłsudskiego,2/1A,Chełm,22-100,1
+480,Anna,Kocięcka,ul. Częstochowska,42/13,Warszawa,02-350,1
+481,Elżbieta,Kolasa,ul. Sadowa,16 A,Skawina,32-050,1
+482,Alina,Komsta,ul. Ametystowa,18/19,Lublin,20-577,1
+483,Lucyna,Koncewicz,ul. Krochmalna,21/9,Lublin,20-401,1
+484,Anna,Kondraciuk,G ó r n a 1,1,Bielsk Podlaski,17-100,1
+485,Krystyna,Kondrat,Z a s t a w i e,142,Turobin,23-450,1
+486,Misjonarze,Werbiści,ul. Szkolna,40,Siedliszcze,22-130,1
+487,Janina,Konik,Łukowica,143,Lesko,38-600,1
+488,Janina,Kopera,ul. Mickiewicza,132/12,Jasło,38-200,1
+489,Joanna,Kopeć,ul. Ogrodowa,7/8,Lublin,20-075,1
+490,Wojciech,Kopeć,ul. Ogrodowa,7/8,Lublin,20-075,1
+491,Izabela,Kopycińska,Dąbrowica ul.Brzozowa,1,Jastków,21-002,1
+492,Elżbieta,Kolasa,ul. Sądowa,16 A,Skawina,32-050,1
+493,"Agnieszka,","Grzegorz, Tymoteusz KORAB",ul. Żurawinowa 5 TURKA,,Lublin,20-258,1
+494,Agnieszka,Kornacka,ul. Zuchów,16,Świdnik,21-040,1
+495,Elżbieta,Kornet,ul. Podzamcze,19,Mełgiew,21-007,1
+496,Katarzyna,Korniluk,ul. St. Wyszyńskiego,11/34,Parczew,21-200,1
+497,Feliksa,Korolczyk,ul. Dolna 3-go Maja 3 A/5,,Lublin,20-079,1
+498,Irena,Kosikowska,Rzeczyca Księża,107,Trzydnik Duży,23-230,1
+499,Halina,Kostka,al. Jana Pawła II,15/34,Stalowa Wola,37-450,1
+500,Hieronima,Kot,ul. Piłsudskiego,35/19,Zamość,22-400,1
+501,Wanda,Kot,Rakszawa,404,Rakszawa,37-111,1
+502,Patrycja,Kotuła-Dudek,Zastawie,189,Dzierzkowice,23-251,1
+503,Dorota,Kotuła,Zastawie,189,Dzierzkowice,23-251,1
+504,Patrycja,Kotuła - Dudek,Dzierzkowice - Zastawie,189,Dzierzkowice,23-251,1
+505,Barbara,Kowal,ul. Ossowskiego,17,Stalowa Wola,97-450,1
+506,Helena,Kowalczyk,ul. Honoraty,46/1,Tychy,43-100,1
+507,Jadwiga,Kowalczyk,ul. Ks. Ściegiennego,8,Opole Lubelskie,24-300,1
+508,Maria,Kowalczyk,ul. Słowackiego 3 A/17,,Kraśnik,23-204,1
+509,Marianna,i Krzysztof Kowalscy,M a t y s y,85,Trzebieszów,21-404,1
+510,Weronika,Kowalska,ul. Urzędowska,481,Kraśnik,23-200,1
+511,Zofia,Kowalska,ul. Konarskiego,11/28,Kozienice,26-900,1
+512,Misjonarze,Werbiści,Kiełczewice Maryjskie,3,Strzyżewice,23-107,1
+513,ul.,Jagiellońska 45,ul. Jagiellońska,45,Lublin,20-806,1
+514,Alicja,Koziej,ul. Leśna,19/43,Puławy,24-100,1
+515,Zenobia,Koziej,ul. Szpinalskiego,2/81,Lublin,20-860,1
+516,Maria,Kozioł,ul. Lubelska,168,Izbica,22-375,1
+517,Alicja,Kozyrska,ul. Ściegiennego,9,Opole Lubelskie,24-300,1
+518,Sylwia,Kozłowska,Zawadka Osiecka,8,Osiek Jasielski,38-223,1
+519,Józef,Kołodziej,ul. Baczyńskiego,13/19,Jasło,38-200,1
+520,Anna,Kołodziejczyk,Chmielnik,120,Bełżyce,24-200,1
+521,Kazimierz,Kołodziejczyk,ul. Kościelna,18,Stoczek Łukowski,21-450,1
+522,Cecylia,Kościak,ul. Borelowskiego,3/1A,Przemyśl,37-700,1
+523,Misjonarze,Werbiści,33 - 334 Kamionka Wielka,139,Kamionka Wielka 139,33-334,1
+524,Wiesława,Koślacz,ul. Jaworowa,8/2,P ie c h o w i c e,58-573,1
+525,Stanisława,Kośmider,ul. Nadbzurzańska,24,Łowicz,99-400,1
+526,Barbara,Krakiewicz,ul. Wolności,27/59,Chełm,22-100,1
+527,Barbara,Krasoń,Talstr.,23,,,1
+528,Maria,Krasucka,ul. Św. Mikołaja,4/34,Rzeszów,35-001,1
+529,Ewa,Krawczak,ul. Czeremchowa,18/4,Lublin,20-807,1
+530,Anna,Krawczyk,B a r a k i 3,0,Zakrzew,23-155,1
+531,Henryka,Krawczyk,23 - 310 M o d l i b o r z y c e,,Modliborzyce,23-310,1
+532,Teresa,Krawczyk,ul. Kolejowa,40/27,Kraśnik,23-200,1
+533,Lucyna,Krawiec,ul. Podborcze,21,Podborcze,22-463,1
+534,Ewa,Kruk,ul. Sobieskiego,11/14,Słupsk,76-200,1
+535,Beata,Krupa,ul. Domeyki,8/51,Lublin,20-488,1
+536,Zenon,Krupa,ul. Arabska,10/17,Warszawa,03-977,1
+537,Zofia,Krupa,Chorupnik,126,Gorzków,22-315,1
+538,Zofia,Kryla,Wierzawice,190,Leżajsk,37-300,1
+539,Teresa,Krysa,ul. Jutrzenki,14/24,Lublin,20-538,1
+540,Wanda,Krzewińska,ul. Pozytywistów,20/2,Lublin,20-639,1
+541,Mariola,Krzewska - Wdowska,ul. Skrzetuskiego,4/108,Lublin,20-628,1
+542,Jadwiga,Krzewska,ul. Wojska Polskiego,29/10,Pisz,12-200,1
+543,Bogusław,Krzos,os. Pomorskie 10 G/3,,Zielona Góra,65-548,1
+544,Edyta,Krzysztofik,ul. Ułanów,27/6,Lublin,20-554,1
+545,Barbara,Krzysztofińska,ul. Łokietka,16,Tarnobrzeg,39-400,1
+546,Andrzej,Krzysztoń,23 - 310 M o d l i b o r z y c e,,Modliborzyce,23-310,1
+547,Irena,Krótki,ul. Piaskowa,55,Wodzisław Śl.,44-300,1
+548,Ewa,- Martyna Kubalska,B o r o w n i c a 6,1,Janów Lubelski,23-300,1
+549,Bronisława,Kubeluk,ul. Króla Zygmunta,20,Ostrów Lubelski,21-110,1
+550,Bożena,Kucharczyk,Pawłowice,103,Solec nad Wisłą,27-320,1
+551,Anna,Kucharska,ul. Prymasa 100-lecia,10/4,Rzeszów,35-511,1
+552,Irena,Kucia,ul. Kopernika,58,Wodzisław Śl.,44-300,1
+553,Wanda,Kuduk,ul. Spółdzielcza,6/22,Mielec,39-300,1
+554,Dominik,Kufel,ul. Kochanowskiego 20 A/1,,Lublin,20-434,1
+555,Łucja,Kujawa,ul. Łużycka,167/9,Gryfino,74-100,1
+556,Danuta,i Mirosław KULIG,Wierchomla Wielka,78,Piwniczna - Zdrój,33-350,1
+557,Teresa,Kulczycka,ul. Noskowskiego,4/13,Lublin,20-858,1
+558,Maria,Kulik,Tereszpol Kukiełki,84,Tereszpol,23-407,1
+559,Jan,Kulpa,F r y c o w a,333,Nawojowa,33-335,1
+560,Marian,Kulpa,ul. Staromiejska,5 A,Pyrzyce,74-200,1
+561,Lucyna,Kuncewicz,ul. Krochmalna,21/9,Lublin,20-401,1
+562,Krystyna,Kurek,ul. Młodzieżowa,4/10,Lublin,20-468,1
+563,Misjonarze,Werbiści,Plac Katedralny,4 a,Przemyśl,37-700,1
+564,Bożena,Kurowska,Turze Rogi,47,Łuków,21-400,1
+565,Teresa,Kurzawa,ul. Reymonta,22/23,Skierniewice,96-100,1
+566,Hermina,Kusibab,PUSTYNIA,153,Dębica,39-200,1
+567,Janusz,Kustra,ul. Samsonowicza,29/2,Lublin,20-485,1
+568,Czesława,Kusz,Wysokie,223,Zamość,22-400,1
+569,Anna,Kutryb,Oborczyska,42,Baranowo k. Ostrołęki,06-320,1
+570,Julia,Kuwałek,Tomaszowice Kolonia,3,Tomaszowice,21-008,1
+571,Bożena,Kuśmierz,ul. Oratoryjna,3/33,Lublin,20-881,1
+572,Marianna,Kwasowiec,J u r k i,18,Kąkolewnica,21-302,1
+573,Anna,Kwiatkowska,Al. Wojska Polskiego,53/4,Jelenia Góra,58-500,1
+574,ul.,Jagiellońska 45,ul. Jagiellońska,45,Lublin,20-806,1
+575,Krystyna,Kwil,ul. Krępowieckiego,11/11,Warszawa,01-456,1
+576,Aleksandra,Kędzierska,ul. Rycerska,6/37,Lublin,20-552,1
+577,Barbara,Kędziorek,Nowy Żabieniec,62,Nowy Żabieniec,08-470,1
+578,Marzena,Kępa,ul. Perłowa,4/58,Lublin,20-574,1
+579,ANNA,Kłak,Bałtów,82,Ż y rz y n,84-103,1
+580,Ewa,Kłoda,ul. Oleśnickiego,3,Ostrów Lubelski,21-110,1
+581,Misjonarze,Werbiści,Kamionka Mała,18,Kamionka Wielka,33-334,1
+582,Bernadetta,Lachowska,ul. Górniczego Stanu,49,Katowice,40-469,1
+583,Misjonarze,Werbiści,ul. Parkowa,33,Łabunie,22-437,1
+584,Elżbieta,Lament,ul. Cztery Pory Roku,7/4,Szczecin,71-806,1
+585,Ewa,Lasak Siwerska,ul. Wajdeloty,10/57,Lublin,20-608,1
+586,Elżbieta,Lasecka,ul. Mickiewicza,19,Karczew,05-480,1
+587,Anna,Lasota,ul. Podhalańska,10/57,Ł ó dź,93-224,1
+588,Małgorzata,Lebiedowicz,ul. Bursztynowa,15/65,Lublin,20-576,1
+589,Ewa,Lebioda,ul. Kazimierza Dulędy,3/8,Lublin,20-357,1
+590,Krystyna,Leja,ul. Kopernika,1/8,Leżajsk,37-300,1
+591,Misjonarze,Werbiści,ul. Gen. Sikorskiego,17/14,Kraśnik,23-204,1
+592,Stanisław,Ligęska,Budzisz,77,Dębica,39-200,1
+593,Grażyna,Ligęza,ul. Kościuszki,34,Annopol,23-235,1
+594,Kazimiera,Lipczyńska,ul. Słowackiego,19/8,Chełm,22-100,1
+595,Teresa,Lipinian,ul. Kłodzka,10 A,Nowa Ruda,57-402,1
+596,Małgorzata,Lipiec,ul. Tumidajskiego,10/4,Lublin,20-247,1
+597,Agnieszka,Lipka,ul. Mickiewicza,57,Siedlce,08-110,1
+598,Krystyna,Lisiowska,ul. Racławicka,15/32,Świdnik,21-040,1
+599,Urszula,Lisowska,ul. Krzywe Koło,26,Góra Puławska,24-100,1
+600,Władysław,Lisowski,ul. Biskupa Fulmana,1/41,Lublin,20-492,1
+601,Małgorzata,Litwińska,Nowy Pożóg,144,Końskowola,24-130,1
+602,Teresa,Lupa,ul. Partyzantów,56,Zamość,22-400,1
+603,Liliana,Lusina,ul. Bajeczna,1/112,Kraków,31-543,1
+604,Marianna,Luśnia,Chinów,10,Kozienice,26-900,1
+605,ul,Jagiellońska 45,ul Jagiellońska,45,Lublin,20-806,1
+606,Misjonarze,Werbiści,CMOLAS,252 A,Cmolas,36-105,1
+607,Magdalena,Maciocha,G l i n y,45,Biłgoraj,23-415,1
+608,Wiesława,Maciocha,ul. Jarzębinowa,3/9,Świdnik,21-040,1
+609,Emilia,Maciuk,ul. Paderewskiego,13,Chełm,22-100,1
+610,Anna,Maciąg,ul. Norwida,40/18,Puławy,24-100,1
+611,Weronika,Madej,Grabów Szlachecki,190,Nowodwór,08-503,1
+612,Anna,Magiełda,Szastarka,117,Szastarka,23-225,1
+613,Anna,Magiełda,ul. Urzędowska,240 A,Kraśnik,23-200,1
+614,Grażyna,Majcher,Wilczopole,174,Lublin,20-388,1
+615,Józefa,Majcher,ul. Piotra Skargi,1/159,Chełm,22-100,1
+616,Magdalena,Majcher,ul. Nałkowskich,84/37,Lublin,20-470,1
+617,Maria,Majkut,W i e r z a w i c e,334,Leżajsk,37-300,1
+618,Teresa,Makaruk,ul. Lipowa,12/18,Lublin,20-024,1
+619,Krystyna,Makowska,Wyspiańskiego,20/72,Tarnobrzeg,39-400,1
+620,Karolina,Malisz,D z i e l c e,9 A,Radecznica,22-463,1
+621,Zofia,Marciniec,ul. Wyspiańskiego,7/82,Tarnobrzeg,39-400,1
+622,Anna,Marcinkowska,ul. Fantastyczna,9/6,Lublin,20-531,1
+623,Marek,Krystyna,ul. Piękna,65,Dębica,39-200,1
+624,Janina,Markiewicz,ul. Tarnobrzeska,2 A,Osiek,28-221,1
+625,Ewelina,Markowska,ul. Zana,10/41,Lublin,20-601,1
+626,Marta,Martyniuk,ul. Szmaragdowa,4/54,Lublin,20-570,1
+627,Zofia,Martysz,ul. Podleśna,14,Leżajsk,37-300,1
+628,Justyna,Marynowska,u l. K r u c z a,9,Głosków,05-503,1
+629,Jadwiga,Masłowska,ul. Bahrkego 2 A/8,,E ł k,19-300,1
+630,Teresa,Masłowska,Dąbrówka,51,Orzysz,12-250,1
+631,Piotr,Mateńko,ul. Czeremchowa,18/70,Lublin,20-807,1
+632,Dorota,Matuszczak,ul. Wyścigowa,43/51,Lublin,20-345,1
+633,Genowefa,Matykiewicz,ul. Św. Jana,13/40,Bochnia,32-700,1
+634,Czesława,Matys,ul. Niepodległości,22/22,Świdnik,21-040,1
+635,Monika,Matysek,P i ł a t k a,81,Godziszów,23-302,1
+636,Agnieszka,Matysiak,ul. Żarnowiecka,3/44,Lublin,20-630,1
+637,Anna,Mazur,Kolonia Małków,34,Mircze,22-530,1
+638,Anna,Mazur,Krasińskiego,26/9,Kraśnik,23-201,1
+639,Anna,Mazur,ul. Gęsia,28/25,Lublin,20-719,1
+640,Krzysztof,Mazur,Kolonia Małków,34,Mircze,22-530,1
+641,Maria,Mazur,ul. Hrubieszowska,20/5,Zamość,22-400,1
+642,Małgorzata,Mazur,ul. Pawia,69,Lublin,20-343,1
+643,Urszula,Mazur,Huzele,102,Lesko,38-600,1
+644,Wiesława,Mazur,Brzostówka,114,Serniki,21-107,1
+645,Wiesława,Mazur,Siedlanka,199,Niwiska,36-147,1
+646,Alicja,Mazurek,ul. Paganiniego,9/25,Lublin,20-850,1
+647,Teodora,Mazurek,Tomaszowice Kolonia,3,Tomaszowice,21-008,1
+648,Celina,Mazurkiewicz,ul. Reymonta,2/36,Ostrołęka,07-410,1
+649,Jadwiga,Mazuryk,ul. 8-go Września,19/3,J a n ó w L u b.,23-300,1
+650,Krzysztof,Mazuryk,Boh. Portowego Wzgórza,5/28,J a n ó w L u b.,23-300,1
+651,Józef,Maćkowiak,ul. Paderewskiego,6/40,Śrem,08-100,1
+652,Beata,Małasiewicz,ul. Smyczkowa,4/53,Lublin,20-844,1
+653,Zofia,Małek,ul. Leśna,1,Modliborzyce,23-310,1
+654,Karolina,Małysz,Dzielce,9 A,Radecznica,22-463,1
+655,Grażyna,Mańkowska,ul. Kochanowskiego,14/40,Puławy,24-100,1
+656,Zofia,Maślanka,ul. Witkacego,3/208,Rzeszów,35-113,1
+657,Błażej,Meler,ul. Krucza,48,Piła,64-920,1
+658,Maria,Mełgieś,ul. Skautów,13/4,Lublin,20-055,1
+659,Magdalena,Mianowska,ul. Willowa,40 C,Lublin,20-819,1
+660,Maria,Michalak,21 - 044 T r a w n i k i,266,T r a w n i k i 266,21-044,1
+661,Agnieszka,Michalczewska,Baszki,14 C,Ciecierzyn,21-003,1
+662,Alicja,Michalczuk,Domanowo,43,Brańsk,17-120,1
+663,Władysława,Michaluk,Zahajki,77,Drelów,21-570,1
+664,Marzena,Michowska,ul. Spokojna,18,Michów,21-140,1
+665,Katarzyna,Miernik,ul. Szarych Szeregów 1 B/18,,Lublin,20-047,1
+666,Matylda,Mik,ul. Siedlanowskiego,2/107,Stalowa Wola,37-450,1
+667,Eugenia,Mikołajek,Nowociny,11,Górki Małe,43-436,1
+668,Krystyna,Miksza,Osmolica Pierwsze,32,Strzyżewice,23-107,1
+669,Teresa,Mikusek,Trojanów,56,Trojanów,08-455,1
+670,Barbara,Mioduszewska,ul. Sienkiewicza,3,Kleosin,16-001,1
+671,Mariusz,Mirek,ul. Ułanów,19/37,Lublin,20-554,1
+672,Misjonarze,Werbiści,ul. Parkowa,33,Łabunie,22-437,1
+673,Mieczysława,Mital,ul. Główna,9,Skaryszew,26-640,1
+674,Krystyna,Mitura,ul. Racławicka,31/54,Świdnik,21-040,1
+675,Andrzej,Mizerski,ul. Lubelska,17/20,Puławy,24-100,1
+676,Wanda,Miąso,ul. Torowa,12,Ropczyce,39-100,1
+677,Wioleta,Miś,ul. Podchorążych,1/9,Słupsk,76-200,1
+678,Halina,Moczulewska,ul. Cyrkoniowa,12/49,Lublin,20-583,1
+679,Małgorzata,Moliszewska,ul. Orfeusza,30/4,Gdańsk,80-299,1
+680,Barbara,Montewka,ul. Skrzetuskiego,6/23,Łuków,21-400,1
+681,Barbara,Moskal,ul. Marszałkowska,15/152,Rzeszów,35-215,1
+682,Dominik,Mroczkowski,ul. 8-go Marca,23,Konstantynów Łódzki,95-050,1
+683,Andrzej,Mrugała,ul. Melsztyńska,2/45,Warszawa,02-537,1
+684,Agnieszka,Mularz,ul. Podchorążych,3/5,Rzeszów,35-216,1
+685,Halina,Mulińska,ul. Zana,10/97,Lublin,20-601,1
+686,Bożena,Murdzia,Stare Miasto,151,Leżajsk,37-300,1
+687,Janina,Musiał,Skorczów,50,Kazimierza Wielka,28-500,1
+688,Teresa,Muzyka,23 - 310 Modliborzyce,,Modliborzyce,23-310,1
+689,Irena,Myc,Zalesie,126 B,Łuków,21-400,1
+690,Justyna,Myszak,Tereszpol Zygmunty,203,Tereszpol,23-407,1
+691,Karolina,Młynarczyk,ul. Smyczkowa,4/66,Lublin,20-844,1
+692,Wiesława,Orzełowska,u l. K r u c z a,9,Głosków,05-503,1
+693,Renata,Miłosz,ul. Grabów Szlachecki,66,Grabów Szlachecki,08-503,1
+694,Dagmara,Nalepa,Zalesie,42,Górki Wielkie,43-436,1
+695,Przemysław,Nalepa,D r o g i n i a,410,Myślenice,32-400,1
+696,Teresa,Nalepa,ul. Pogodna 50 A/32,,Lublin,20-337,1
+697,Łucja,i Władysław Nalepa,Z a l e s i e 4,2,Górki Wielkie,43-436,1
+698,Ewa,Nasalska,ul. Radzyńska,10/63,Lublin,20-850,1
+699,Jerzy,Nawrocki,ul. Mickiewicza,57,Siedlce,08-110,1
+700,Maria,Niemczuk,ul. Grabowa,10,Zamość,22-400,1
+701,Anna,Niemczyk,ul. Katowicka,4,K U P,46-082,1
+702,Magdalena,Nieradka,Matczyn,9/2,Bełżyce,24-200,1
+703,Grzegorz,Niezgoda,C z ó ł n a,26,Niedrzwica Duża,24-220,1
+704,Wiktoria,Nikolas,ul. Sienkiewicza,10/15,Biłgoraj,23-400,1
+705,Józefa,i Kazimierz Noga,ul. Spółdzielcza,16/1,Myszków,42-300,1
+706,Alina,Nowak,ul. Oboźna,25/20,Zamość,22-400,1
+707,Elżbieta,Nowak,Piotrków - Kolonia,24 A,Jabłonna,23-114,1
+708,Maria,Nowak,ul. Floriańska,178,Jasło,38-200,1
+709,Małgorzata,Nowak,Uliczka,13,Górki Wielkie,43-436,1
+710,Maria,Nowiczuk,ul. Siemiradzkiego 6 A/42,,Przemyśl,37-700,1
+711,Jolanta,Nowosadzka,ul. Wajzera,5/14,Zabrze,41-808,1
+712,Zdzisław,Nykiel,ul. Piękna,63,Dębica,39-200,1
+713,Jadwiga,Łada,ul. Wyspiańskiego,22,Olszewo - Borki,07-415,1
+714,Marek,Łagoda,ul. Gen. Grota - Roweckiego 2 B/6,,CHEŁM,22-100,1
+715,Helena,Łapińska,ul. Wojska Polskiego,8,Zamość,22-400,1
+716,Izabela,Łaskarzewska,ul. Bukowa,19/37,Lublin,20-353,1
+717,Jadwiga,Ławrynowicz,ul. Dożynkowa,48 B,Lublin,20-152,1
+718,Małgorzata,Łojko,ul. Miłocińska,27/30,Rzeszów,35-232,1
+719,Anna,Łopacka,Lichty,71,Czemierniki,21-306,1
+720,Alicja,Łukaszyk,ul. Wyżynna,8/92,Lublin,20-560,1
+721,Regina,Łukiewicz,ul. Piłsudskiego,76 G,Hrubieszów,22-500,1
+722,Katarzyna,Łuszczak,Jastrzębiec,36,Brzyska Wola,37-304,1
+723,Zofia,Łuszczak,Jastrzębiec,36,Brzyska Wola,37-304,1
+724,Krystyna,i Zenon Łuszczyńscy,Al. 3-go Maja,28/45,Słupsk,76-200,1
+725,Maria,Łyszcz,ul. Kazimierska,23,Kazimierz Dolny,24-120,1
+726,ul.,Jagiellońska 45,ul. Jagiellońska,45,Lublin,20-806,1
+727,Urszula,Ferdyn,ul. Wspólna,12,Miasteczko Śl.,42-610,1
+728,Mariola,Ferenc,ul. Nadstawna,36/12,Biłgoraj,23-400,1
+729,Renata,Ferenc,ul. Nadstawna,36/12,Biłgoraj,23-400,1
+730,Aleksandra,Fidecka,ul. Sobieskiego 7 A/47,,Krasnystaw,22-300,1
+731,Danuta,Figiel,Kaleń,49,Kaleń,24-173,1
+732,Dominika,Figiel,Kaleń,49,Kaleń,24-173,1
+733,Janina,Figura,Baranów,61,Ochotcza,27-312,1
+734,Piotr,Figurski,Nowy Żabieniec,69,Wilga,08-470,1
+735,Jolanta,Fik,ul. Gdańska,25,Lublin,20-732,1
+736,Zofia,Filiks,ul. Niepodległości,7/36,Lublin,20-246,1
+737,Lesław,Filipkowski,ul. Olsztyńska,26,Pisz,12-200,1
+738,Maria,Filist,ul. M. C. Skłodowskiej,1/50,Leżajsk,37-300,1
+739,Joanna,Flis,Wólka,23 A,Lublin,20-258,1
+740,Zofia,Flis,ul. Józefowska,5,Tomaszów Lubelski,22-600,1
+741,Barbara,i Wojciech Frankiewicz,ul. Staszica,36,Łuków,21-400,1
+742,Wojciech,Frankiewicz,ul. Szafirowa,21/16,Lublin,20-573,1
+743,Wojciech,Frankiewicz,ul. Staszica,36,Łuków,21-400,1
+744,Helena,Frodyma,ul. Robotnicza 1 C/84,,Dębica,39-200,1
+745,Maria,Fronc,Drohiczany,26,Uhanie,22-510,1
+746,Grzegorz,Furman,ul. Leśna,25,Tomaszów Lubelski,22-600,1
+747,Elżbieta,Furmańska,ul. 3-go Maja,10/11,Oława,55-200,1
+748,Krystyna,Fąfara,ul. Lisa - Kuli,14,Ropczyce,39-100,1
+749,VIA,DEI VERBITI 1,VIA DEI VERBITI,1,ROMA,00154,1
+750,Beata,Gajak,ul. Zimowa,10/189,Lublin,20-337,1
+751,Władysława,Gajda,ul. Mickiewicza,132/6,Jasło,38-200,1
+752,Maria,Gajdzik,ul. Jabłonowa,16,Wodzisław Śląski,44-304,1
+753,Iwona,Galińska,ul. Jastrzębia,13/40,Gdynia,81-077,1
+754,Bożena,Gancarz,ul. Łysogórska,18/27,Dębica,39-200,1
+755,Małgorzata,Garbacz,ul. Skrzetuskiego,4/42,Lublin,20-628,1
+756,Dorota,Garbarczyk,ul. Szewska,15,Kraśnik,23-200,1
+757,Leokadia,Gardyś,ul. Chodźki,5/86,Lublin,20-093,1
+758,Anna,Gawlik,os. Dywizjonu 303 Nr 14 m,62,Kraków,31-872,1
+759,Janina,Gawlik,ul. Kasprowicza,8/6,Krupski Młyn,42-693,1
+760,Halina,Gawola,ul. 1-go Maja,12,Tarnogród,23-420,1
+761,Zofia,Gała,ul. Racławicka,30/36,Świdnik,21-040,1
+762,Bożena,Gałat,Henin,14 A,Poniatowa,24-320,1
+763,Mariola,Giszczak,ul. Żmichowskiej,5,Lublin,20-359,1
+764,Marta,Gnap,Os. Panorama 5 m,5,Polańczyk,38-610,1
+765,Anna,Gnaś,ul. Zielona,20,Lublin,20-082,1
+766,Iwona,Gniecka,ul. Kochanowskiego,74,Lublin,20-434,1
+767,Halina,Goch,ul. Poprzeczna,17/15,Zamość,22-400,1
+768,Alicja,Godek,ul. Brzeskiej,16/8,Lublin,20-640,1
+769,Halina,Godzisz,ul. Kościelna,13,Szczebrzeszyn,22-460,1
+770,Barbara,Goliszek,ul. Szkolna,3/11,Karczmiska,24-310,1
+771,Waleria,Gorczyca,Wola Rusinowska,68,Majdan Królewski,36-110,1
+772,Izabela,Gorczycka,ul. Sienkiewicza,13/11,Chełm,22-100,1
+773,Bogumiła,Gorgol,ul. Spadochroniarzy,4/28,Lublin,20-043,1
+774,Sebastian,Gozdur,ul. Marywilska,58/251,Warszawa,03-042,1
+775,Wiesława,Gozdur,ul. Pozytywistów,2/54,Lublin,22-639,1
+776,Izabela,Goławska,M i l e j ó w 1 3,1 A,Milejów,21-020,1
+777,Paulina,Gołdon,Jana Kazimierza 53 A/99,,Warszawa,01-248,1
+778,Tatiana,Gołdon,Jana Kazimierza,13/11,Warszawa,01-248,1
+779,Wioletta,i Mariusz Gołdon,ul. Grabowiecka,70,Ostrowiec Św.,27-400,1
+780,Katarzyna,Gołdyn,Skrodne,246,Ochotnica Dolna,34-452,1
+781,Celina,Gołębiowska,ul. Wojsławicka,15/20,Chełm,22-100,1
+782,Irena,Gołębiowska,ul. Promienna,27/42,Włocławek,87-800,1
+783,Ewa,Gościmińska,ul. Szczudliki,9,Sanok,38-500,1
+784,Monika,Grabczak,ul. Ks. Popiełuszki 3 C M 12,12,Kraśnik,23-204,1
+785,Leokadia,Grabowska,ul. Norwida,5/6,Świdnik,21-040,1
+786,Oliwia,Grabowska,ul. Siedlanowskiego,4/120,Stalowa Wola,37-450,1
+787,Aurelia,Grasza,ul. Sikorskiego,1/1,Lublin,20-814,1
+788,Bożena,Greguła,Wola Lisowska,4 A,Lubartów,21-100,1
+789,Lidia,Greguła,Wola Lisowska,4 A,Lubartów,21-100,1
+790,Janina,Grela,ul. Kraszewskiego,5/19,Puławy,24-100,1
+791,Aleksandra,Greń,ul. Miła,18,Górki Wielkie,43-436,1
+792,Marek,Grobelski,ul. Jezierskiego,6/4,LUBLIN,20-439,1
+793,Beata,Grochowicz,ul. Długa 230 Zaorenda,,Tereszpol,23-407,1
+794,Stanisław,Gromadzki,ul. Piaskowa,30,Chełm,22-100,1
+795,Monika,Gromek,ul. Dębina,56,Ciecierzyn,21-003,1
+796,Alina,Groszek,ul. Odlewnicza,11/13,Lublin,20-219,1
+797,Ryszard,Gronczyński,ul. Ptasia,57,Lubin,59-300,1
+798,PIOTR,GRUDKA,ul. Głuska,145,Lublin,20-385,1
+799,Katarzyna,Grudzień,ul. Ignacego Domeyki,8/74,Lublin,20-488,1
+800,Danuta,Gryglas,Nowy Pawłów,207,Jabłonna Lubelska,23-114,1
+801,Anna,Grzelak,ul. Fabryczna,3/10,Bełżyce,24-200,1
+802,Alicja,Grzesiak,ul. Wajdeloty,16/18,Lublin,20-608,1
+803,Zofia,Grzywaczewska,ul. Lubelska,103,Chełm,22-100,1
+804,Zenobia,Grąba,Kosin,133,Annapol,23-235,1
+805,Stefania,Gumieniak,ul. Racławicka,31/61,Świdnik,21-040,1
+806,Aniela,Gurdziel,Różaniec II,50,Tarnogród,23-420,1
+807,Irena,Guzy,Bobrowniki Małe,126,Wierzchosławice,33-122,1
+808,Halina,Gwazdacz,ul. M. Konopnickiej,2/11,Rzeszów,35-211,1
+809,Bożena,Gzik,ul. Partyzancka,26/4,Milejów,21-020,1
+810,Maria,Górecka Malik,ul. Olchowa,5/95,Lublin,20-355,1
+811,Janina,Górska,Podgórz,35 A,Wilków,24-313,1
+812,Marta,Gągała,U ł ę ż 9,4,Ułęż,08-504,1
+813,Wanda,Gładosz,ul. Strzeszewskiego,13/82,Lublin,20-153,1
+814,Małgorzata,Głos,ul. Janowska,41,Kraśnik,23-200,1
+815,Adela,Głąb,ul. Kombatantów,19/25,Jarosław,37-500,1
+816,Marianna,Habdas,ul. Dębowa,16,Skoczów,43-430,1
+817,Barbara,Hacia,ul. Herbowa,8/2,Lublin,20-551,1
+818,Danuta,Hadała,ul. Rolnicza,15,Dębica,39-200,1
+819,Mirosława,Hadała,ul. Słoneczna,4/24,Poniatowa,24-320,1
+820,Mirosława,Hadała,Prawiedniki,119 D,Lublin,20-515,1
+821,Zofia,Hadała,ul. Sportowa,21/97,Rzeszów,35-111,1
+822,Teresa,Hanc,ul. Małachowskiego 1 b/22,,Chełm,22-100,1
+823,Iwona,Hanusek,ul. Jagodowa,8,Brzezówka,43-418,1
+824,Kazimiera,Hejno,Batorz Drugi,63 A,Batorz,23-320,1
+825,Mateusz,Hejno,ul. Piasecka,1,Mełgiew,21-007,1
+826,Anna,Henzell,ul. Herbowa,5/41,Lublin,20-551,1
+827,Ewa,Harbin,ul. Franciszkańska,9,Zamość,22-400,1
+828,Bogumiła,Hildebrand,ul. Koszary 64 a/17,,Zamość,22-400,1
+829,Anna,Holeksa,Zalesie,30,Górki Wielkie,43-436,1
+830,Renata,Horbaczewska,ul. Probostwo 11 a/2,,Lublin,20-089,1
+831,"Anna,",Bartosz Horky,ul. Klimczaka,5,Warszawa,02-746,1
+832,Agata,Horodeńska,ul. Włościańska,75,Białystok,15-199,1
+833,Teresa,Hołderna,ul. ks. Popiełuszki,35/20,Lublin,20-052,1
+834,Arkadiusz,Hunik,ul. Gęsia,17/4,Lublin,20-719,1
+835,Marta,Hurkała,ul. Szkolna,25,Tereszpol - Zaorenda,23-407,1
+836,Agnieszka,Huszcz,ul. Szafirowa,3/74,Lublin,20-573,1
+837,Janina,Iwanciów,ul. Kopernika,442,Leżajsk,37-300,1
+838,Sylwia,Iwaniuk,ul. Szwejka,47 B,Lublin,20-713,1
+839,Bożena,Iwańczuk,K a w k a,31 K,Niemce,21-025,1
+840,Grażyna,Jabłczyńska,ul. M. Brzeskiej,11/4,Lublin,21-640,1
+841,Agnieszka,Jabłońska,ul. Okulickiego,15/20,Świdnik,21-040,1
+842,Danuta,Jabłońska,ul. Niechorska 13 B/7,,Gryfice,72-300,1
+843,Jarosław,Jabłoński,Uniszowice,104 B,Motycz,21-030,1
+844,Marianna,Jacak,Zakrzówek - Wieś,121,Zakrzówek,23-213,1
+845,Grażyna,Jagiełło,ul. Jaśminowa,3/10,Łęczna,21-010,1
+846,Michał,Jagusiak,ul. Kusocińskiego,5/60,Mielec,39-300,1
+847,Anna,Jakubowska,ul. Przyjaźni,21/94,Lublin,20-314,1
+848,Edmund,Janczarek,ul. Pogodna,28/15,Lublin,20-337,1
+849,Małgorzata,Janczyk,ul. Miodowa,30,Zamość,22-400,1
+850,Janina,Janicka,Zagajdzie,20 A,Wilków,24-313,1
+851,Grzegorz,Janicki,ul. Długa,53,Biała Podlaska,21-500,1
+852,Maria,Janik,ul. Langiewicza,23/24,Rzeszów,35-021,1
+853,Teresa,Janik,S t a r e M o c z y d ł a 1,1,Szastarka,23-225,1
+854,Anna,Januszewska,ul. Skrzetuskiego,10/54,Lublin,20-628,1
+855,Krystyna,Jaros,ul. Łucznicza,3,Pszczyna,43-200,1
+856,Elżbieta,Jarosińska,ul. Chełmska,8 A,Cyców,21-070,1
+857,Barbara,Jarosz,ul. Niecała,18/5,Lublin,20-080,1
+858,Danuta,i Stanisław Jarosz,ul. Smolki,14/2,Lesko,38-600,1
+859,Ewa,Jarzymowska-Kałudowa,ul. Księdza Szulczyka,35,Warszawa,04-965,1
+860,Zofia,Jasińczak,Tomaszowice Kolonia,27 B,Jastków,21-002,1
+861,Krystyna,Jasińska,ul. Polna,13,Frampol,23-440,1
+862,Joanna,Jastrzębska,ul. Skołuby,5/39,Lublin,20-837,1
+863,Łucja,Jaworska,ul. Władysława IV,1/55,Słupsk,76-200,1
+864,Agnieszka,Jeż,ul. Międzyrzecka,26,Radzyń Podlaski,21-300,1
+865,Irena,Jeż,Nad Potokiem,8/14,Kraków,30-830,1
+866,Zofia,Jodłowska,ul. Tysiąclecia,19/5,Sułkowice,32-440,1
+867,Regina,Jopek,Sitno,40,Sitno,22-424,1
+868,Tomasz,Jusiak,ul. Przejrzysta,9,Lublin,20-832,1
+869,Maria,Józefczak,Radawczyk Drugi,41,Motycz,21-030,1
+870,Henryka,Jędrychowska,ul. Południowa,3/9,Skarżysko-Kamienna,26-110,1
+871,Iwona,Jędzura,Wolica Kolonia,26,Modliborzyce,23-310,1
+872,Zofia,Jędzura,Wolica Kolonia,72,Modliborzyce,23-310,1
+873,Zofia,Jędzura,L u c i e n i e c,72,Modliborzyce,23-310,1
+874,Zofia,Jędzura,Wolica Kolonia,72,Modliborzyce,23-310,1
+875,ul.,Jagiellońska 45,ul. Jagiellońska,45,Lublin,20-806,1
+876,Urszula,Ferdyn,ul. Wspólna,12,Miasteczko Śl.,42-610,1
+877,Mariola,Ferenc,ul. Nadstawna,36/12,Biłgoraj,23-400,1
+878,Renata,Ferenc,ul. Nadstawna,36/12,Biłgoraj,23-400,1
+879,Aleksandra,Fidecka,ul. Sobieskiego 7 A/47,,Krasnystaw,22-300,1
+880,Danuta,Figiel,Kaleń,49,Kaleń,24-173,1
+881,Dominika,Figiel,Kaleń,49,Kaleń,24-173,1
+882,Janina,Figura,Baranów,61,Ochotcza,27-312,1
+883,Piotr,Figurski,Nowy Żabieniec,69,Wilga,08-470,1
+884,Jolanta,Fik,ul. Gdańska,25,Lublin,20-732,1
+885,Zofia,Filiks,ul. Niepodległości,7/36,Lublin,20-246,1
+886,Lesław,Filipkowski,ul. Olsztyńska,26,Pisz,12-200,1
+887,Maria,Filist,ul. M. C. Skłodowskiej,1/50,Leżajsk,37-300,1
+888,Joanna,Flis,Wólka,23 A,Lublin,20-258,1
+889,Zofia,Flis,ul. Józefowska,5,Tomaszów Lubelski,22-600,1
+890,Barbara,i Wojciech Frankiewicz,ul. Staszica,36,Łuków,21-400,1
+891,Wojciech,Frankiewicz,ul. Szafirowa,21/16,Lublin,20-573,1
+892,Wojciech,Frankiewicz,ul. Staszica,36,Łuków,21-400,1
+893,Helena,Frodyma,ul. Robotnicza 1 C/84,,Dębica,39-200,1
+894,Maria,Fronc,Drohiczany,26,Uhanie,22-510,1
+895,Grzegorz,Furman,ul. Leśna,25,Tomaszów Lubelski,22-600,1
+896,Elżbieta,Furmańska,ul. 3-go Maja,10/11,Oława,55-200,1
+897,Krystyna,Fąfara,ul. Lisa - Kuli,14,Ropczyce,39-100,1
+898,VIA,DEI VERBITI 1,VIA DEI VERBITI,1,ROMA,00154,1
+899,Beata,Gajak,ul. Zimowa,10/189,Lublin,20-337,1
+900,Władysława,Gajda,ul. Mickiewicza,132/6,Jasło,38-200,1
+901,Maria,Gajdzik,ul. Jabłonowa,16,Wodzisław Śląski,44-304,1
+902,Iwona,Galińska,ul. Jastrzębia,13/40,Gdynia,81-077,1
+903,Bożena,Gancarz,ul. Łysogórska,18/27,Dębica,39-200,1
+904,Małgorzata,Garbacz,ul. Skrzetuskiego,4/42,Lublin,20-628,1
+905,Dorota,Garbarczyk,ul. Szewska,15,Kraśnik,23-200,1
+906,Leokadia,Gardyś,ul. Chodźki,5/86,Lublin,20-093,1
+907,Anna,Gawlik,os. Dywizjonu 303 Nr 14 m,62,Kraków,31-872,1
+908,Janina,Gawlik,ul. Kasprowicza,8/6,Krupski Młyn,42-693,1
+909,Halina,Gawola,ul. 1-go Maja,12,Tarnogród,23-420,1
+910,Zofia,Gała,ul. Racławicka,30/36,Świdnik,21-040,1
+911,Bożena,Gałat,Henin,14 A,Poniatowa,24-320,1
+912,Mariola,Giszczak,ul. Żmichowskiej,5,Lublin,20-359,1
+913,Marta,Gnap,Os. Panorama 5 m,5,Polańczyk,38-610,1
+914,Anna,Gnaś,ul. Zielona,20,Lublin,20-082,1
+915,Iwona,Gniecka,ul. Kochanowskiego,74,Lublin,20-434,1
+916,Halina,Goch,ul. Peowiaków,14/10,Zamość,22-400,1
+917,Alicja,Godek,ul. Brzeskiej,16/8,Lublin,20-640,1
+918,Halina,Godzisz,ul. Kościelna,13,Szczebrzeszyn,22-460,1
+919,Barbara,Goliszek,ul. Szkolna,3/11,Karczmiska,24-310,1
+920,Waleria,Gorczyca,Wola Rusinowska,68,Majdan Królewski,36-110,1
+921,Izabela,Gorczycka,ul. Sienkiewicza,13/11,Chełm,22-100,1
+922,Bogumiła,Gorgol,ul. Spadochroniarzy,4/28,Lublin,20-043,1
+923,Sebastian,Gozdur,ul. Marywilska,58/251,Warszawa,03-042,1
+924,Wiesława,Gozdur,ul. Pozytywistów,2/54,Lublin,22-639,1
+925,Izabela,Goławska,M i l e j ó w 1 3,1 A,Milejów,21-020,1
+926,Paulina,Gołdon,Jana Kazimierza 53 A/99,,Warszawa,01-248,1
+927,Tatiana,Gołdon,Jana Kazimierza,13/11,Warszawa,01-248,1
+928,Wioletta,i Mariusz Gołdon,ul. Grabowiecka,70,Ostrowiec Św.,27-400,1
+929,Katarzyna,Gołdyn,Skrodne,246,Ochotnica Dolna,34-452,1
+930,Celina,Gołębiowska,ul. Wojsławicka,15/20,Chełm,22-100,1
+931,Irena,Gołębiowska,ul. Promienna,27/42,Włocławek,87-800,1
+932,Ewa,Gościmińska,ul. Szczudliki,9,Sanok,38-500,1
+933,Monika,Grabczak,ul. Ks. Popiełuszki 3 C/12,,Kraśnik,23-204,1
+934,Leokadia,Grabowska,ul. Norwida,5/6,Świdnik,21-040,1
+935,Oliwia,Grabowska,ul. Siedlanowskiego,4/120,Stalowa Wola,37-450,1
+936,Aurelia,Grasza,ul. Sikorskiego,1/1,Lublin,20-814,1
+937,Bożena,Greguła,Wola Lisowska,4 A,Lubartów,21-100,1
+938,Lidia,Greguła,Wola Lisowska,4 A,Lubartów,21-100,1
+939,Janina,Grela,ul. Kaszawskiego,5/19,Puławy,24-100,1
+940,Aleksandra,Greń,ul. Miła,18,Górki Wielkie,43-436,1
+941,Marek,Grobelski,ul. Jezierskiego,6/4,LUBLIN,20-439,1
+942,Beata,Grochowicz,ul. Długa 230 Zaorenda,,Tereszpol,23-407,1
+943,Stanisław,Gromadzki,ul. Piaskowa,30,Chełm,22-100,1
+944,Monika,Gromek,ul. Dębina,56,Ciecierzyn,21-003,1
+945,Alina,Groszek,ul. Odlewnicza,11/13,Lublin,20-219,1
+946,Ryszard,Gronczyński,ul. Ptasia,57,Lubin,59-300,1
+947,PIOTR,GRUDKA,ul. Głuska,145,Lublin,20-385,1
+948,Katarzyna,Grudzień,ul. Ignacego Domeyki,8/74,Lublin,20-488,1
+949,Danuta,Gryglas,Nowy Pawłów,207,Jabłonna Lubelska,23-114,1
+950,Anna,Grzelak,ul. Fabryczna,3/10,Bełżyce,24-200,1
+951,Alicja,Grzesiak,ul. Wajdeloty,16/18,Lublin,20-608,1
+952,Zofia,Grzywaczewska,ul. Lubelska,103,Chełm,22-100,1
+953,Zenobia,Grąba,Kosin,133,Annapol,23-235,1
+954,Stefania,Gumieniak,ul. Racławicka,31/61,Świdnik,21-040,1
+955,Aniela,Gurdziel,Różaniec II,50,Tarnogród,23-420,1
+956,Irena,Guzy,Bobrowniki Małe,126,Wierzchosławice,33-122,1
+957,Halina,Gwazdacz,ul. M. Konopnickiej,2/11,Rzeszów,35-211,1
+958,Bożena,Gzik,ul. Partyzancka,26/4,Milejów,21-020,1
+959,Maria,Górecka Malik,ul. Olchowa,5/95,Lublin,20-355,1
+960,Janina,Górska,Podgórz,35 A,Wilków,24-313,1
+961,Marta,Gągała,U ł ę ż 9,4,Ułęż,08-504,1
+962,Wanda,Gładosz,ul. Strzeszewskiego,13/82,Lublin,20-153,1
+963,Małgorzata,Głos,ul. Janowska,41,Kraśnik,23-200,1
+964,Adela,Głąb,ul. Kombatantów,19/25,Jarosław,37-500,1
+965,Marianna,Habdas,ul. Dębowa,16,Skoczów,43-430,1
+966,Barbara,Hacia,ul. Herbowa,8/2,Lublin,20-551,1
+967,Danuta,Hadała,ul. Rolnicza,15,Dębica,39-200,1
+968,Mirosława,Hadała,ul. Słoneczna,4/24,Poniatowa,24-320,1
+969,Mirosława,Hadała,Prawiedniki,119 D,Lublin,20-515,1
+970,Zofia,Hadała,ul. Sportowa,21/97,Rzeszów,35-111,1
+971,Teresa,Hanc,ul. Małachowskiego 1 b/22,,Chełm,22-100,1
+972,Iwona,Hanusek,ul. Jagodowa,8,Brzezówka,43-418,1
+973,Kazimiera,Hejno,Batorz Drugi,63 A,Batorz,23-320,1
+974,Mateusz,Hejno,ul. Piasecka,1,Mełgiew,21-007,1
+975,Anna,Henzell,ul. Herbowa,5/41,Lublin,20-551,1
+976,Ewa,Herbin,ul. Franciszkańska,9,Zamość,22-400,1
+977,Bogumiła,Hildebrand,ul. Koszary 64 a/17,,Zamość,22-400,1
+978,Anna,Holeksa,Zalesie,30,Górki Wielkie,43-436,1
+979,Renata,Horbaczewska,ul. Probostwo 11 a/2,,Lublin,20-089,1
+980,"Anna,",Bartosz Horky,ul. Klimczaka,5,Warszawa,02-746,1
+981,Agata,Horodeńska,ul. Włościańska,75,Białystok,15-199,1
+982,Teresa,Hołderna,ul. ks. Popiełuszki,35/20,Lublin,20-052,1
+983,Marianna,Habdas,ul. Dębowa,16,Skoczów,43-430,1
+984,Arkadiusz,Hunik,ul. Gęsia,17/4,Lublin,20-719,1
+985,Marta,Hurkała,ul. Szkolna,25,Tereszpol - Zaorenda,23-407,1
+986,Agnieszka,Huszcz,ul. Szafirowa,3/74,Lublin,20-573,1
+987,Janina,Iwanciów,ul. Kopernika,442,Leżajsk,37-300,1
+988,Sylwia,Iwaniuk,ul. Szwejka,47 B,Lublin,20-713,1
+989,Bożena,Iwańczuk,K a w k a,31 K,Niemce,21-025,1
+990,Grażyna,Jabłczyńska,ul. M. Brzeskiej,11/4,Lublin,21-640,1
+991,Agnieszka,Jabłońska,ul. Okulickiego,15/20,Świdnik,21-040,1
+992,Danuta,Jabłońska,ul. Niechorska 13 B/7,,Gryfice,72-300,1
+993,Jarosław,Jabłoński,Uniszowice,104 B,Motycz,21-030,1
+994,Marianna,Jacak,Zakrzówek - Wieś,121,Zakrzówek,23-213,1
+995,Grażyna,Jagiełło,ul. Jaśminowa,3/10,Łęczna,21-010,1
+996,Michał,Jagusiak,ul. Kusocińskiego,5/60,Mielec,39-300,1
+997,Anna,Jakubowska,ul. Przyjaźni,21/94,Lublin,20-314,1
+998,Edmund,Janczarek,ul. Pogodna,28/15,Lublin,20-337,1
+999,Małgorzata,Janczyk,ul. Miodowa,30,Zamość,22-400,1
+1000,Janina,Janicka,Zagajdzie,20 A,Wilków,24-313,1
+1001,Grzegorz,Janicki,ul. Długa,53,Biała Podlaska,21-500,1
+1002,Maria,Janik,ul. Langiewicza,23/24,Rzeszów,35-021,1
+1003,Teresa,Janik,S t a r e M o c z y d ł a 1,1,Szastarka,23-225,1
+1004,Anna,Januszewska,ul. Skrzetuskiego,10/54,Lublin,20-628,1
+1005,Krystyna,Jaros,ul. Łucznicza,3,Pszczyna,43-200,1
+1006,Elżbieta,Jarosińska,ul. Chełmska,8 A,Cyców,21-070,1
+1007,Beata,Jonaszek,ul. Piłsudskiego,53/41,Hrubieszów,22-500,1
+1008,Danuta,i Stanisław Jarosz,ul. Smolki,14/2,Lesko,38-600,1
+1009,Ewa,Jarzymowska-Kałudowa,ul. Księdza Szulczyka,35,Warszawa,04-965,1
+1010,Zofia,Jasińczak,Tomaszowice Kolonia,27 B,Jastków,21-002,1
+1011,Krystyna,Jasińska,ul. Polna,13,Frampol,23-440,1
+1012,Joanna,Jastrzębska,ul. Skołuby,5/39,Lublin,20-837,1
+1013,Łucja,Jaworska,ul. Władysława IV,1/55,Słupsk,76-200,1
+1014,Agnieszka,Jeż,ul. Międzyrzecka,26,Radzyń Podlaski,21-300,1
+1015,Irena,Jeż,Nad Potokiem,8/14,Kraków,30-830,1
+1016,Zofia,Jodłowska,ul. Tysiąclecia,19/5,Sułkowice,32-440,1
+1017,Regina,Jopek,Sitno,40,Sitno,22-424,1
+1018,Tomasz,Jusiak,ul. Przejrzysta,9,Lublin,20-832,1
+1019,Maria,Józefczak,Radawczyk Drugi,41,Motycz,21-030,1
+1020,Henryka,Jędrychowska,ul. Południowa,3/9,Skarżysko-Kamienna,26-110,1
+1021,Iwona,Jędzura,Wolica Kolonia,26,Modliborzyce,23-310,1
+1022,Zofia,Jędzura,Wolica Kolonia,72,Modliborzyce,23-310,1
+1023,Zofia,Jędzura,L u c i e n i e c,72,Modliborzyce,23-310,1
+1024,Zofia,Jędzura,Wolica Kolonia,72,Modliborzyce,23-310,1
+1025,Agata,Kaczorowska,ul. Dulęby,5/5,Lublin,20-357,1
+1026,Maria,Kalbarczyk,ul. Różana,18/17,Lublin,20-538,1
+1027,Monika,Kalicka,ul. Racławicka,19/53,Świdnik,21-040,1
+1028,Maria,Kalińska,ul. Domaniewska 22 m.,23,Warszawa,02-672,1
+1029,Helena,Kamieniarz,23 - 275 Gościeradów,,Gościeradów,23-275,1
+1030,Janina,Kamińska,ul. Pułaskiego,5/35,Busko - Zdrój,28-100,1
+1031,Janina,Kamińska,ul. Robotnicza,4/19,Dębica,39-200,1
+1032,Lucyna,Kamińska,ul. Kalinowa,4,Okszów,22-105,1
+1033,Małgorzata,Kamińska,ul. Skoczylasa,6,Lublin,20-811,1
+1034,Henryk,Kamiński,ul. Bialska,11,Janów Podlaski,21-505,1
+1035,Anna,Kania,Wola Wielka,130,Straszęcin,39-218,1
+1036,Zofia,Kania,ul. Szkolna,3/13,Karczmiska,24-310,1
+1037,Grażyna,Kanty,ul. Boh. Monte Cassino,18/10,Biłgoraj,23-400,1
+1038,Marta,Kapica,ul. Okrzei,24/2,Krasnystaw,22-300,1
+1039,Emilia,Kapka,Majdan Nowy,20 A,Majdan Stary,23-414,1
+1040,Ewa,Kaproń,Wólka Ratajska,143,Godziszów,23-302,1
+1041,Grażyna,Kaproń,ul. Wolińskiego,28/59,Lublin,20-491,1
+1042,Małgorzata,Kapłon,ul. Osiedlowa,7,Zamość,22-400,1
+1043,Małgorzata,Karasek,ul. Słoneczna,22,Prawiedniki,20-515,1
+1044,Monika,Karlińska,ul. Wołoska,80/32,Warszawa,02-507,1
+1045,Feliksa,Karolczyk,ul. Dolna 3 Maja 3 A/5,,Lublin,20-079,1
+1046,Małgorzata,Karpińska,ul. Jana Kiepury,11/32,Lublin,20-838,1
+1047,Helena,Karpiński,825 Raiton Ave.,,,,1
+1048,Liliana,Karwowska,ul. Zakręt,9 A,Lublin,20-149,1
+1049,Barbara,Karłowicz,ul. 1 Maja,4/36,Suwałki,16-400,1
+1050,Grażyna,Kasperek,ul. Storczykowa,32,Lublin,20-143,1
+1051,Maria,Kasperek,ul. Świętokrzyska,17/4,Lublin,20-867,1
+1052,Alicja,Kasprzak - Żeżuła,ul. Piłsudskiego,21,Krasnystaw,22-300,1
+1053,Halina,Kawa,ul. Fantastyczna,21/59,Lublin,20-531,1
+1054,Adriana,Kawecka,ul. 1-go Maja,43/9,Lublin,20-410,1
+1055,Ewelina,Kawęcka,Łada,76,Chrzanów,23-305,1
+1056,Piotr,Kazek,ul. Gęsia,28/25,Lublin,20-719,1
+1057,Wanda,Kałamarz,ul. Krynicka,6/26A,Rzeszów,35-505,1
+1058,Hanna,Kielar,ul. Działkowca,4,Świdnik,21-040,1
+1059,Janina,Kieliszek,ul. Bohaterów Warszawy,23/41,Bartoszyce,11-200,1
+1060,Lucyna,Kiepas,ul. Strażacka,8,Kotowice - Żarki,42-310,1
+1061,Róża,Kieszkiewicz,ul. Synów Pułku,8/35,Warszawa,01-354,1
+1062,Alicja,i Tomasz Kiliszek,S t a r e Z a d y b i e,115,Stare Zadybie,08-550,1
+1063,Lucyna,Kindzierska,Plac Wolności,12/5,Lwówek Śląski,59-600,1
+1064,Tamara,i Wiktor KISIAŁA,Z A L E S I E 6,5,Górki Wielkie,43-436,1
+1065,Anna,Kisiel,Antopol,22,Podedwórze,21-222,1
+1066,Plac,św. Kingi 1,Plac św. Kingi,1,Stary Sącz,33-340,1
+1067,Jarosław,i Ilona Klimek,Os. Słoneczne,44/37,Ostrowiec Świętokrzycki,27-400,1
+1068,Halina,Klocek,ul. Jagodowa,8,Pogwizdów,43-418,1
+1069,Bogusława,Knapik,Os. Kościuszkowskie,10/55,Kraków,31-858,1
+1070,Agata,Kochanowska,ul. Sas - Zubrzyckiego,5/22,Kraków,30-611,1
+1071,Elżbieta,Kociuba,Trawniki,332,Trawniki,21-044,1
+1072,Kazimiera,Kociuba,Al. Piłsudskiego,2/1A,Chełm,22-100,1
+1073,Anna,Kocięcka,ul. Częstochowska,42/13,Warszawa,02-350,1
+1074,Elżbieta,Kolasa,ul. Sadowa,16 A,Skawina,32-050,1
+1075,Alina,Komsta,ul. Ametystowa,18/19,Lublin,20-577,1
+1076,Lucyna,Koncewicz,ul. Krochmalna,21/9,Lublin,20-401,1
+1077,Anna,Kondraciuk,G ó r n a 1,1,Bielsk Podlaski,17-100,1
+1078,Krystyna,Kondrat,Z a s t a w i e,142,Turobin,23-450,1
+1079,Misjonarze,Werbiści,ul. Szkolna,40,Siedliszcze,22-130,1
+1080,Janina,Konik,Łukowica,143,Lesko,38-600,1
+1081,Janina,Kopera,ul. Mickiewicza,132/12,Jasło,38-200,1
+1082,Joanna,Kopeć,ul. Ogrodowa,7/8,Lublin,20-075,1
+1083,Wojciech,Kopeć,ul. Ogrodowa,7/8,Lublin,20-075,1
+1084,Izabela,Kopycińska,ul Brzozowa,1,Dąbrowica,21-002,1
+1085,Elżbieta,Kolasa,ul. Sądowa,16 A,Skawina,32-050,1
+1086,"Agnieszka,","Grzegorz, Tymoteusz KORAB",ul. Żurawinowa 5 TURKA,,Lublin,20-258,1
+1087,Agnieszka,Kornacka,ul. Zuchów,16,Świdnik,21-040,1
+1088,Elżbieta,Kornet,ul. Podzamcze,19,Mełgiew,21-007,1
+1089,Katarzyna,Korniluk,ul. St. Wyszyńskiego,11/34,Parczew,21-200,1
+1090,Feliksa,Korolczyk,ul. Dolna 3-go Maja 3 A/5,,Lublin,20-079,1
+1091,Irena,Kosikowska,Rzeczyca Księża,107,Trzydnik Duży,23-230,1
+1092,Halina,Kostka,al. Jana Pawła II,15/34,Stalowa Wola,37-450,1
+1093,Arkadiusz,Kot,Rakszawa,406,Rakszawa,37-111,1
+1094,Hieronima,Kot,ul. Piłsudskiego,35/19,Zamość,22-400,1
+1095,Wioletta,Kopycka,Powstańców Warszawy,16/43,Skarżysko-Kamienna,26-110,1
+1096,Patrycja,Kotuła-Dudek,Zastawie,189,Dzierzkowice,23-251,1
+1097,Dorota,Kotuła,Zastawie,189,Dzierzkowice,23-251,1
+1098,Patrycja,Kotuła - Dudek,Dzierzkowice - Zastawie,189,Dzierzkowice,23-251,1
+1099,Barbara,Kowal nie żyje,ul. Ossowskiego,17,Stalowa Wola,97-450,1
+1100,Helena,Kowalczyk,ul. Honoraty,46/1,Tychy,43-100,1
+1101,Jadwiga,Kowalczyk,ul. Ks. Ściegiennego,8,Opole Lubelskie,24-300,1
+1102,Maria,Kowalczyk,ul. Słowackiego 3 A/17,,Kraśnik,23-204,1
+1103,Marianna,i Krzysztof Kowalscy,M a t y s y,85,Trzebieszów,21-404,1
+1104,Weronika,Kowalska,ul. Urzędowska,481,Kraśnik,23-200,1
+1105,Zofia,Kowalska,ul. Konarskiego,11/28,Kozienice,26-900,1
+1106,Misjonarze,Werbiści,Kiełczewice Maryjskie,3,Strzyżewice,23-107,1
+1107,ul.,Jagiellońska 45,ul. Jagiellońska,45,Lublin,20-806,1
+1108,Alicja,Koziej,ul. Leśna,19/43,Puławy,24-100,1
+1109,Zenobia,Koziej,ul. Szpinalskiego,2/81,Lublin,20-860,1
+1110,Maria,Kozioł,ul. Lubelska,168,Izbica,22-375,1
+1111,Alicja,Kozyrska,ul. Ściegiennego,9,Opole Lubelskie,24-300,1
+1112,Sylwia,Kozłowska,Zawadka Osiecka,8,Osiek Jasielski,38-223,1
+1113,Józef,Kołodziej,ul. Baczyńskiego,13/19,Jasło,38-200,1
+1114,Anna,Kołodziejczyk,Chmielnik,120,Bełżyce,24-200,1
+1115,Kazimierz,Kołodziejczyk,ul. Kościelna,18,Stoczek Łukowski,21-450,1
+1116,Cecylia,Kościak,ul. Borelowskiego,3/1A,Przemyśl,37-700,1
+1117,Misjonarze,Werbiści,33 - 334 Kamionka Wielka,139,Kamionka Wielka 139,33-334,1
+1118,Wiesława,Koślacz,ul. Jaworowa,8/2,P ie c h o w i c e,58-573,1
+1119,Stanisława,Kośmider,ul. Nadbzurzańska,24,Łowicz,99-400,1
+1120,Barbara,Krakiewicz,ul. Wolności,27/59,Chełm,22-100,1
+1121,Barbara,Krasoń,Talstr.,23,,,1
+1122,Maria,Krasucka,ul. Św. Mikołaja,4/34,Rzeszów,35-001,1
+1123,Ewa,Krawczak,ul. Czeremchowa,18/4,Lublin,20-807,1
+1124,Anna,Krawczyk,B a r a k i 3,0,Zakrzew,23-155,1
+1125,Henryka,Krawczyk,23 - 310 M o d l i b o r z y c e,,Modliborzyce,23-310,1
+1126,Teresa,Krawczyk,ul. Kolejowa,40/27,Kraśnik,23-200,1
+1127,Lucyna,Krawiec,ul. Podborcze,21,Podborcze,22-463,1
+1128,Ewa,Kruk,ul. Sobieskiego,11/14,Słupsk,76-200,1
+1129,Beata,Krupa,ul. Domeyki,8/51,Lublin,20-488,1
+1130,Zenon,Krupa,ul. Arabska,10/17,Warszawa,03-977,1
+1131,Zofia,Krupa,Chorupnik,126,Gorzków,22-315,1
+1132,Zofia,Kryla,Wierzawice,190,Leżajsk,37-300,1
+1133,Teresa,Krysa,ul. Jutrzenki,14/24,Lublin,20-538,1
+1134,Wanda,Krzewińska,ul. Pozytywistów,20/2,Lublin,20-639,1
+1135,Mariola,Krzewska - Wdowska,ul. Skrzetuskiego,4/108,Lublin,20-628,1
+1136,Jadwiga,Krzewska,ul. Wojska Polskiego,29/10,Pisz,12-200,1
+1137,Bogusław,Krzos,os. Pomorskie 10 G/3,,Zielona Góra,65-548,1
+1138,Edyta,Krzysztofik,ul. Ułanów,27/6,Lublin,20-554,1
+1139,Barbara,Krzysztofińska,ul. Łokietka,16,Tarnobrzeg,39-400,1
+1140,Andrzej,Krzysztoń,23 - 310 M o d l i b o r z y c e,,Modliborzyce,23-310,1
+1141,Irena,Krótki,ul. Piaskowa,55,Wodzisław Śl.,44-300,1
+1142,Ewa,- Martyna Kubalska,B o r o w n i c a 6,1,Janów Lubelski,23-300,1
+1143,Bronisława,Kubeluk,ul. Króla Zygmunta,20,Ostrów Lubelski,21-110,1
+1144,Bożena,Kucharczyk,Pawłowice,103,Solec nad Wisłą,27-320,1
+1145,Anna,Kucharska,ul. Prymasa 100-lecia,10/4,Rzeszów,35-511,1
+1146,Irena,Kucia,ul. Kopernika,58,Wodzisław Śl.,44-300,1
+1147,Elżbieta,Kuczyńska,ul. Łukasińskiego,19,Tomaszów Lubelski,22-600,1
+1148,Wanda,Kuduk,ul. Spółdzielcza,6/22,Mielec,39-300,1
+1149,Dominik,Kufel,ul. Kochanowskiego 20 A/1,,Lublin,20-434,1
+1150,Łucja,Kujawa,ul. Łużycka,167/9,Gryfino,74-100,1
+1151,Danuta,i Mirosław KULIG,Wierchomla Wielka,78,Piwniczna - Zdrój,33-350,1
+1152,Teresa,Kulczycka,ul. Noskowskiego,4/13,Lublin,20-858,1
+1153,Maria,Kulik,Tereszpol Kukiełki,84,Tereszpol,23-407,1
+1154,Jan,Kulpa,F r y c o w a,333,Nawojowa,33-335,1
+1155,Marian,Kulpa,ul. Staromiejska,5 A,Pyrzyce,74-200,1
+1156,Lucyna,Kuncewicz,ul. Krochmalna,21/9,Lublin,20-401,1
+1157,Krystyna,Kurek,ul. Młodzieżowa,4/10,Lublin,20-468,1
+1158,Misjonarze,Werbiści,Plac Katedralny,4 a,Przemyśl,37-700,1
+1159,Bożena,Kurowska,Turze Rogi,47,Łuków,21-400,1
+1160,Teresa,Kurzawa,ul. Reymonta,22/23,Skierniewice,96-100,1
+1161,Hermina,Kusibab,PUSTYNIA,153,Dębica,39-200,1
+1162,Janusz,Kustra,ul. Samsonowicza,29/2,Lublin,20-485,1
+1163,Czesława,Kusz,Wysokie,223,Zamość,22-400,1
+1164,Anna,Kutryb,Oborczyska,42,Baranowo k. Ostrołęki,06-320,1
+1165,Julia,Kuwałek,Tomaszowice Kolonia,3,Tomaszowice,21-008,1
+1166,Bożena,Kuśmierz,ul. Oratoryjna,3/33,Lublin,20-881,1
+1167,Marianna,Kwasowiec,J u r k i,18,Kąkolewnica,21-302,1
+1168,Anna,Kwiatkowska,Al. Wojska Polskiego,53/4,Jelenia Góra,58-500,1
+1169,Irena,Kwiatkowska,ul. Jana Pawła II,27/11,WŁODAWA,22-200,1
+1170,Krystyna,Kwil,ul. Krępowieckiego,11/11,Warszawa,01-456,1
+1171,Aleksandra,Kędzierska,ul. Rycerska,6/37,Lublin,20-552,1
+1172,Barbara,Kędziorek,Nowy Żabieniec,62,Nowy Żabieniec,08-470,1
+1173,Marzena,Kępa,ul. Perłowa,4/58,Lublin,20-574,1
+1174,ANNA,Kłak,Bałtów,82,Ż y rz y n,84-103,1
+1175,Ewa,Kłoda,ul. Oleśnickiego,3,Ostrów Lubelski,21-110,1
+1176,ul.,Jagiellońska 45,ul. Jagiellońska,45,Lublin 11,20-806,1
+1177,Misjonarze,Werbiści,Kamionka Mała,18,Kamionka Wielka,33-334,1
+1178,Bernadetta,Lachowska,ul. Górniczego Stanu,49,Katowice,40-469,1
+1179,Misjonarze,Werbiści,ul. Parkowa,33,Łabunie,22-437,1
+1180,Elżbieta,Lament,ul. Cztery Pory Roku,7/4,Szczecin,71-806,1
+1181,Ewa,Lasak Siwerska,ul. Wajdeloty,10/57,Lublin,20-608,1
+1182,Elżbieta,Lasecka,ul. Mickiewicza,19,Karczew,05-480,1
+1183,Anna,Lasota,ul. Podhalańska,10/57,Ł ó dź,93-224,1
+1184,Małgorzata,Lebiedowicz,ul. Bursztynowa,15/65,Lublin,20-576,1
+1185,Ewa,Lebioda,ul. Kazimierza Dulędy,3/8,Lublin,20-357,1
+1186,Krystyna,Leja,ul. Kopernika,1/8,Leżajsk,37-300,1
+1187,Misjonarze,Werbiści,ul. Gen. Sikorskiego,17/14,Kraśnik,23-204,1
+1188,Stanisław,Ligęska,Budzisz,77,Dębica,39-200,1
+1189,Grażyna,Ligęza,ul. Kościuszki,34,Annopol,23-235,1
+1190,Kazimiera,Lipczyńska,ul. Słowackiego,19/8,Chełm,22-100,1
+1191,Teresa,Lipinian,ul. Kłodzka,10 A,Nowa Ruda,57-402,1
+1192,Małgorzata,Lipiec,ul. Tumidajskiego,10/4,Lublin,20-247,1
+1193,Agnieszka,Lipka,ul. Mickiewicza,57,Siedlce,08-110,1
+1194,Krystyna,Lisiowska,ul. Racławicka,15/32,Świdnik,21-040,1
+1195,Urszula,Lisowska,ul. Krzywe Koło,26,Góra Puławska,24-100,1
+1196,Władysław,Lisowski,ul. Biskupa Fulmana,1/41,Lublin,20-492,1
+1197,Małgorzata,Litwińska,Nowy Pożóg,144,Końskowola,24-130,1
+1198,Teresa,Lupa,ul. Partyzantów,56,Zamość,22-400,1
+1199,Liliana,Lusina,ul. Bajeczna,1/112,Kraków,31-543,1
+1200,Marianna,Luśnia,Chinów,28,Kozienice,26-900,1
+1201,Misjonarze,Werbiści,CMOLAS,252 A,Cmolas,36-105,1
+1202,Magdalena,Maciocha,G l i n y,45,Biłgoraj,23-415,1
+1203,Wiesława,Maciocha,ul. Jarzębinowa,3/9,Świdnik,21-040,1
+1204,Emilia,Maciuk,ul. Paderewskiego,13,Chełm,22-100,1
+1205,Anna,Maciąg,ul. Norwida,40/18,Puławy,24-100,1
+1206,Anna,Magiełda,Szastarka,117,Szastarka,23-225,1
+1207,Anna,Magiełda,ul. Urzędowska,240 A,Kraśnik,23-200,1
+1208,Grażyna,Majcher,Wilczopole,174,Lublin,20-388,1
+1209,Józefa,Majcher,ul. Piotra Skargi,1/159,Chełm,22-100,1
+1210,Magdalena,Majcher,ul. Nałkowskich,84/37,Lublin,20-470,1
+1211,Maria,Majkut,W i e r z a w i c e,334,Leżajsk,37-300,1
+1212,Teresa,Makaruk,ul. Lipowa,12/18,Lublin,20-024,1
+1213,Krystyna,Makowska,Wyspiańskiego,20/72,Tarnobrzeg,39-400,1
+1214,Karolina,Malisz,D z i e l c e,9 A,Radecznica,22-463,1
+1215,Zofia,Marciniec,ul. Wyspiańskiego,7/82,Tarnobrzeg,39-400,1
+1216,Anna,Marcinkowska,ul. Fantastyczna,9/6,Lublin,20-531,1
+1217,Marek,Krystyna,ul. Piękna,65,Dębica,39-200,1
+1218,Janina,Markiewicz,ul. Tarnobrzeska,2 A,Osiek,28-221,1
+1219,Ewelina,Markowska,ul. Zana,10/41,Lublin,20-601,1
+1220,Marta,Martyniuk,ul. Szmaragdowa,4/54,Lublin,20-570,1
+1221,Zofia,Martysz,ul. Podleśna,14,Leżajsk,37-300,1
+1222,Wiesława,Orzełowska,u l. K r u c z a,9,Głosków,05-503,1
+1223,Jadwiga,Masłowska,ul. Bahrkego 2 A/8,,E ł k,19-300,1
+1224,Teresa,Masłowska,Dąbrówka,51,Orzysz,12-250,1
+1225,Piotr,Mateńko,ul. Czeremchowa,18/70,Lublin,20-807,1
+1226,Dorota,Matuszczak,ul. Wyścigowa,43/51,Lublin,20-345,1
+1227,Genowefa,Matykiewicz,ul. Św. Jana,13/40,Bochnia,32-700,1
+1228,Czesława,Matys,ul. Niepodległości,22/22,Świdnik,21-040,1
+1229,Monika,Matysek,P i ł a t k a,81,Godziszów,23-302,1
+1230,Agnieszka,Matysiak,ul. Żarnowiecka,3/44,Lublin,20-630,1
+1231,Anna,Mazur,Kolonia Małków,34,Mircze,22-530,1
+1232,Anna,Mazur,Krasińskiego,26/9,Kraśnik,23-201,1
+1233,Anna,Mazur,ul. Gęsia,28/25,Lublin,20-719,1
+1234,Krzysztof,Mazur,Kolonia Małków,34,Mircze,22-530,1
+1235,Maria,Mazur,ul. Hrubieszowska,20/5,Zamość,22-400,1
+1236,Małgorzata,Mazur,ul. Pawia,69,Lublin,20-343,1
+1237,Urszula,Mazur,Huzele,102,Lesko,38-600,1
+1238,Wiesława,Mazur,Brzostówka,114,Serniki,21-107,1
+1239,Wiesława,Mazur,Siedlanka,199,Niwiska,36-147,1
+1240,Alicja,Mazurek,ul. Paganiniego,9/25,Lublin,20-850,1
+1241,Teodora,Mazurek,Tomaszowice Kolonia,3,Tomaszowice,21-008,1
+1242,Celina,Mazurkiewicz,ul. Reymonta,2/36,Ostrołęka,07-410,1
+1243,Jadwiga,Mazuryk,ul. 8-go Września,19/3,J a n ó w L u b.,23-300,1
+1244,Krzysztof,Mazuryk,Boh. Portowego Wzgórza,5/28,J a n ó w L u b.,23-300,1
+1245,Józef,Maćkowiak,ul. Paderewskiego,6/40,Śrem,08-100,1
+1246,Beata,Małasiewicz,ul. Smyczkowa,4/53,Lublin,20-844,1
+1247,Zofia,Małek,ul. Leśna,1,Modliborzyce,23-310,1
+1248,Karolina,Małysz,Dzielce,9 A,Radecznica,22-463,1
+1249,Grażyna,Mańkowska,ul. Kochanowskiego,14/40,Puławy,24-100,1
+1250,Zofia,Maślanka,ul. Witkacego,3/208,Rzeszów,35-113,1
+1251,Błażej,Meler,ul. Krucza,48,Piła,64-920,1
+1252,Maria,Mełgieś,ul. Skautów,13/4,Lublin,20-055,1
+1253,Magdalena,Mianowska,ul. Willowa,40 C,Lublin,20-819,1
+1254,Sz.,P.,Ł o p a t k i,81,Wąwolnica,24-160,1
+1255,Maria,Michalak,21 - 044 T r a w n i k i,266,T r a w n i k i 266,21-044,1
+1256,Agnieszka,Michalczewska,Baszki,14 C,Ciecierzyn,21-003,1
+1257,Alicja,Michalczuk,Domanowo,43,Brańsk,17-120,1
+1258,Władysława,Michaluk,Zahajki,77,Drelów,21-570,1
+1259,Marzena,Michowska,ul. Spokojna,18,Michów,21-140,1
+1260,Katarzyna,Miernik,ul. Szarych Szeregów 1 B/18,,Lublin,20-047,1
+1261,Matylda,Mik,ul. Siedlanowskiego,2/107,Stalowa Wola,37-450,1
+1262,Eugenia,Mikołajek,Nowociny,11,Górki Małe,43-436,1
+1263,Krystyna,Miksza,Osmolica Pierwsze,32,Strzyżewice,23-107,1
+1264,Teresa,Mikusek,Trojanów,56,Trojanów,08-455,1
+1265,Barbara,Mioduszewska,ul. Sienkiewicza,3,Kleosin,16-001,1
+1266,Mariusz,Mirek,ul. Ułanów,19/37,Lublin,20-554,1
+1267,Misjonarze,Werbiści,ul. Parkowa,33,Łabunie,22-437,1
+1268,Mieczysława,Mital,ul. Główna,9,Skaryszew,26-640,1
+1269,Krystyna,Mitura,ul. Racławicka,31/54,Świdnik,21-040,1
+1270,Andrzej,Mizerski,ul. Lubelska,17/20,Puławy,24-100,1
+1271,Wanda,Miąso,ul. Torowa,12,Ropczyce,39-100,1
+1272,Wioleta,Miś,ul. Podchorążych,1/9,Słupsk,76-200,1
+1273,Halina,Moczulewska,ul. Cyrkoniowa,12/49,Lublin,20-583,1
+1274,Małgorzata,Moliszewska,ul. Orfeusza,30/4,Gdańsk,80-299,1
+1275,Barbara,Montewka,ul. Skrzetuskiego,6/23,Łuków,21-400,1
+1276,Barbara,Moskal,ul. Marszałkowska,15/152,Rzeszów,35-215,1
+1277,Dominik,Mroczkowski,ul. 8-go Marca,23,Konstantynów Łódzki,95-050,1
+1278,Andrzej,Mrugała,ul. Melsztyńska,2/45,Warszawa,02-537,1
+1279,Agnieszka,Mularz,ul. Podchorążych,3/5,Rzeszów,35-216,1
+1280,Halina,Mulińska,ul. Zana,10/97,Lublin,20-601,1
+1281,Bożena,Murdzia,Stare Miasto,151,Leżajsk,37-300,1
+1282,Janina,Musiał,Skorczów,50,Kazimierza Wielka,28-500,1
+1283,Teresa,Muzyka,23 - 310 Modliborzyce,,Modliborzyce,23-310,1
+1284,Irena,Myc,Zalesie,126 B,Łuków,21-400,1
+1285,Justyna,Myszak,Tereszpol Zygmunty,203,Tereszpol,23-407,1
+1286,Karolina,Młynarczyk,ul. Smyczkowa,4/66,Lublin,20-844,1
+1287,Wiesława,Orzełowska,u l. K r u c z a,9,Głosków,05-503,1
+1288,Wanda,Miąso,ul. Torowa,12,Ropczyce,39-100,1
+1289,Dagmara,Nalepa,Zalesie,42,Górki Wielkie,43-436,1
+1290,Przemysław,Nalepa,D r o g i n i a,410,Myślenice,32-400,1
+1291,Teresa,Nalepa,ul. Pogodna 50 A/32,,Lublin,20-337,1
+1292,Łucja,i Władysław Nalepa,Z a l e s i e 4,2,Górki Wielkie,43-436,1
+1293,Ewa,Nasalska,ul. Radzyńska,10/63,Lublin,20-850,1
+1294,Jerzy,Nawrocki,ul. Mickiewicza,57,Siedlce,08-110,1
+1295,Maria,Niemczuk,ul. Grabowa,10,Zamość,22-400,1
+1296,Anna,Niemczyk,ul. Katowicka,4,K U P,46-082,1
+1297,Magdalena,Nieradka,Matczyn,9/2,Bełżyce,24-200,1
+1298,Grzegorz,Niezgoda,C z ó ł n a,26,Niedrzwica Duża,24-220,1
+1299,Wiktoria,Nikolas,ul. Sienkiewicza,10/15,Biłgoraj,23-400,1
+1300,Józefa,i Kazimierz Noga,ul. Spółdzielcza,16/1,Myszków,42-300,1
+1301,Alina,Nowak,ul. Oboźna,25/20,Zamość,22-400,1
+1302,Elżbieta,Nowak,Piotrków - Kolonia,24 A,Jabłonna,23-114,1
+1303,Maria,Nowak,ul. Floriańska,178,Jasło,38-200,1
+1304,Małgorzata,Nowak,Uliczka,13,Górki Wielkie,43-436,1
+1305,Maria,Nowiczuk,ul. Siemiradzkiego 6 A/42,,Przemyśl,37-700,1
+1306,Jolanta,Nowosadzka,ul. Wajzera,5/14,Zabrze,41-808,1
+1307,Zdzisław,Nykiel,ul. Piękna,63,Dębica,39-200,1
+1308,Jadwiga,Łada,ul. Wyspiańskiego,22,Olszewo - Borki,07-415,1
+1309,Marek,Łagoda,ul. Gen. Grota - Roweckiego 2 B/6,,CHEŁM,22-100,1
+1310,Helena,Łapińska,ul. Wojska Polskiego,8,Zamość,22-400,1
+1311,Izabela,Łaskarzewska,ul. Bukowa,19/37,Lublin,20-353,1
+1312,Jadwiga,Ławrynowicz,ul. Dożynkowa,48 B,Lublin,20-152,1
+1313,Małgorzata,Łojko,ul. Miłocińska,27/30,Rzeszów,35-232,1
+1314,Anna,Łopacka,Lichty,71,Czemierniki,21-306,1
+1315,Alicja,Łukaszyk,ul. Wyżynna,8/92,Lublin,20-560,1
+1316,Regina,Łukiewicz,ul. Piłsudskiego,76 G,Hrubieszów,22-500,1
+1317,Katarzyna,Łuszczak,Jastrzębiec,36,Brzyska Wola,37-304,1
+1318,Zofia,Łuszczak,Jastrzębiec,36,Brzyska Wola,37-304,1
+1319,Krystyna,i Zenon Łuszczyńscy,Al. 3-go Maja,28/45,Słupsk,76-200,1
+1320,Maria,Łyszcz,ul. Kazimierska,23,Kazimierz Dolny,24-120,1
+1321,Karolina,Abramczyk,ul. Piwonia,10 A,Parczew,21-200,1
+1322,Małgorzata,Abramczyk,ul. Piwonia,10 A,Parczew,21-200,1
+1323,Janina,Adamaszek,ul. Sabały,21/27,Warszawa,02-174,1
+1324,Grażyna,Adamczyk,ul. Przybylskiego,20/20,Lublin,20-465,1
+1325,Helena,Adamiak,ul. Lubelska,73/18,Kraśnik,23-200,1
+1326,Ewa,Adamowicz,ul. Fulmana,4/23,Lublin,20-492,1
+1327,Iwona,Aftyka,ul. Irydiona,10/51,Lublin,20-624,1
+1328,Jolanta,Aftyka,ul. Gen. Sikorskiego,4/24,PUŁAWY,24-100,1
+1329,Halina,Aleksandrowicz,ul. Botaniczna,54,Lublin,20-809,1
+1330,Anna,Andruszkiewicz,ul. Ogrody 19 C/76,,Bydgoszcz,85-870,1
+1331,Anna,Andrzejczak,ul. Równoległa,10,Tarnów,33-100,1
+1332,Ewa,Antończyk,ul. Batalionów Chłopskich,6,Wodzisław Śląski,44-300,1
+1333,Maria,Asłamowicz,Grzegorzów,11,Grzegorzów,59-407,1
+1334,Irena,Augustyn,ul. Spacerowa,6/34,Milejów,21-020,1
+1335,Danuta,Augustyniak,Pszczela Wola,3/1,Strzyżewice,23-107,1
+1336,Paulina,Augustynowicz,ul. Kraszewskiego,79,Łańcut,37-100,1
+1337,Krystyna,Babicka,ul. Listopadowa,7/18,Hrubieszów,22-500,1
+1338,Barbara,Babula,ul. Wolności,174,Mielec,39-300,1
+1339,Teresa,Baczewska,ul. Kwiecińskiego,10,Lublin,20-453,1
+1340,Magdalena,Baczyńska,ul. Drukarzy,12/4,Warszawa,02-452,1
+1341,Wanda,Badach,D r z e w c e,3 A,Nałęczów,24-150,1
+1342,Teresa,Bajura,ul. Łapiguz,20,Łuków,21-400,1
+1343,Emilia,Banaszak,ul. Środkowa,13/53,Lublin,20-015,1
+1344,Anna,Banaszek,ul. Niepodległości,5/8,Świdnik,21-040,1
+1345,Krystyna,Banaszek,ul. Iridiona,8/28,Lublin,20-624,1
+1346,Bolesław,Baran,Z a w a d y 2,5,Ostrówek,21-102,1
+1347,Danuta,Barankiewicz,Zalesie,44,Górki Wielkie,43-436,1
+1348,Elżbieta,Barnaś,Straszęcin,137,Straszęcin,39-218,1
+1349,Halina,Bartman,S i e t e r z 2,5,Kańczuga,37-206,1
+1350,Barbara,Bartnik,ul. Zakrzowiecka,7 B,Kraśnik,23-200,1
+1351,Edward,Bartnik,22 - 470 Zwierzyniec,,Zwierzyniec,22-470,1
+1352,Alicja,Bartosiak,ul. Puławska,13/22,Puławy,20-046,1
+1353,Anna,Bartosik,ul. Gospodarcza,24/6,Lublin,20-213,1
+1354,Joanna,Bartosz,ul. Zielona,10,Tarnogród,23-420,1
+1355,Małgorzata,Bartoszek,ul. Krasickiego,32,Lublin,20-358,1
+1356,Aniela,Bastrzyk,Potok Górny,221 C,Potok Górny,21-423,1
+1357,Anna,Bator,ul. Warszawska 1/3 m,85,Rzeszów,35-205,1
+1358,Ewa,Batorska,Tereszyn,5 B,Motycz,21-030,1
+1359,Kazimiera,Bańka,Sosnowa Wola,108,Dzierzkowice,23-251,1
+1360,Przemysław,Berek,P u s t y n i a,152,Pustynia,39-200,1
+1361,Danuta,Bernat,ul. Lubelska,75/11,Kraśnik,23-200,1
+1362,Iwona,Bełz,ul. Kamienna,17/39,Zamość,22-400,1
+1363,Aneta,Białek,ul. Maruszów,85 A,Zawichost,27-630,1
+1364,Maria,Biegajło,ul. Mickiewicza,1/59,Świdnik,21-040,1
+1365,Leon,Bielak,Zdzisławice,37,Dzwola,23-304,1
+1366,Magdalena,Bielak,ul. Jagiellońska,25,Lublin,20-806,1
+1367,Teresa,Bielak,ul. Krasickiego 95 M,2,Lublin,20-358,1
+1368,Anna,Bielecka,ul. Kolejowa 62 B/37,,Chełm,22-100,1
+1369,Anna,Bielińska,ul. Jaskrawa,3,Marysin,21-002,1
+1370,Elżbieta,Bielowska,S i t n o,18,Borki,21-345,1
+1371,Ewa,Bieniasz - Piróg,Sułoszyn,16,Kock,21-150,1
+1372,Katarzyna,Anna Bigus,al. Jana Pawła II,9/27,Reda,84-240,1
+1373,Feliksa,Bilska,ul. Paganiniego,9/52,Lublin,20-850,1
+1374,Halina,Bilska,ul. Leśna,33/59,Puławy,24-100,1
+1375,Renata,Blazy,ul. Jastrzębska,173 A,Wodzisław Śląski,44-304,1
+1376,Jadwiga,Blicharz,ul. Racławicka,15/70,Świdnik,21-040,1
+1377,Katarzyna,Blicharz,ul. Racławicka,13/16,Świdnik,21-040,1
+1378,Jerzy,Blok,ul. Konstytucji 3 Maja 9 a/16,,Toruń,87-100,1
+1379,Sławomir,Bobowicz,ul. Szpitalna,44,Suwałki,16-400,1
+1380,Maria,Bobruk,ul. 11-go Listopada,64/55,Parczew,21-200,1
+1381,Marzena,Bochenek,ul. Probostwo 17 A/6,,Lublin,20-089,1
+1382,Bogumiła,Boczar,ul. Kwiatowa,21,Iwonicz - Zdrój,38-440,1
+1383,Bogumiła,Boczar,ul. Kwiatowa,21,Iwonicz - Zdrój,38-440,1
+1384,Grzegorz,Bodzak,ul. Czeremchowa,10/9,Lublin,20-807,1
+1385,Kazimiera,Bodzak,Wola Sernicka,17 A,Serniki,21-107,1
+1386,Anastazja,Bogusławska,ul. Kraszewskiego 10 A/59,,Kleosin,16-001,1
+1387,Larysa,Bojdoł,ul. Łowiecka,9,Pszczyna,43-200,1
+1388,Klaudia,Bojkowska,ul. Słoneczna,29,Okrzów - Kolonia,22-105,1
+1389,Beata,Borowiecka,Bychawka Druga Kolonia,35,Bychawa,23-100,1
+1390,Bożena,Borowińska,ul. Tomickiego 13/15 m,30,Poznań,61-116,1
+1391,Faina,Borowska,ul. Paryska,3/14,Lublin,20-854,1
+1392,Jadwiga,Borowska,ul. Radomska 1 B/28,,Pionki,26-670,1
+1393,Kazimiera,Borzoł,ul. Norwida,7/2,Radzyń Podlaski,21-300,1
+1394,Antoni,Bosak,ul. Żeromskiego,4,Zamość,22-400,1
+1395,Alina,Bremmer,ul. Kochanowskiego,1,Zwoleń,26-700,1
+1396,Anna,Broniarczyk,Swoboda,31,Niemce,21-025,1
+1397,Aniela,Brudkowska,Oś. Klimeckiego,9/11,Łuków,21-400,1
+1398,Irena,Brydzińska,ul. Budziszyńska 31 A/3,,Szczecin,70-023,1
+1399,Agnieszka,Brzostowska,ul. Kazańska,28/29,Łomża,18-400,1
+1400,Grażyna,Brzozowska,ul. Samsonowicza 51 A/107,,Lublin,20-485,1
+1401,Renata,Brzozowska,ul. Krasnystawska,18,Łęczna,21-010,1
+1402,Elżbieta,Brzyszczel,ul. Kopernika,24/52A,Tarnobrzeg,39-400,1
+1403,Maria,Bubicz,ul. K. Wallenroda,7/1,Lublin,20-607,1
+1404,Józefa,Bucior,ul. Sienkiewicza,14/29,Biłgoraj,23-400,1
+1405,Teresa,Bucior,ul. Stare Miasto,257,Leżajsk,37-300,1
+1406,Zenona,Budzisz,ul. Drzewieckiego,31/16,Mielec,39-300,1
+1407,Anna,Brzoza,ul. Kosynierów,15/4,Świdnik,21-040,1
+1408,Ewa,Budzyńska,ul. Spółdzielcza,8/4,Parczew,21-200,1
+1409,Barbara,Bujnowska,ul. Matejki,11,Świdnik,21-040,1
+1410,Teresa,Buk,Potok - Stany,101,Potok Wielki,23-313,1
+1411,Leokadia,Bulińska,ul. Słoneczna,15,Tarnogród,23-420,1
+1412,Jacek,Burdek,Zalesie,12,Prusy Zalesie,32-010,1
+1413,Zuzanna,Burek,Słupeczno,37,Wysokie,23-145,1
+1414,Elżbieta,Burka,Międzyrzecka,41/37,Łuków,21-400,1
+1415,Czesława,Byczek,ul. Karskiego 19 B/4,,Rybnik,44-251,1
+1416,Danuta,Bystrowska,ul. Kościuszki,10/14,Biała Podlaska,21-500,1
+1417,Janina,Bzdal,Chwałowice,143,Radomyśl nad Sanem,37-445,1
+1418,Jadwiga,Studnicka,03 - 922 W a r s z a w a,,Warszawa,03-922,1
+1419,Edyta,Bąk,38 - 505 W o l i c a 5,7,W o l i c a 5 7,38-505,1
+1420,Elżbieta,Błaszczak,ul. Długosza,10/2,Warszawa,01-174,1
+1421,Jan,i Halina Błaszczakowie,ul. Szeroszewskiego,50/30,Puławy,24-100,1
+1422,Barbara,Błaziak,ul. Zachodnia,16,Lublin,20-620,1
+1423,"Jan,",Halina Błaziak,ul. Sieroszewskiego,50/30,Puławy,24-100,1
+1424,Patrycja,Błazik,Al. Bielska,145/4,Tychy,43-100,1
+1425,Olga,Błonarowicz,ul. Mickiewicza,4,Zamość,22-400,1
+1426,Maria,Błoniarz,ul. Architektów,3/34,Rzeszów,35-082,1
+1427,Anna,Kisiel,Kolonia Annobór,64 A,Lubartów,20-100,1
+1428,Jacek,Caban,ul. E. Romera,50/7,Lublin,20-473,1
+1429,Izabela,Cempa,33-334 Kamionka Wielka,176,Kamionka Wielka 176,33-334,1
+1430,Mirosława,Chamot,ul. Jaśminowa,21,Tarnogród,23-420,1
+1431,Jadwiga,Chlewicka,ul. Sowińskiego,41/10,Katowice,40-272,1
+1432,Bożena,Chmiel,Szaniawy-Poniaty,4,Trzebieszów,21-404,1
+1433,Elżbieta,Chmielowiec,ul. Janowska,41,Kraśnik,23-200,1
+1434,Misjonarze,Werbiści,ul. Sobieskiego,14,Lubliniec,42-700,1
+1435,Dominika,Chodkiewicz,ul. Urbanowicza,10/9,Lublin,20-291,1
+1436,Małgorzata,Chodkowska,ul. Słowicza,3/1,Lublin,20-336,1
+1437,Teresa,Chodkowska,ul. Sienkiewicza,10/15,Biłgoraj,23-400,1
+1438,Irena,Chowaniec,S t r a s z ę c i n 2,8,Straszęcin,39-218,1
+1439,Józefa,Chudy,ul. 3-go Maja,48/51,Jarosław,37-500,1
+1440,Krystyna,Chudziak,ul. Mickiewicza,4,Zamość,22-400,1
+1441,Elżbieta,Maria Chyż,ul. Makowa,3/1,Garbów,21-080,1
+1442,Misjonarze,Werbiści,ul. Łęczyńska,59/88,Lublin,20-313,1
+1443,Zofia,Cichońska,ul. Fantastyczna,11/33,Lublin,20-531,1
+1444,Elżbieta,Cichy,ul. Skrzyszowska,34,Wodzisław Śl.,44-300,1
+1445,Agnieszka,Ciechomska,ul. Zemborzycka 53/p.,109,Lublin,20-445,1
+1446,Janina,Ciemała,Zalesie,33,Górki Wielkie,43-436,1
+1447,Piotr,Cieśla,ul. Kaszubska,7/30,Jastrzębie - Zdrój,44-335,1
+1448,Beata,Cieślik,Drzewce,119,Nałęczów,24-150,1
+1449,Katarzyna,Cimek,Krzczonów Skałka,66,Krzczonów,23-110,1
+1450,Grażyna,Ciseł,ul. Fantastyczna,11/29,Lublin,20-531,1
+1451,Regina,Ciupak,B ł a ż e k,32,Batorz,23-320,1
+1452,Agnieszka,Ciężka,Dziekanów,91,Hrubieszów,22-500,1
+1453,Księża,Werbiści,21 - 030 U n i s z o w i c e,,Uniszowice,21-030,1
+1454,Irena,Cymborska,ul. Tomaszowska,220,Susiec,22-672,1
+1455,Janina,Czarna,Korchów Pierwszy,19,Księżpol,23-415,1
+1456,Barbara,Czarnecka,Piotrków Pierwszy,199,Piotrków Pierwszy,23-114,1
+1457,Teresa,Czarnowska,Gęsia,31/33,Lublin,20-719,1
+1458,Teresa,Czelusta,ul. Leopolda Staffa,3/48,MIELEC,39-300,1
+1459,Anna,Czepółkowska,ul. Kolonia Robotnicza,1/1,Frombork,14-530,1
+1460,Arkadiusz,Czerniak,ul. Krzywa,11,Włodawa,22-200,1
+1461,Tadeusz,Czerwiński,ul. Przemysłowa,3/11,Boguchwała,36-040,1
+1462,Krystyna,Czop,ul. Kościuszki,152/7,Biłgoraj,23-400,1
+1463,Krystyna,Czuba,ul. Cechowa,30,Kraków,30-614,1
+1464,Mieczysława,Czuba,ul. Łysogórska,18/25,Dębica,39-200,1
+1465,Leokadia,Ćwiek,ul. Konarskiego,11/27,Kozienice,26-900,1
+1466,Barbara,Daca,Borów,162,Annopol,23-235,1
+1467,Irena,Dajnowicz,ul. Gliniana,23/18,Lublin,20-616,1
+1468,Janina,Dardzińska,ul. 11-go Listopada,16/36,Kolno,18-500,1
+1469,Anna,Dawidowska,ul. Zamojska,42,Bełżec,22-670,1
+1470,Monika,Denkiewicz,ul. Tereszpol - Kukiełki,86,Tereszpol,23-407,1
+1471,Maria,Derkacz,ul. Stwosza,21,Lublin,20-439,1
+1472,Karolina,Dmitriew,ul. Ligonia,1/2,Lubliniec,42-700,1
+1473,Agnieszka,Dobrogoszcz,ul. Głębocznica,23/33,Nałęczów,24-150,1
+1474,Katarzyna,Dobrowolska,ul. Różana,3/46,Lublin,20-538,1
+1475,Urszula,Dolecka,ul. Twardowskiego,7 C,Oława,55-200,1
+1476,Wanda,Domagała,Kobylec,80,Łapanów,32-740,1
+1477,Andrzej,Domański,ul. Południowa,12/1,Radom,26-606,1
+1478,Alina,Dołęcka,ul. Graniczna,8,Zamość,22-400,1
+1479,Alfreda,Dragan,ul. Gombrowicza,13/17,Ustrzyki Dolne,38-700,1
+1480,Marta,Drela,ul. Nałkowskich,103/18,Lublin,20-470,1
+1481,Stanisław,Drop,ul. Berka Joselewicza,8/7,Lesko,38-600,1
+1482,Elżbieta,Drozd,ul. Niepodległości,4/21,Lublin,20-246,1
+1483,Natalia,Drozd,Blinów Pierwszy,94,Szastarka,23-225,1
+1484,Magdalena,Drzazga,ul. Paryska,7/4,Lublin,20-854,1
+1485,Anna,Dubiel,Wola Zarczycka,472,Wola Zarczycka,37-311,1
+1486,Teresa,Duda,ul. Jana Pawła II,6/7,Janów Lubelski,23-300,1
+1487,Irena,Dudka,ul. Krańcowa,113/35,Lublin,20-338,1
+1488,Irena,Dudkiewicz,ul. Norwida,5/13,Świdnik,21-040,1
+1489,Roman,Dyś,ul. Skarzyńskiego,12/64,Świdnik,21-040,1
+1490,Urszula,Dudziak,ul. Domeyki,8/40,Lublin,20-485,1
+1491,Anna,Dudzińska,ul. Cicha,3/32,Lubartów,21-100,1
+1492,Katarzyna,Dudzińska,ul. Piłsudskiego,27/1,Działoszyn,98-355,1
+1493,Jadwiga,Duma,ul. Frampolska,39 A,Poraj,23-450,1
+1494,Ewa,Dumkiewicz - Sprawka,U n i s z o w i c e 3,1 T,Motycz,21-030,1
+1495,Ewa,Dydziul,ul. Warszawska,5/15,Giżycko,11-500,1
+1496,Anna,Dyjach,Kocudza Górna,10,Dzwola,23-304,1
+1497,Teresa,Dykas,ul. Zdziarzec,120,Zdziarzec,39-311,1
+1498,Edward,Dymek,ul. Zakładowa,48,Lublin,20-820,1
+1499,Anna,Maria Dywan,ul. Szpinalskiego,2/104,Lublin,20-860,1
+1500,Irena,Dywan,ul. Zwierzyniecka,41/2,Tarnobrzeg,39-400,1
+1501,Maria,Działo,ul. Teligi,20,Mielec,39-300,1
+1502,Małgorzata,i Tadeusz Działo,ul. Wiejska,55,Mielec,39-300,1
+1503,Dorota,Dzieniak,ul. Piłsudskiego,53/41,Hrubieszów,22-500,1
+1504,Jolanta,Dzierźęga,ul. Chalotta,8/1,Rybnik,44-200,1
+1505,Tadeusz,Dziełak,ul. Sikorskiego,16/9,Ostrołęka,07-410,1
+1506,Katarzyna,i Jarosław,ul. Pana Balcera,8/46,Lublin,20-631,1
+1507,Wanda,Dąbrowska,ul. Kędziora,4/22,Mielec,39-300,1
+1508,LUIZA,DĄBSKA,ul. Pana Balcera,1/199,Lublin,20-631,1
+1509,Barbara,Dębowska,D ę b o w i c a,7A,Trzebieszów,21-404,1
+1510,Hanna,Długołęcka,ul. Curie - Skłodowskiej,1/5,Przasnysz,06-300,1

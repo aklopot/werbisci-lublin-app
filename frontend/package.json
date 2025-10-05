@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host --port 5173 --strictPort --clearScreen false",
+    "dev:debug": "vite --host --port 5173 --strictPort --clearScreen false --force",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import List, Optional
+from typing import List, Optional, Union
 
 from sqlalchemy import Select, and_, delete, or_, select
 from sqlalchemy.orm import Session
@@ -24,7 +24,7 @@ class AddressRepository:
         # Validate sort field
         valid_fields = [
             "id", "first_name", "last_name", "street", "apartment_no",
-            "city", "postal_code", "label_marked"
+            "city", "postal_code", "description", "label_marked"
         ]
         if sort_field not in valid_fields:
             sort_field = "id"
@@ -56,6 +56,7 @@ class AddressRepository:
         apartment_no: str | None,
         city: str,
         postal_code: str,
+        description: str | None = None,
     ) -> Address:
         address = Address(
             first_name=first_name,
@@ -64,6 +65,7 @@ class AddressRepository:
             apartment_no=apartment_no,
             city=city,
             postal_code=postal_code,
+            description=description,
         )
         db.add(address)
         db.commit()
@@ -93,6 +95,7 @@ class AddressRepository:
         apartment_no: str | None = None,
         city: str | None = None,
         postal_code: str | None = None,
+        description: Union[str, None, type(...)] = None,
         label_marked: bool | None = None,
     ) -> Address:
         if first_name is not None:
@@ -107,6 +110,10 @@ class AddressRepository:
             address.city = city
         if postal_code is not None:
             address.postal_code = postal_code
+        if description is not None or description is ...:
+            address.description = (
+                description if description is not ... else None
+            )
         if label_marked is not None:
             address.label_marked = label_marked
 
@@ -151,7 +158,7 @@ class AddressRepository:
         # Validate sort field
         valid_fields = [
             "id", "first_name", "last_name", "street", "apartment_no",
-            "city", "postal_code", "label_marked"
+            "city", "postal_code", "description", "label_marked"
         ]
         if sort_field not in valid_fields:
             sort_field = "id"

@@ -6,6 +6,7 @@ export interface Address {
   apartment_no: string | null
   city: string
   postal_code: string
+  description: string | null
   label_marked: boolean
 }
 
@@ -16,6 +17,7 @@ export interface AddressCreateInput {
   apartment_no?: string | null
   city: string
   postal_code: string
+  description?: string | null
 }
 
 export interface AddressUpdateInput {
@@ -25,6 +27,7 @@ export interface AddressUpdateInput {
   apartment_no?: string | null
   city?: string
   postal_code?: string
+  description?: string | null
   label_marked?: boolean
 }
 

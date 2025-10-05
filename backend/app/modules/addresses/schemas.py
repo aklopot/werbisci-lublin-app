@@ -10,6 +10,7 @@ class AddressBase(BaseModel):
     apartment_no: str | None = Field(default=None, max_length=50)
     city: str = Field(min_length=1, max_length=120)
     postal_code: str = Field(min_length=3, max_length=20)
+    description: str | None = Field(default=None, max_length=500)
 
 
 class AddressCreate(AddressBase):
@@ -23,6 +24,7 @@ class AddressUpdate(BaseModel):
     apartment_no: str | None = Field(default=None, max_length=50)
     city: str | None = Field(default=None, max_length=120)
     postal_code: str | None = Field(default=None, max_length=20)
+    description: str | None = Field(default=None, max_length=500)
     label_marked: bool | None = None
 
 
@@ -34,6 +36,7 @@ class AddressRead(BaseModel):
     apartment_no: str | None
     city: str
     postal_code: str
+    description: str | None
     label_marked: bool
 
     class Config:

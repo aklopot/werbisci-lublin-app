@@ -33,7 +33,7 @@ export const AppLayout: React.FC = () => {
           <div className="topbar-left" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <Link to="/app" className="brand" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               <img 
-                src="/assets/logo-werbisci-nazwa.png" 
+                src="/logo-werbisci-nazwa.png" 
                 alt="Werbiści logo" 
                 style={{ height: 32 }}
               />

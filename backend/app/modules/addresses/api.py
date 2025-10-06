@@ -14,7 +14,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 
 from app.core.deps import (
-    get_db, require_user, require_manager_qh, require_manager
+    get_db, require_user, require_manager_qh, require_admin
 )
 from .models import Address
 from .repositories import AddressRepository
@@ -127,7 +127,7 @@ def update_address(
 @router.delete("/clear-data")
 def clear_addresses_data(
     db: Session = Depends(get_db),
-    _: object = Depends(require_manager),
+    _: object = Depends(require_admin),
 ) -> dict:
     """Clear all data from addresses table. This operation cannot be undone."""
     try:
@@ -524,7 +524,7 @@ def import_addresses_csv(
 @router.post("/recreate-schema", status_code=status.HTTP_200_OK)
 def recreate_addresses_schema(
     db: Session = Depends(get_db),
-    _: object = Depends(require_manager),
+    _: object = Depends(require_admin),
 ) -> dict:
     """Drop and recreate addresses table with clean schema. This operation
     cannot be undone."""

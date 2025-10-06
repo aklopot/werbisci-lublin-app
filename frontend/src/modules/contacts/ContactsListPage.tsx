@@ -87,6 +87,7 @@ export const ContactsListPage: React.FC = () => {
 
   const canExport = currentUser?.role === 'manager' || currentUser?.role === 'admin'
   const canImport = canExport // Same permissions as export
+  const canManageDatabase = currentUser?.role === 'admin' // Only admin can manage database
 
   const handleFileImport = useCallback(async (file: File) => {
     if (!file.name.toLowerCase().endsWith('.csv')) {
@@ -259,7 +260,7 @@ export const ContactsListPage: React.FC = () => {
                       { label: 'Eksport PDF', onSelect: () => downloadFile('/api/addresses/export.pdf', 'addresses.pdf', 'application/pdf') },
                     ],
                   }] : []),
-                  {
+                  ...(canManageDatabase ? [{
                     label: 'Baza danych',
                     items: [
                       { 
@@ -275,7 +276,7 @@ export const ContactsListPage: React.FC = () => {
                         style: { color: '#dc3545' }
                       },
                     ],
-                  },
+                  }] : []),
                 ]} />
             )}
           </>

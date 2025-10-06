@@ -14,7 +14,9 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 @dataclass
 class EnvelopeOptions:
-    bold: bool = False
+    # bold: when True only the recipient's name line is bold; address
+    # lines always stay regular.
+    bold: bool = True  # default ON per requirement
     font_size: int = 14
 
 
@@ -210,7 +212,7 @@ def _format_recipient_address(address: Any) -> list[str]:
     name = f"{address.first_name} {address.last_name}".strip()
     street = address.street
     if getattr(address, "apartment_no", None):
-        street = f"{street} m. {address.apartment_no}"
+        street = f"{street} {address.apartment_no}"
     city_line = f"{address.postal_code} {address.city}".strip()
     return [name, street, city_line]
 
@@ -255,16 +257,16 @@ def generate_envelope_pdf(
     # Recipient (right)
     recipient_lines = _format_recipient_address(address)
     fonts = _register_unicode_fonts()
-    font_name = fonts["bold"] if opts.bold else fonts["regular"]
 
     # ================= Recipient block positioning & spacing ================
     # Move leftwards (decrease x) and upwards (increase start_y) per request.
     right_block_x = page_width * 0.50  # horizontal stays the same for now
-    # Move higher (closer to top). Previously 260.
-    start_y = page_height - 180  # raised higher (was 230)
+    # Move higher (closer to top). Previously 260 -> 230 -> 210 -> 180.
+    # Jeszcze wyżej:
+    start_y = page_height - 160  # higher position for recipient block
 
-    # Unified, slightly wider line spacing including the "Sz. P." prefix.
-    line_gap = int(opts.font_size * 1.35)
+    # Większe rozstrzelenie linii (było 1.35 * font_size) -> 1.50 * font_size.
+    line_gap = int(opts.font_size * 1.70)
     italic_size = max(10, opts.font_size - 2)
 
     pdf.setFont(fonts["italic"], italic_size)
@@ -272,10 +274,19 @@ def generate_envelope_pdf(
     pdf.drawString(right_block_x, y, "Sz. P.")
     y -= line_gap
 
-    pdf.setFont(font_name, opts.font_size)
-    for line in recipient_lines:
-        pdf.drawString(right_block_x, y, line)
+    # First recipient line = name, bold if option enabled
+    if recipient_lines:
+        name_line = recipient_lines[0]
+        pdf.setFont(
+            fonts["bold"] if opts.bold else fonts["regular"], opts.font_size
+        )
+        pdf.drawString(right_block_x, y, name_line)
         y -= line_gap
+        # Remaining address lines always regular (never bold)
+        pdf.setFont(fonts["regular"], opts.font_size)
+        for line in recipient_lines[1:]:
+            pdf.drawString(right_block_x, y, line)
+            y -= line_gap
 
     pdf.showPage()
     pdf.save()

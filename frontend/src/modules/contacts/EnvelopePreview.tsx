@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) => {
-  const [bold, setBold] = useState(false)
+  const [bold, setBold] = useState(true) // default: bold ON
   const [fontSize, setFontSize] = useState(14)
   const [blobUrl, setBlobUrl] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
@@ -17,7 +17,10 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
   const iframeRef = useRef<HTMLIFrameElement | null>(null)
   const prevUrlRef = useRef<string | null>(null)
 
-  const canSubmit = useMemo(() => Boolean(addressId) && fontSize >= 10 && fontSize <= 36, [addressId, fontSize])
+  const canSubmit = useMemo(
+    () => Boolean(addressId) && fontSize >= 10 && fontSize <= 36,
+    [addressId, fontSize]
+  )
 
   const buildPath = useCallback(() => {
     if (!addressId) return ''
@@ -42,11 +45,9 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
     }
   }, [buildPath, canSubmit])
 
+  // Initial load when dialog opens
   useEffect(() => {
-    if (open) {
-      void loadPreview()
-    }
-    // Cleanup blob URL on close/unmount
+    if (open) void loadPreview()
     return () => {
       if (prevUrlRef.current) {
         URL.revokeObjectURL(prevUrlRef.current)
@@ -54,6 +55,17 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
       }
     }
   }, [open])
+
+  // Auto refresh preview on parameter change (bold / fontSize / addressId)
+  useEffect(() => {
+    if (!open) return
+    if (!canSubmit) return
+    // small debounce to avoid rapid reload during fast typing
+    const handle = setTimeout(() => {
+      void loadPreview()
+    }, 250)
+    return () => clearTimeout(handle)
+  }, [bold, fontSize, addressId, canSubmit, open, loadPreview])
 
   const onPrint = useCallback(() => {
     const iframe = iframeRef.current
@@ -107,11 +119,11 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
         
         {/* Compact controls */}
         <div style={{ padding: '12px 20px', borderBottom: '1px solid #e0e0e0', backgroundColor: '#fafbfc' }}>
-          <form onSubmit={e => { e.preventDefault(); loadPreview() }} style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <input 
-                type="checkbox" 
-                checked={bold} 
+              <input
+                type="checkbox"
+                checked={bold}
                 onChange={e => setBold(e.target.checked)}
                 style={{ transform: 'scale(1.05)' }}
               />
@@ -119,46 +131,38 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
             </label>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <span style={{ fontWeight: 500, fontSize: '13px' }}>Rozmiar czcionki:</span>
-              <input 
-                className="input" 
-                type="number" 
-                min={10} 
-                max={36} 
-                step={1} 
-                value={fontSize} 
+              <input
+                className="input"
+                type="number"
+                min={10}
+                max={36}
+                step={1}
+                value={fontSize}
                 onChange={e => setFontSize(Number(e.target.value))}
                 style={{ width: 60, padding: '4px 6px', fontSize: '13px' }}
               />
             </label>
             <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
-              <button 
-                className="btn" 
-                type="submit" 
-                disabled={!canSubmit || loading}
-                style={{ padding: '6px 12px', fontSize: '13px' }}
-              >
-                {loading ? 'Ładowanie...' : 'Odśwież podgląd'}
-              </button>
-              <button 
-                className="btn" 
-                type="button" 
-                onClick={onPrint} 
+              <button
+                className="btn"
+                type="button"
+                onClick={onPrint}
                 disabled={!blobUrl}
                 style={{ padding: '6px 12px', fontSize: '13px' }}
               >
                 Drukuj
               </button>
-              <button 
-                className="btn primary" 
-                type="button" 
-                onClick={onSavePdf} 
+              <button
+                className="btn primary"
+                type="button"
+                onClick={onSavePdf}
                 disabled={!canSubmit}
                 style={{ padding: '6px 12px', fontSize: '13px' }}
               >
                 Zapisz PDF
               </button>
             </div>
-          </form>
+          </div>
           {error && <div className="error" style={{ marginTop: 8, padding: '6px 10px', fontSize: '13px' }}>{error}</div>}
         </div>
 

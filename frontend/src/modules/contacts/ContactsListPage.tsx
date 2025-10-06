@@ -237,7 +237,7 @@ export const ContactsListPage: React.FC = () => {
               groups={[{ label: 'Druk i podgląd', items: [{ label: 'Etykiety (3×7) – podgląd i PDF', onSelect: onLabelsClick }]}]}
             />
             <button className="btn primary" onClick={onAddClick}>Dodaj kontakt</button>
-            {(canImport || canExport) && (
+            {(canImport || canExport || canManageDatabase) && (
               <DropdownMenu
                 buttonLabel="Administracja bazy"
                 buttonAriaLabel="Menu administracji bazy danych"

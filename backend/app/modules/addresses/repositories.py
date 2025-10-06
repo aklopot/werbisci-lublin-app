@@ -95,7 +95,9 @@ class AddressRepository:
         apartment_no: str | None = None,
         city: str | None = None,
         postal_code: str | None = None,
-        description: Union[str, None, type(...)] = None,
+        # description sentinel:
+        #   Ellipsis => leave unchanged; None => clear; str => set
+        description: Union[str, None, object] = ...,  # Ellipsis value
         label_marked: bool | None = None,
     ) -> Address:
         if first_name is not None:
@@ -110,10 +112,9 @@ class AddressRepository:
             address.city = city
         if postal_code is not None:
             address.postal_code = postal_code
-        if description is not None or description is ...:
-            address.description = (
-                description if description is not ... else None
-            )
+        if description is not ...:
+            # Explicitly provided (may be None meaning clear)
+            address.description = description  # type: ignore[assignment]
         if label_marked is not None:
             address.label_marked = label_marked
 

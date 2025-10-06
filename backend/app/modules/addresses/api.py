@@ -4,9 +4,11 @@ from typing import List
 from io import StringIO, BytesIO
 import csv
 
+import logging
+
 from fastapi import (
     APIRouter, Depends, HTTPException, Query, Response, status, UploadFile,
-    File
+    File,
 )
 from sqlalchemy.orm import Session
 from sqlalchemy import text
@@ -18,6 +20,8 @@ from .models import Address
 from .repositories import AddressRepository
 from .schemas import AddressCreate, AddressRead, AddressUpdate
 from .services import AddressService
+
+logger = logging.getLogger("addresses.import")
 router = APIRouter(prefix="/api/addresses", tags=["addresses"])
 
 
@@ -333,71 +337,136 @@ def import_addresses_csv(
     db: Session = Depends(get_db),
     _: object = Depends(require_manager_qh),
 ) -> dict:
-    """Import addresses from CSV file. Ignores 'id' column and generates new
-    IDs.
+    """Import addresses from CSV file (simple deterministic path).
+
+        Wymagane kolumny:
+            first_name,last_name,street,apartment_no,city,postal_code,label_marked
+        Opcjonalna kolumna: description (aliasy: opis, uwagi, uwaga,
+            notatka, notatki, notes)
+    Kolumna id – ignorowana.
     """
     if not file.filename or not file.filename.lower().endswith('.csv'):
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="File must be a CSV file"
-        )
+        raise HTTPException(status_code=400, detail="File must be a CSV file")
 
     try:
-        # Read file content
-        content = file.file.read().decode('utf-8-sig')  # Handle BOM
-        csv_reader = csv.DictReader(StringIO(content))
+        content_raw = file.file.read().decode('utf-8-sig')
+        if not content_raw.strip():
+            raise HTTPException(status_code=400, detail="CSV file is empty")
 
-        # Validate headers
-        required_headers = {
-            'first_name', 'last_name', 'street', 'apartment_no',
-            'city', 'postal_code', 'label_marked'
+        # delimiter detection
+        head = content_raw[:2048]
+        delimiter = ','
+        try:
+            delimiter = csv.Sniffer().sniff(head, delimiters=',;').delimiter
+        except Exception:
+            if (
+                head.splitlines()
+                and head.splitlines()[0].count(';')
+                > head.splitlines()[0].count(',')
+            ):
+                delimiter = ';'
+
+        # Prepare DictReader with normalized header mapping
+        alias_map = {
+            'opis': 'description',
+            'uwagi': 'description',
+            'uwaga': 'description',
+            'notatka': 'description',
+            'notatki': 'description',
+            'notes': 'description',
         }
-        actual_headers = set(csv_reader.fieldnames or [])
 
-        # Check if all required headers are present
-        # (id is optional and will be ignored, description is also optional)
-        missing_headers = required_headers - actual_headers
-        if missing_headers:
+        # Manually parse first line to normalize headers, then rebuild CSV
+        sio_all = StringIO(content_raw)
+        raw_reader = csv.reader(sio_all, delimiter=delimiter)
+        try:
+            raw_headers = next(raw_reader)
+        except StopIteration:
             raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
+                status_code=400, detail="CSV has no header row"
+            )
+
+        logger.info(
+            "IMPORT CSV start file=%s delim=%s",  # noqa: G004
+            file.filename,
+            delimiter,
+        )
+        logger.info("RAW HEADER: %s", raw_headers)  # noqa: G004
+
+        normalized_headers = []
+        for h in raw_headers:
+            norm = h.strip().lower()
+            norm = alias_map.get(norm, norm)
+            normalized_headers.append(norm)
+
+        required = {
+            'first_name', 'last_name', 'street', 'apartment_no', 'city',
+            'postal_code', 'label_marked'
+        }
+        missing = [h for h in required if h not in normalized_headers]
+        logger.info(
+            "NORMALIZED HEADER: %s (missing=%s)",  # noqa: G004
+            normalized_headers,
+            missing,
+        )
+        if missing:
+            raise HTTPException(
+                status_code=400,
                 detail=(
-                    f"Missing required columns: "
-                    f"{', '.join(sorted(missing_headers))}"
+                    "Missing required columns: "
+                    + ', '.join(sorted(missing))
                 )
             )
 
+    # Reconstruct CSV with normalized headers so DictReader keys are std
+        rebuilt = StringIO()
+        writer = csv.writer(rebuilt, delimiter=delimiter)
+        writer.writerow(normalized_headers)
+        for row in raw_reader:
+            writer.writerow(row)
+        rebuilt.seek(0)
+
+        reader = csv.DictReader(rebuilt, delimiter=delimiter)
+        logger.info(
+            "BEGIN ROW PARSE has_description=%s",  # noqa: G004
+            'description' in normalized_headers,
+        )
+
         service = AddressService()
-        imported_count = 0
-        errors = []
-
-        # Start from 2 because header is row 1
-        for row_num, row in enumerate(csv_reader, start=2):
+        imported = 0
+        errors: list[str] = []
+        for line_no, row in enumerate(reader, start=2):  # start=2 (1=header)
             try:
-                # Extract data, ignoring 'id' column
-                first_name = row.get('first_name', '').strip()
-                last_name = row.get('last_name', '').strip()
-                street = row.get('street', '').strip()
-                apartment_no = row.get('apartment_no', '').strip() or None
-                city = row.get('city', '').strip()
-                postal_code = row.get('postal_code', '').strip()
-                description = row.get('description', '').strip() or None
-                label_marked = row.get('label_marked', '').strip().lower() in (
-                    '1', 'true', 'yes', 'tak'
+                if not any((v or '').strip() for v in row.values()):
+                    continue
+                first_name = (row.get('first_name') or '').strip()
+                last_name = (row.get('last_name') or '').strip()
+                street = (row.get('street') or '').strip()
+                apartment_no = (row.get('apartment_no') or '').strip() or None
+                city = (row.get('city') or '').strip()
+                postal_code = (row.get('postal_code') or '').strip()
+                description = (row.get('description') or '').strip() or None
+                if description:
+                    description = description[:500]
+                label_marked_raw = (
+                    (row.get('label_marked') or '').strip().lower()
                 )
+                label_marked = label_marked_raw in {
+                    '1', 'true', 'yes', 'tak', 'y', 't'
+                }
 
-                # Validate required fields
+                # validations
                 if not first_name:
-                    raise ValueError("first_name is required")
+                    raise ValueError('first_name is required')
                 if not last_name:
-                    raise ValueError("last_name is required")
+                    raise ValueError('last_name is required')
                 if not street:
-                    raise ValueError("street is required")
+                    raise ValueError('street is required')
                 if not city:
-                    raise ValueError("city is required")
+                    raise ValueError('city is required')
                 if not postal_code:
-                    raise ValueError("postal_code is required")
+                    raise ValueError('postal_code is required')
 
-                # Create address
                 address = service.create(
                     db,
                     first_name=first_name,
@@ -408,34 +477,47 @@ def import_addresses_csv(
                     postal_code=postal_code,
                     description=description,
                 )
-
-                # Update label_marked if needed
                 if label_marked:
+                    # don't touch description
                     service.update(
                         db,
                         address,
-                        label_marked=True
+                        label_marked=True,
+                        description=...,  # sentinel keep
                     )
-
-                imported_count += 1
-
-            except Exception as e:
-                errors.append(f"Row {row_num}: {str(e)}")
+                imported += 1
+            except Exception as exc:  # noqa: BLE001
+                logger.warning(
+                    "IMPORT ROW ERROR line=%s err=%s row=%s",  # noqa: G004
+                    line_no,
+                    exc,
+                    row,
+                )
+                errors.append(f"Row {line_no}: {exc}")
                 continue
 
+        logger.info(
+            "IMPORT FINISHED imported=%s errors=%s",  # noqa: G004
+            imported,
+            len(errors),
+        )
         return {
-            "imported_count": imported_count,
-            "total_rows": row_num - 1,  # Subtract 1 for header row
-            "errors": errors[:10],  # Limit errors to first 10
-            "has_more_errors": len(errors) > 10
+            'imported_count': imported,
+            'total_rows': line_no - 1 if 'line_no' in locals() else 0,
+            'errors': errors[:10],
+            'has_more_errors': len(errors) > 10,
+            'used_delimiter': delimiter,
+            'has_description_column': 'description' in normalized_headers,
+            'description_columns_used': (
+                ['description'] if 'description' in normalized_headers else []
+            ),
         }
-
     except HTTPException:
         raise
-    except Exception as e:
+    except Exception as exc:  # noqa: BLE001
         raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Error processing CSV file: {str(e)}"
+            status_code=400,
+            detail=f"Error processing CSV file: {exc}"
         )
 
 
@@ -450,12 +532,6 @@ def recreate_addresses_schema(
         # Drop the addresses table
         db.execute(text("DROP TABLE IF EXISTS addresses"))
         db.commit()
-
-        # Recreate the table using the model definition
-        from app.core.db import Base
-        from .models import Address
-        Base.metadata.create_all(bind=db.bind, tables=[Address.__table__])
-
         return {
             "message": "Addresses table has been recreated successfully",
             "status": "success"

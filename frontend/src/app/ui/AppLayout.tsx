@@ -40,7 +40,7 @@ export const AppLayout: React.FC = () => {
             </nav>
           </div>
           <div className="topbar-right" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span className="role-badge">{currentUser?.role}</span>
+            <span className="role-badge">{currentUser?.full_name}</span>
             <button className="btn" onClick={logout}>Wyloguj</button>
           </div>
         </header>

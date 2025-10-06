@@ -6,6 +6,7 @@ type UserRole = 'user' | 'manager' | 'admin'
 export interface CurrentUser {
   id: number
   role: UserRole
+  full_name: string
 }
 
 interface AuthState {
@@ -59,10 +60,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const payload = decodeJwtPayload(newToken)
       const userIdRaw = payload?.sub
       const roleRaw = payload?.role
+      const fullNameRaw = payload?.full_name
       const userId = typeof userIdRaw === 'string' ? parseInt(userIdRaw, 10) : Number(userIdRaw)
       const role: UserRole | undefined = roleRaw === 'admin' || roleRaw === 'manager' || roleRaw === 'user' ? roleRaw : undefined
-      if (Number.isFinite(userId) && role) {
-        setCurrentUser({ id: userId, role })
+      const fullName = typeof fullNameRaw === 'string' ? fullNameRaw : ''
+      if (Number.isFinite(userId) && role && fullName) {
+        setCurrentUser({ id: userId, role, full_name: fullName })
       } else {
         setCurrentUser(null)
       }

@@ -32,6 +32,6 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)) -> Token:
 
     token = create_access_token(
         user.id,
-        {"role": user.role},
+        {"role": user.role, "full_name": user.full_name},
     )
     return Token(access_token=token)

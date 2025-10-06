@@ -54,6 +54,8 @@ werbisci-lublin-app/
 cd backend
 python -m venv .venv_werbisci-lublin-app
 ./.venv_werbisci-lublin-app/Scripts/Activate.ps1
+linux:
+source .venv_werbisci-lublin-app/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```

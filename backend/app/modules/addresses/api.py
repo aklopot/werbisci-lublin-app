@@ -5,11 +5,15 @@ from io import StringIO, BytesIO
 import csv
 
 from fastapi import (
-    APIRouter, Depends, HTTPException, Query, Response, status, UploadFile, File
+    APIRouter, Depends, HTTPException, Query, Response, status, UploadFile,
+    File
 )
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 
-from app.core.deps import get_db, require_user, require_manager_qh
+from app.core.deps import (
+    get_db, require_user, require_manager_qh, require_manager
+)
 from .models import Address
 from .repositories import AddressRepository
 from .schemas import AddressCreate, AddressRead, AddressUpdate
@@ -114,6 +118,29 @@ def update_address(
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
     return updated
+
+
+@router.delete("/clear-data")
+def clear_addresses_data(
+    db: Session = Depends(get_db),
+    _: object = Depends(require_manager),
+) -> dict:
+    """Clear all data from addresses table. This operation cannot be undone."""
+    try:
+        # Delete all records from addresses table
+        db.execute(text("DELETE FROM addresses"))
+        db.commit()
+
+        return {
+            "message": "All addresses data has been cleared successfully",
+            "status": "success"
+        }
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error clearing addresses data: {str(e)}"
+        )
 
 
 @router.delete(
@@ -306,7 +333,9 @@ def import_addresses_csv(
     db: Session = Depends(get_db),
     _: object = Depends(require_manager_qh),
 ) -> dict:
-    """Import addresses from CSV file. Ignores 'id' column and generates new IDs."""
+    """Import addresses from CSV file. Ignores 'id' column and generates new
+    IDs.
+    """
     if not file.filename or not file.filename.lower().endswith('.csv'):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -319,19 +348,22 @@ def import_addresses_csv(
         csv_reader = csv.DictReader(StringIO(content))
 
         # Validate headers
-        expected_headers = {
+        required_headers = {
             'first_name', 'last_name', 'street', 'apartment_no',
-            'city', 'postal_code', 'description', 'label_marked'
+            'city', 'postal_code', 'label_marked'
         }
         actual_headers = set(csv_reader.fieldnames or [])
 
         # Check if all required headers are present
-        # (id is optional and will be ignored)
-        missing_headers = expected_headers - actual_headers
+        # (id is optional and will be ignored, description is also optional)
+        missing_headers = required_headers - actual_headers
         if missing_headers:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
-                detail=f"Missing required columns: {', '.join(missing_headers)}"
+                detail=(
+                    f"Missing required columns: "
+                    f"{', '.join(sorted(missing_headers))}"
+                )
             )
 
         service = AddressService()
@@ -404,4 +436,33 @@ def import_addresses_csv(
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Error processing CSV file: {str(e)}"
+        )
+
+
+@router.post("/recreate-schema", status_code=status.HTTP_200_OK)
+def recreate_addresses_schema(
+    db: Session = Depends(get_db),
+    _: object = Depends(require_manager),
+) -> dict:
+    """Drop and recreate addresses table with clean schema. This operation
+    cannot be undone."""
+    try:
+        # Drop the addresses table
+        db.execute(text("DROP TABLE IF EXISTS addresses"))
+        db.commit()
+
+        # Recreate the table using the model definition
+        from app.core.db import Base
+        from .models import Address
+        Base.metadata.create_all(bind=db.bind, tables=[Address.__table__])
+
+        return {
+            "message": "Addresses table has been recreated successfully",
+            "status": "success"
+        }
+    except Exception as e:
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error recreating addresses schema: {str(e)}"
         )

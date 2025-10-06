@@ -61,4 +61,17 @@ export async function importAddressesCsv(file: File): Promise<ImportResult> {
   return response.json()
 }
 
+export interface DatabaseOperationResult {
+  message: string
+  status: string
+}
+
+export async function clearAddressesData(): Promise<DatabaseOperationResult> {
+  return fetchJson<DatabaseOperationResult>('/api/addresses/clear-data', { method: 'DELETE' })
+}
+
+export async function recreateAddressesSchema(): Promise<DatabaseOperationResult> {
+  return fetchJson<DatabaseOperationResult>('/api/addresses/recreate-schema', { method: 'POST' })
+}
+
 

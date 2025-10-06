@@ -36,6 +36,10 @@ class AddressService:
         description: str | None = None,
     ) -> Address:
         normalized_postal = self._normalize_postal_code(postal_code)
+        processed_description = (
+            description.strip() if description and description.strip()
+            else None
+        )
         return self.repo.create(
             db,
             first_name=first_name.strip(),
@@ -44,10 +48,7 @@ class AddressService:
             apartment_no=(apartment_no.strip() if apartment_no else None),
             city=city.strip(),
             postal_code=normalized_postal,
-            description=(
-                description.strip() if description and description.strip()
-                else None
-            ),
+            description=processed_description,
         )
 
     def update(

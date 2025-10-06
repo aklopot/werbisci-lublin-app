@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import type { Address } from './types'
-import { createAddress, deleteAddress, listAddresses, searchAddresses, updateAddress, importAddressesCsv, type ImportResult } from './api'
+import { createAddress, deleteAddress, listAddresses, searchAddresses, updateAddress, importAddressesCsv, clearAddressesData, recreateAddressesSchema, type ImportResult, type DatabaseOperationResult } from './api'
 import { ContactForm } from './ContactForm'
 import { EnvelopePreview } from './EnvelopePreview'
 import { LabelsPreview } from './LabelsPreview'
@@ -28,6 +28,7 @@ export const ContactsListPage: React.FC = () => {
   const [labelsOpen, setLabelsOpen] = useState(false)
   const [importLoading, setImportLoading] = useState(false)
   const [importResult, setImportResult] = useState<ImportResult | null>(null)
+  const [dbOperationLoading, setDbOperationLoading] = useState(false)
 
   const refresh = useCallback(async () => {
     setLoading(true)
@@ -180,6 +181,49 @@ export const ContactsListPage: React.FC = () => {
     setOffset(0)
   }, [])
 
+  const handleClearData = useCallback(async () => {
+    const confirmed = confirm(
+      'UWAGA: Ta operacja usunie wszystkie dane z tabeli adresów.\n\n' +
+      'Czy na pewno chcesz kontynuować?\n\n' +
+      'Ta operacja nie może być cofnięta!'
+    )
+    
+    if (!confirmed) return
+
+    setDbOperationLoading(true)
+    try {
+      await clearAddressesData()
+      alert('Wszystkie dane zostały pomyślnie usunięte z tabeli adresów.')
+      await refresh()
+    } catch (err: any) {
+      alert(err?.message ?? 'Błąd podczas czyszczenia danych')
+    } finally {
+      setDbOperationLoading(false)
+    }
+  }, [refresh])
+
+  const handleRecreateSchema = useCallback(async () => {
+    const confirmed = confirm(
+      'UWAGA: Ta operacja usunie tabelę adresów i utworzy ją od nowa.\n\n' +
+      'Wszystkie dane zostaną bezpowrotnie utracone!\n\n' +
+      'Czy na pewno chcesz kontynuować?\n\n' +
+      'Ta operacja nie może być cofnięta!'
+    )
+    
+    if (!confirmed) return
+
+    setDbOperationLoading(true)
+    try {
+      await recreateAddressesSchema()
+      alert('Tabela adresów została pomyślnie odtworzona z czystym schematem.')
+      await refresh()
+    } catch (err: any) {
+      alert(err?.message ?? 'Błąd podczas odtwarzania schematu tabeli')
+    } finally {
+      setDbOperationLoading(false)
+    }
+  }, [refresh])
+
   return (
     <div className="content">
       <PageHeader
@@ -215,6 +259,23 @@ export const ContactsListPage: React.FC = () => {
                       { label: 'Eksport PDF', onSelect: () => downloadFile('/api/addresses/export.pdf', 'addresses.pdf', 'application/pdf') },
                     ],
                   }] : []),
+                  {
+                    label: 'Baza danych',
+                    items: [
+                      { 
+                        label: 'Wyczyść dane', 
+                        onSelect: handleClearData,
+                        disabled: dbOperationLoading,
+                        style: { color: '#dc3545' }
+                      },
+                      { 
+                        label: 'Utwórz czysty schemat bazy', 
+                        onSelect: handleRecreateSchema,
+                        disabled: dbOperationLoading,
+                        style: { color: '#dc3545' }
+                      },
+                    ],
+                  },
                 ]} />
             )}
           </>

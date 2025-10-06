@@ -5,6 +5,7 @@ type MenuItem = {
   label: string
   onSelect: () => void
   disabled?: boolean
+  style?: React.CSSProperties
 }
 
 type MenuGroup = {
@@ -149,6 +150,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({ buttonLabel, buttonA
                       fontSize: '20px',
                       minHeight: 52,
                       cursor: 'pointer',
+                      ...item.style,
                     }}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {

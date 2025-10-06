@@ -44,7 +44,10 @@ def _register_unicode_fonts() -> dict[str, str]:
             "AppSans",
             [
                 Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
-                Path("/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"),
+                Path(
+                    "/usr/share/fonts/truetype/liberation/"
+                    "LiberationSans-Regular.ttf"
+                ),
                 Path("C:/Windows/Fonts/arial.ttf"),
                 _get_assets_path() / "DejaVuSans.ttf",
             ],
@@ -53,7 +56,10 @@ def _register_unicode_fonts() -> dict[str, str]:
             "AppSans-Bold",
             [
                 Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"),
-                Path("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"),
+                Path(
+                    "/usr/share/fonts/truetype/liberation/"
+                    "LiberationSans-Bold.ttf"
+                ),
                 Path("C:/Windows/Fonts/arialbd.ttf"),
                 _get_assets_path() / "DejaVuSans-Bold.ttf",
             ],
@@ -61,8 +67,14 @@ def _register_unicode_fonts() -> dict[str, str]:
         (
             "AppSans-Italic",
             [
-                Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf"),
-                Path("/usr/share/fonts/truetype/liberation/LiberationSans-Italic.ttf"),
+                Path(
+                    "/usr/share/fonts/truetype/dejavu/"
+                    "DejaVuSans-Oblique.ttf"
+                ),
+                Path(
+                    "/usr/share/fonts/truetype/liberation/"
+                    "LiberationSans-Italic.ttf"
+                ),
                 Path("C:/Windows/Fonts/ariali.ttf"),
                 _get_assets_path() / "DejaVuSans-Oblique.ttf",
             ],
@@ -76,7 +88,10 @@ def _register_unicode_fonts() -> dict[str, str]:
                 if p.exists():
                     pdfmetrics.registerFont(TTFont(font_name, str(p)))
                     registered[font_name] = font_name
-                    print(f"Successfully registered font: {font_name} from {p}")
+                    print(
+                        f"Successfully registered font: {font_name} "
+                        f"from {p}"
+                    )
                     break
             except Exception as e:
                 print(f"Failed to register font {font_name} from {p}: {e}")
@@ -102,56 +117,93 @@ def _draw_sender_block(
 ) -> None:
     assets_dir = _get_assets_path()
     logo_path = assets_dir / "logo.png"
+    # ================= Configuration constants (easy to tweak) ==============
+    # Horizontal offset of the whole sender block (logo + text) from the left.
+    # (Original was 36). We move a bit towards the page center as requested.
+    X_LOGO = 96  # moved further right (previously 54)
+    # Distance from top (original top margin 36). We lower slightly
+    # ("delikatnie obniżamy").
+    TOP_MARGIN = 48
+    # Target logo width (original 72). "Zmniejszamy logo (dość mocno)".
+    LOGO_WIDTH = 38
+    # Gap between logo and text (original 12) -> "bliżej siebie".
+    LOGO_TEXT_GAP = 6
+    # Sender line heights / spacing
+    SENDER_FIRST_LINE_FONT_SIZE = 11
+    SENDER_OTHER_LINES_FONT_SIZE = 10
+    SENDER_LINE_SPACING = 11  # was 12; slightly tighter
 
-    # Top-left placement for logo
-    x_logo = 36
-    y_logo_top = page_height - 36
+    # ===========================================================================
 
-    # Draw logo (smaller) and sender text to the right of the logo
-    logo_width = 72  # smaller logo
+    # Compute top coordinate
+    y_logo_top = page_height - TOP_MARGIN
+
+    # Draw (smaller) logo
+    logo_width = LOGO_WIDTH
     logo_height = None
-    if logo_path.exists():
-        try:
+    try:
+        if logo_path.exists():
             img = ImageReader(str(logo_path))
             iw, ih = img.getSize()
             aspect = ih / float(iw) if iw else 1.0
             logo_height = logo_width * aspect
             pdf.drawImage(
                 img,
-                x_logo,
+                X_LOGO,
                 y_logo_top - logo_height,
                 width=logo_width,
                 height=logo_height,
                 preserveAspectRatio=True,
                 mask="auto",
             )
-        except Exception:
-            logo_height = 24
-            pdf.setFont("Helvetica-Bold", 16)
-            pdf.drawString(x_logo, y_logo_top - 18, "WERBISCI")
-    else:
-        logo_height = 24
-        pdf.setFont("Helvetica-Bold", 16)
-        pdf.drawString(x_logo, y_logo_top - 18, "WERBISCI")
+        else:
+            raise FileNotFoundError(str(logo_path))
+    except Exception:
+        # Fallback text if logo not available
+        logo_height = 20
+        pdf.setFont("Helvetica-Bold", 14)
+        pdf.drawString(X_LOGO, y_logo_top - 16, "WERBISCI")
 
-    # Sender address block placed to the right of the logo
-    text_x = x_logo + logo_width + 12
-    text_y = y_logo_top - 18
+    # Sender text block definition
     sender_lines = [
         "Misjonarze Werbiści",
         "ul. Jagiellońska 45",
         "20-806 Lublin",
     ]
-    # First line bold, rest regular
     fonts = _register_unicode_fonts()
-    pdf.setFont(fonts["bold"], 11)
-    pdf.drawString(text_x, text_y, sender_lines[0])
-    line_height = 12
-    pdf.setFont(fonts["regular"], 10)
-    text_y -= line_height
-    for line in sender_lines[1:]:
-        pdf.drawString(text_x, text_y, line)
-        text_y -= line_height
+
+    # Compute max width to center each line relative to the widest
+    # ("wyśrodkować względem siebie").
+    widths: list[float] = []
+    for i, line in enumerate(sender_lines):
+        if i == 0:
+            w = pdf.stringWidth(
+                line, fonts["bold"], SENDER_FIRST_LINE_FONT_SIZE
+            )
+        else:
+            w = pdf.stringWidth(
+                line, fonts["regular"], SENDER_OTHER_LINES_FONT_SIZE
+            )
+        widths.append(w)
+    block_width = max(widths)
+
+    # Left edge of text block
+    text_block_left = X_LOGO + logo_width + LOGO_TEXT_GAP
+    # Vertical start baseline for first line (slightly below top of logo)
+    # Gentle vertical alignment tweak of text block relative to logo height
+    text_y = y_logo_top - (logo_height * 0.35)
+
+    # Draw first (bold) line centered inside block_width
+    center_x = text_block_left + block_width / 2
+    pdf.setFont(fonts["bold"], SENDER_FIRST_LINE_FONT_SIZE)
+    pdf.drawString(center_x - widths[0] / 2, text_y, sender_lines[0])
+
+    # Draw remaining lines centered, with consistent spacing
+    pdf.setFont(fonts["regular"], SENDER_OTHER_LINES_FONT_SIZE)
+    text_y -= SENDER_LINE_SPACING
+    for idx, line in enumerate(sender_lines[1:], start=1):
+        pdf.drawString(center_x - widths[idx] / 2, text_y, line)
+        text_y -= SENDER_LINE_SPACING
 
 
 def _format_recipient_address(address: Any) -> list[str]:
@@ -205,18 +257,21 @@ def generate_envelope_pdf(
     fonts = _register_unicode_fonts()
     font_name = fonts["bold"] if opts.bold else fonts["regular"]
 
-    # Place recipient in the right-middle area, slightly lower
-    right_block_x = page_width * 0.58
-    start_y = page_height - 320
-    line_gap = int(opts.font_size * 1.25)
+    # ================= Recipient block positioning & spacing ================
+    # Move leftwards (decrease x) and upwards (increase start_y) per request.
+    right_block_x = page_width * 0.50  # horizontal stays the same for now
+    # Move higher (closer to top). Previously 260.
+    start_y = page_height - 230
 
-    # Prefix line "Sz. P." above the name
-    pdf.setFont(fonts["italic"], max(10, opts.font_size - 2))
+    # Unified, slightly wider line spacing including the "Sz. P." prefix.
+    line_gap = int(opts.font_size * 1.35)
+    italic_size = max(10, opts.font_size - 2)
+
+    pdf.setFont(fonts["italic"], italic_size)
     y = start_y
     pdf.drawString(right_block_x, y, "Sz. P.")
-    y -= max(12, int((opts.font_size - 2) * 1.2))
+    y -= line_gap
 
-    # Draw recipient lines
     pdf.setFont(font_name, opts.font_size)
     for line in recipient_lines:
         pdf.drawString(right_block_x, y, line)

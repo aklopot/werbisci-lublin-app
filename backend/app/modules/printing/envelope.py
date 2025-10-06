@@ -118,7 +118,7 @@ def _draw_sender_block(
     page_height: float,
 ) -> None:
     assets_dir = _get_assets_path()
-    logo_path = assets_dir / "logo.png"
+    logo_path = assets_dir / "logo-werbisci-nazwa.png"
     # ================= Configuration constants (easy to tweak) ==============
     # Horizontal offset of the whole sender block (logo + text) from the left.
     # (Original was 36). We move a bit towards the page center as requested.

@@ -31,7 +31,13 @@ export const AppLayout: React.FC = () => {
       <div className="main">
         <header className="topbar">
           <div className="topbar-left" style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <Link to="/app" className="brand">Werbiści</Link>
+            <Link to="/app" className="brand" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <img 
+                src="/assets/logo-werbisci-nazwa.png" 
+                alt="Werbiści logo" 
+                style={{ height: 32 }}
+              />
+            </Link>
             <nav className="topnav" style={{ display: 'inline-flex', gap: 8 }}>
               <NavLink to="/app/contacts" className={({ isActive }) => isActive ? 'active' : ''}>Baza kontaktów</NavLink>
               {currentUser?.role === 'admin' && (

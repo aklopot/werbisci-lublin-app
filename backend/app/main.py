@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
+from pathlib import Path
 
 from app.core.config import get_settings
 from app.core.db import Base, engine, SessionLocal
@@ -21,6 +23,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Static files
+assets_path = Path(__file__).parent / "assets"
+app.mount("/assets", StaticFiles(directory=str(assets_path)), name="assets")
 
 # DB init
 Base.metadata.create_all(bind=engine)

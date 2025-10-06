@@ -532,6 +532,11 @@ def recreate_addresses_schema(
         # Drop the addresses table
         db.execute(text("DROP TABLE IF EXISTS addresses"))
         db.commit()
+
+        # Recreate the table using SQLAlchemy metadata
+        from app.core.db import Base
+        Base.metadata.create_all(bind=db.bind, tables=[Address.__table__])
+
         return {
             "message": "Addresses table has been recreated successfully",
             "status": "success"

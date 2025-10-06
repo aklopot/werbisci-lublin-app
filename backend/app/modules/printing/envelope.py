@@ -120,17 +120,17 @@ def _draw_sender_block(
     # ================= Configuration constants (easy to tweak) ==============
     # Horizontal offset of the whole sender block (logo + text) from the left.
     # (Original was 36). We move a bit towards the page center as requested.
-    X_LOGO = 96  # moved further right (previously 54)
+    X_LOGO = 105  # moved further right (previously 54)
     # Distance from top (original top margin 36). We lower slightly
     # ("delikatnie obniżamy").
-    TOP_MARGIN = 48
+    TOP_MARGIN = 55
     # Target logo width (original 72). "Zmniejszamy logo (dość mocno)".
-    LOGO_WIDTH = 38
+    LOGO_WIDTH = 34
     # Gap between logo and text (original 12) -> "bliżej siebie".
     LOGO_TEXT_GAP = 6
     # Sender line heights / spacing
-    SENDER_FIRST_LINE_FONT_SIZE = 11
-    SENDER_OTHER_LINES_FONT_SIZE = 10
+    SENDER_FIRST_LINE_FONT_SIZE = 10
+    SENDER_OTHER_LINES_FONT_SIZE = 9
     SENDER_LINE_SPACING = 11  # was 12; slightly tighter
 
     # ===========================================================================
@@ -261,7 +261,7 @@ def generate_envelope_pdf(
     # Move leftwards (decrease x) and upwards (increase start_y) per request.
     right_block_x = page_width * 0.50  # horizontal stays the same for now
     # Move higher (closer to top). Previously 260.
-    start_y = page_height - 230
+    start_y = page_height - 180  # raised higher (was 230)
 
     # Unified, slightly wider line spacing including the "Sz. P." prefix.
     line_gap = int(opts.font_size * 1.35)

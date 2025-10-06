@@ -51,6 +51,17 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
     }
   }, [open])
 
+  // Auto refresh preview on parameter change (fontSize)
+  useEffect(() => {
+    if (!open) return
+    if (!canSubmit) return
+    // small debounce to avoid rapid reload during fast typing
+    const handle = setTimeout(() => {
+      void loadPreview()
+    }, 250)
+    return () => clearTimeout(handle)
+  }, [fontSize, canSubmit, open, loadPreview])
+
   const onPrint = useCallback(() => {
     const iframe = iframeRef.current
     if (iframe && iframe.contentWindow) {
@@ -103,7 +114,7 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
         
         {/* Compact controls */}
         <div style={{ padding: '12px 20px', borderBottom: '1px solid #e0e0e0', backgroundColor: '#fafbfc' }}>
-          <form onSubmit={e => { e.preventDefault(); loadPreview() }} style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <span style={{ fontWeight: 500, fontSize: '13px' }}>Rozmiar czcionki:</span>
               <input 
@@ -118,14 +129,6 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
               />
             </label>
             <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
-              <button 
-                className="btn" 
-                type="submit" 
-                disabled={!canSubmit || loading}
-                style={{ padding: '6px 12px', fontSize: '13px' }}
-              >
-                {loading ? 'Ładowanie...' : 'Generuj etykiety'}
-              </button>
               <button 
                 className="btn" 
                 type="button" 
@@ -145,7 +148,7 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
                 Zapisz PDF
               </button>
             </div>
-          </form>
+          </div>
           <div style={{ fontSize: 12, color: '#666', marginTop: 8 }}>
             Uwaga: Generowane są tylko rekordy oznaczone jako „etykieta".
           </div>

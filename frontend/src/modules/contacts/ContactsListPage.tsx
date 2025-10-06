@@ -234,7 +234,7 @@ export const ContactsListPage: React.FC = () => {
             <DropdownMenu
               buttonLabel="Etykiety"
               buttonAriaLabel="Menu etykiet"
-              groups={[{ label: 'Druk i podgląd', items: [{ label: 'Etykiety (3×7) – podgląd i PDF', onSelect: onLabelsClick }]}]}
+              groups={[{ label: 'Druk i podgląd', items: [{ label: 'Etykiety (3×7)', onSelect: onLabelsClick }]}]}
             />
             <button className="btn primary" onClick={onAddClick}>Dodaj kontakt</button>
             {(canImport || canExport || canManageDatabase) && (

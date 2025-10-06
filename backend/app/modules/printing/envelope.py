@@ -257,6 +257,7 @@ def generate_envelope_pdf(
     # Recipient (right)
     recipient_lines = _format_recipient_address(address)
     fonts = _register_unicode_fonts()
+    pdf.setTitle("Koperta")
 
     # ================= Recipient block positioning & spacing ================
     # Move leftwards (decrease x) and upwards (increase start_y) per request.

@@ -95,7 +95,7 @@ def generate_labels_pdf(addresses: List[Any], font_size: int = 11) -> bytes:
             # Calculate different line gaps
             normal_gap = int(font_size * 1.2)
             name_to_address_gap = int(font_size * 2.2)  # Reduced from 3.0
-            address_lines_gap = int(font_size * 1.5)   # Increased from 0.8
+            address_lines_gap = int(font_size * 1.6)   # Increased from 0.8
             
             # Calculate total text block height with different gaps
             total_height = len(display_lines) * font_size
@@ -108,7 +108,12 @@ def generate_labels_pdf(addresses: List[Any], font_size: int = 11) -> bytes:
                 total_height += name_to_address_gap
             
             # Calculate starting Y position to center text block vertically
-            start_y = cell_center_y + (total_height / 2) - font_size
+            # Add small offset to move text slightly down (more space above name)
+            vertical_offset = font_size * 0.3  # 30% of font size as top margin
+            start_y = (
+                cell_center_y + (total_height / 2) - font_size
+                - vertical_offset
+            )
 
             # Draw lines centered horizontally and vertically
             y = start_y

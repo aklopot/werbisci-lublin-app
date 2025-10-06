@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
-  const [fontSize, setFontSize] = useState(11)
+  const [fontSize, setFontSize] = useState(12)
   const [blobUrl, setBlobUrl] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -148,9 +148,6 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
                 Zapisz PDF
               </button>
             </div>
-          </div>
-          <div style={{ fontSize: 12, color: '#666', marginTop: 8 }}>
-            Uwaga: Generowane są tylko rekordy oznaczone jako „etykieta".
           </div>
           {error && <div className="error" style={{ marginTop: 8, padding: '6px 10px', fontSize: '13px' }}>{error}</div>}
         </div>

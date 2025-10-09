@@ -344,19 +344,16 @@ def generate_envelope_pdf(
     # Recipient (right)
     recipient_lines = _format_recipient_address(address)
     fonts = _register_unicode_fonts()
-    pdf.setTitle("Koperta")
+    pdf.setAuthor("Misjonarze Werbisci Lublin")
+    if fmt == "A4":
+        pdf.setTitle("Dokument A4")
+    else:
+        pdf.setTitle("Koperta C6")
 
     # ================= Recipient block positioning & spacing ================
-    if fmt == "A4":
-        right_block_x = page_width * 0.50
-        start_y = page_height - 160
-        line_gap = int(opts.font_size * 1.70)
-    else:  # C6 landscape – jeszcze niżej blok odbiorcy
-        # Obniżamy do 74% wysokości (poprzednio 70%).
-        start_y = page_height * 0.74
-        # Delikatnie przesuwamy bardziej w prawo niż środek.
-        right_block_x = page_width * 0.50
-        line_gap = int(opts.font_size * 1.55)
+    right_block_x = page_width * 0.50
+    start_y = page_height - 160
+    line_gap = int(opts.font_size * 1.70)
     italic_size = max(10, opts.font_size - 2)
 
     # Unified drawing (A4 + C6) with computed positioning

@@ -99,7 +99,7 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
       <div className="dialog" style={{ width: 1200, maxWidth: '95vw', height: '85vh' }}>
         {/* Header with title and close button */}
         <div className="dialog-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderBottom: '1px solid #e0e0e0' }}>
-          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Podgląd koperty</h3>
+          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Podgląd wydruku - Koperta</h3>
           <button 
             className="btn" 
             onClick={onClose}
@@ -122,6 +122,17 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
         <div style={{ padding: '12px 20px', borderBottom: '1px solid #e0e0e0', backgroundColor: '#fafbfc' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontWeight: 500, fontSize: '13px' }}>Format:</span>
+              <select
+                value={format}
+                onChange={e => setFormat(e.target.value as 'A4' | 'C6')}
+                style={{ padding: '4px 6px', fontSize: '13px' }}
+              >
+                <option value="A4">Dokument A4</option>
+                <option value="C6">Koperta C6 (114×162 mm)</option>
+              </select>
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <input
                 type="checkbox"
                 checked={bold}
@@ -142,17 +153,6 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
                 onChange={e => setFontSize(Number(e.target.value))}
                 style={{ width: 60, padding: '4px 6px', fontSize: '13px' }}
               />
-            </label>
-            <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ fontWeight: 500, fontSize: '13px' }}>Format:</span>
-              <select
-                value={format}
-                onChange={e => setFormat(e.target.value as 'A4' | 'C6')}
-                style={{ padding: '4px 6px', fontSize: '13px' }}
-              >
-                <option value="A4">Dokument A4</option>
-                <option value="C6">Koperta C6 (114×162 mm)</option>
-              </select>
             </label>
             <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
               <button

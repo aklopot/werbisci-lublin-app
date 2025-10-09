@@ -64,6 +64,7 @@ def generate_labels_pdf(addresses: List[Any], font_size: int = 11) -> bytes:
 
     fonts = _register_unicode_fonts()
     pdf.setTitle("Etykiety 3x7")
+    pdf.setAuthor("Misjonarze Werbisci Lublin")
 
     for page_items in _iter_in_pages(addresses, per_page):
         for idx, address in enumerate(page_items):

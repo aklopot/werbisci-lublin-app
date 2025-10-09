@@ -93,7 +93,7 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
       <div className="dialog" style={{ width: 1200, maxWidth: '95vw', height: '85vh' }}>
         {/* Header with title and close button */}
         <div className="dialog-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderBottom: '1px solid #e0e0e0' }}>
-          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Podgląd etykiet 3×7</h3>
+          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Podgląd wydruku - Etykiety 3×7</h3>
           <button 
             className="btn" 
             onClick={onClose}

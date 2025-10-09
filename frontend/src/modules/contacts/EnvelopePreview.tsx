@@ -10,6 +10,7 @@ interface Props {
 export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) => {
   const [bold, setBold] = useState(true) // default: bold ON
   const [fontSize, setFontSize] = useState(14)
+  const [format, setFormat] = useState<'A4' | 'C6'>('C6')
   const [blobUrl, setBlobUrl] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -24,9 +25,9 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
 
   const buildPath = useCallback(() => {
     if (!addressId) return ''
-    const params = new URLSearchParams({ bold: String(bold), font_size: String(fontSize) })
+    const params = new URLSearchParams({ bold: String(bold), font_size: String(fontSize), format })
     return `/api/print/envelope/${addressId}?${params.toString()}`
-  }, [addressId, bold, fontSize])
+  }, [addressId, bold, fontSize, format])
 
   const loadPreview = useCallback(async () => {
     if (!canSubmit) return
@@ -65,7 +66,7 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
       void loadPreview()
     }, 250)
     return () => clearTimeout(handle)
-  }, [bold, fontSize, addressId, canSubmit, open, loadPreview])
+  }, [bold, fontSize, format, addressId, canSubmit, open, loadPreview])
 
   const onPrint = useCallback(() => {
     const iframe = iframeRef.current
@@ -141,6 +142,17 @@ export const EnvelopePreview: React.FC<Props> = ({ addressId, open, onClose }) =
                 onChange={e => setFontSize(Number(e.target.value))}
                 style={{ width: 60, padding: '4px 6px', fontSize: '13px' }}
               />
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontWeight: 500, fontSize: '13px' }}>Format:</span>
+              <select
+                value={format}
+                onChange={e => setFormat(e.target.value as 'A4' | 'C6')}
+                style={{ padding: '4px 6px', fontSize: '13px' }}
+              >
+                <option value="A4">Dokument A4</option>
+                <option value="C6">Koperta C6 (114×162 mm)</option>
+              </select>
             </label>
             <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
               <button

@@ -17,6 +17,7 @@ def print_envelope(
     address_id: int,
     bold: bool = Query(default=False),
     font_size: int = Query(default=14, ge=10, le=36),
+    format: str = Query(default="C6", pattern="^(A4|C6)$"),
     db: Session = Depends(get_db),
     _: object = Depends(require_user),
 ) -> Response:
@@ -28,6 +29,7 @@ def print_envelope(
     pdf_bytes = generate_envelope_pdf(
         address,
         EnvelopeOptions(bold=bold, font_size=font_size),
+        format=format,
     )
     return Response(content=pdf_bytes, media_type="application/pdf")
 

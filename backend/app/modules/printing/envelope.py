@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from reportlab.lib.pagesizes import A4
+from reportlab.lib.units import mm
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
@@ -208,6 +209,80 @@ def _draw_sender_block(
         text_y -= SENDER_LINE_SPACING
 
 
+def _draw_sender_block_c6(
+    pdf: canvas.Canvas,
+    page_width: float,
+    page_height: float,
+) -> None:
+    """Compact sender for C6 – bardziej w lewo i wyżej zgodnie z prośbą.
+
+    Używa tego samego logo co wersja A4, ale:
+    - mniejszy X_LOGO
+    - mniejszy TOP_MARGIN (wyżej)
+    - delikatnie pomniejszone fonty
+    """
+    assets_dir = _get_assets_path()
+    logo_path = assets_dir / "logo.png"
+    from reportlab.lib.utils import ImageReader  # local import if needed
+
+    X_LOGO = 40  # bardziej w lewo
+    TOP_MARGIN = 38  # wyżej (mniejszy margines od góry)
+    LOGO_WIDTH = 32
+    LOGO_TEXT_GAP = 6
+    SENDER_FIRST_LINE_FONT_SIZE = 9
+    SENDER_OTHER_LINES_FONT_SIZE = 8
+    SENDER_LINE_SPACING = 10
+
+    y_logo_top = page_height - TOP_MARGIN
+    logo_height = 18
+    try:
+        if logo_path.exists():
+            img = ImageReader(str(logo_path))
+            iw, ih = img.getSize()
+            aspect = ih / float(iw) if iw else 1.0
+            logo_height = LOGO_WIDTH * aspect
+            pdf.drawImage(
+                img,
+                X_LOGO,
+                y_logo_top - logo_height,
+                width=LOGO_WIDTH,
+                height=logo_height,
+                preserveAspectRatio=True,
+                mask="auto",
+            )
+    except Exception:
+        pass
+
+    sender_lines = [
+        "Misjonarze Werbiści",
+        "ul. Jagiellońska 45",
+        "20-806 Lublin",
+    ]
+    fonts = _register_unicode_fonts()
+    widths: list[float] = []
+    for i, line in enumerate(sender_lines):
+        if i == 0:
+            w = pdf.stringWidth(
+                line, fonts["bold"], SENDER_FIRST_LINE_FONT_SIZE
+            )
+        else:
+            w = pdf.stringWidth(
+                line, fonts["regular"], SENDER_OTHER_LINES_FONT_SIZE
+            )
+        widths.append(w)
+    block_width = max(widths)
+    text_block_left = X_LOGO + LOGO_WIDTH + LOGO_TEXT_GAP
+    center_x = text_block_left + block_width / 2
+    text_y = y_logo_top - (logo_height * 0.30)
+    pdf.setFont(fonts["bold"], SENDER_FIRST_LINE_FONT_SIZE)
+    pdf.drawString(center_x - widths[0] / 2, text_y, sender_lines[0])
+    pdf.setFont(fonts["regular"], SENDER_OTHER_LINES_FONT_SIZE)
+    text_y -= SENDER_LINE_SPACING
+    for idx, line in enumerate(sender_lines[1:], start=1):
+        pdf.drawString(center_x - widths[idx] / 2, text_y, line)
+        text_y -= SENDER_LINE_SPACING
+
+
 def _format_recipient_address(address: Any) -> list[str]:
     name = f"{address.first_name} {address.last_name}".strip()
     street = address.street
@@ -220,8 +295,9 @@ def _format_recipient_address(address: Any) -> list[str]:
 def generate_envelope_pdf(
     address: Any,
     options: EnvelopeOptions | dict | None = None,
+    format: str = "A4",
 ) -> bytes:
-    """Generate an A4 PDF for an envelope.
+    """Generate an envelope PDF (A4 or C6).
 
     Sender is placed on the left, recipient on the right.
 
@@ -247,12 +323,23 @@ def generate_envelope_pdf(
     if opts.font_size > 36:
         opts.font_size = 36
 
-    buffer = BytesIO()
-    page_width, page_height = A4
-    pdf = canvas.Canvas(buffer, pagesize=A4)
+    # Select page size
+    fmt = format.upper() if isinstance(format, str) else "A4"
+    if fmt == "C6":
+        # C6 physical size 114 x 162 mm; use landscape (162 wide x 114 high)
+        page_width, page_height = (162 * mm, 114 * mm)
+    else:
+        page_width, page_height = A4
+        fmt = "A4"
 
-    # Sender (left)
-    _draw_sender_block(pdf, page_width, page_height)
+    buffer = BytesIO()
+    pdf = canvas.Canvas(buffer, pagesize=(page_width, page_height))
+
+    # Sender block per format
+    if fmt == "C6":
+        _draw_sender_block_c6(pdf, page_width, page_height)
+    else:
+        _draw_sender_block(pdf, page_width, page_height)
 
     # Recipient (right)
     recipient_lines = _format_recipient_address(address)
@@ -260,30 +347,31 @@ def generate_envelope_pdf(
     pdf.setTitle("Koperta")
 
     # ================= Recipient block positioning & spacing ================
-    # Move leftwards (decrease x) and upwards (increase start_y) per request.
-    right_block_x = page_width * 0.50  # horizontal stays the same for now
-    # Move higher (closer to top). Previously 260 -> 230 -> 210 -> 180.
-    # Jeszcze wyżej:
-    start_y = page_height - 160  # higher position for recipient block
-
-    # Większe rozstrzelenie linii (było 1.35 * font_size) -> 1.50 * font_size.
-    line_gap = int(opts.font_size * 1.70)
+    if fmt == "A4":
+        right_block_x = page_width * 0.50
+        start_y = page_height - 160
+        line_gap = int(opts.font_size * 1.70)
+    else:  # C6 landscape – jeszcze niżej blok odbiorcy
+        # Obniżamy do 74% wysokości (poprzednio 70%).
+        start_y = page_height * 0.74
+        # Delikatnie przesuwamy bardziej w prawo niż środek.
+        right_block_x = page_width * 0.50
+        line_gap = int(opts.font_size * 1.55)
     italic_size = max(10, opts.font_size - 2)
 
+    # Unified drawing (A4 + C6) with computed positioning
     pdf.setFont(fonts["italic"], italic_size)
     y = start_y
     pdf.drawString(right_block_x, y, "Sz. P.")
     y -= line_gap
-
-    # First recipient line = name, bold if option enabled
     if recipient_lines:
         name_line = recipient_lines[0]
         pdf.setFont(
-            fonts["bold"] if opts.bold else fonts["regular"], opts.font_size
+            fonts["bold"] if opts.bold else fonts["regular"],
+            opts.font_size,
         )
         pdf.drawString(right_block_x, y, name_line)
         y -= line_gap
-        # Remaining address lines always regular (never bold)
         pdf.setFont(fonts["regular"], opts.font_size)
         for line in recipient_lines[1:]:
             pdf.drawString(right_block_x, y, line)

@@ -89,17 +89,18 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
   if (!open) return null
 
   return (
-    <div className="dialog-backdrop" role="dialog" aria-modal="true">
-      <div className="dialog" style={{ width: 1200, maxWidth: '95vw', height: '85vh' }}>
+    <div className="dialog-backdrop" role="dialog" aria-modal="true" style={{ alignItems: 'center' }}>
+      <div className="dialog" style={{ width: 1200, maxWidth: '95vw', height: 'auto', maxHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
         {/* Header with title and close button */}
-        <div className="dialog-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 20px', borderBottom: '1px solid #e0e0e0' }}>
-          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 600 }}>Podgląd wydruku - Etykiety 3×7</h3>
+        <div className="dialog-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 16px', borderBottom: '1px solid #e0e0e0', flexShrink: 0 }}>
+          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>Podgląd wydruku - Etykiety 3×7</h3>
           <button 
             className="btn" 
             onClick={onClose}
             style={{ 
-              padding: '8px 16px', 
-              fontSize: '14px',
+              padding: '6px 12px', 
+              fontSize: '13px',
+              minHeight: 'unset',
               border: '1px solid #dc3545',
               borderRadius: '4px',
               backgroundColor: '#dc3545',
@@ -113,8 +114,8 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
         </div>
         
         {/* Compact controls */}
-        <div style={{ padding: '12px 20px', borderBottom: '1px solid #e0e0e0', backgroundColor: '#fafbfc' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+        <div style={{ padding: '8px 16px', borderBottom: '1px solid #e0e0e0', backgroundColor: '#fafbfc', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
             <label style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
               <span style={{ fontWeight: 500, fontSize: '13px' }}>Rozmiar czcionki:</span>
               <input 
@@ -125,16 +126,16 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
                 step={1} 
                 value={fontSize} 
                 onChange={e => setFontSize(Number(e.target.value))}
-                style={{ width: 60, padding: '4px 6px', fontSize: '13px' }}
+                style={{ width: 60, padding: '4px 6px', fontSize: '13px', minHeight: 'unset' }}
               />
             </label>
-            <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
+            <div style={{ display: 'flex', gap: 6, marginLeft: 'auto' }}>
               <button 
                 className="btn" 
                 type="button" 
                 onClick={onPrint} 
                 disabled={!blobUrl}
-                style={{ padding: '6px 12px', fontSize: '13px' }}
+                style={{ padding: '5px 10px', fontSize: '13px', minHeight: 'unset' }}
               >
                 Drukuj
               </button>
@@ -143,17 +144,17 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
                 type="button" 
                 onClick={onSavePdf} 
                 disabled={!canSubmit}
-                style={{ padding: '6px 12px', fontSize: '13px' }}
+                style={{ padding: '5px 10px', fontSize: '13px', minHeight: 'unset' }}
               >
                 Zapisz PDF
               </button>
             </div>
           </div>
-          {error && <div className="error" style={{ marginTop: 8, padding: '6px 10px', fontSize: '13px' }}>{error}</div>}
+          {error && <div className="error" style={{ marginTop: 6, padding: '4px 8px', fontSize: '12px' }}>{error}</div>}
         </div>
 
         {/* Preview area with proper scaling */}
-        <div style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f5f5f5', padding: '8px' }}>
+        <div style={{ flex: 1, overflow: 'hidden', backgroundColor: '#f5f5f5', padding: '6px', minHeight: 0 }}>
           <div style={{ 
             height: '100%', 
             border: '1px solid #ddd', 
@@ -167,7 +168,7 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 height: '100%',
-                fontSize: '14px',
+                fontSize: '13px',
                 color: '#666'
               }}>
                 Ładowanie podglądu…
@@ -182,7 +183,7 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
                   height: '100%', 
                   border: 0,
                   borderRadius: '4px',
-                  minHeight: '500px'
+                  minHeight: '400px'
                 }} 
               />
             ) : (
@@ -191,7 +192,7 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 height: '100%',
-                fontSize: '14px',
+                fontSize: '13px',
                 color: '#666'
               }}>
                 Brak podglądu

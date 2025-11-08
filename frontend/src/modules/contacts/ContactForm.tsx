@@ -106,60 +106,60 @@ export const ContactForm: React.FC<Props> = ({ open, onClose, onSaved, editing }
   if (!open) return null
 
   return (
-    <div className="dialog-backdrop" role="dialog" aria-modal="true">
-      <div className="dialog" style={{ maxWidth: 640 }}>
-        <div className="dialog-header">
-          <h3 style={{ margin: 0 }}>{editing ? 'Edycja kontaktu' : 'Nowy kontakt'}</h3>
+    <div className="dialog-backdrop" role="dialog" aria-modal="true" style={{ alignItems: 'center', padding: '16px' }}>
+      <div className="dialog" style={{ maxWidth: 640, maxHeight: '95vh', display: 'flex', flexDirection: 'column' }}>
+        <div className="dialog-header" style={{ padding: '12px 16px', flexShrink: 0 }}>
+          <h3 style={{ margin: 0, fontSize: '16px' }}>{editing ? 'Edycja kontaktu' : 'Nowy kontakt'}</h3>
         </div>
-        <form onSubmit={submit} className="dialog-body" style={{ display: 'grid', gap: 12 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-            <label className="field">
-              <span>Imię</span>
-              <input value={form.first_name} onChange={e => setForm({ ...form, first_name: e.target.value })} required />
+        <form onSubmit={submit} className="dialog-body" style={{ display: 'grid', gap: 10, padding: '16px', overflowY: 'auto', flexGrow: 1, minHeight: 0 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+            <label className="field" style={{ margin: 0, gap: 4 }}>
+              <span style={{ fontSize: '14px' }}>Imię</span>
+              <input value={form.first_name} onChange={e => setForm({ ...form, first_name: e.target.value })} required style={{ padding: '8px 10px', fontSize: '14px' }} />
             </label>
-            <label className="field">
-              <span>Nazwisko</span>
-              <input value={form.last_name} onChange={e => setForm({ ...form, last_name: e.target.value })} required />
-            </label>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '120px minmax(0, 1fr) 120px', gap: 12 }}>
-            <label className="field" style={{ gridColumn: '1 / span 2', minWidth: 0 }}>
-              <span>Ulica</span>
-              <input value={form.street} onChange={e => setForm({ ...form, street: e.target.value })} required style={fullWidthInputStyle} />
-            </label>
-            <label className="field" style={{ gridColumn: '3', minWidth: 0 }}>
-              <span>Nr mieszkania</span>
-              <input value={form.apartment_no ?? ''} onChange={e => setForm({ ...form, apartment_no: e.target.value })} style={fullWidthInputStyle} />
+            <label className="field" style={{ margin: 0, gap: 4 }}>
+              <span style={{ fontSize: '14px' }}>Nazwisko</span>
+              <input value={form.last_name} onChange={e => setForm({ ...form, last_name: e.target.value })} required style={{ padding: '8px 10px', fontSize: '14px' }} />
             </label>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '120px minmax(0, 1fr) 120px', gap: 12 }}>
-            <label className="field" style={{ gridColumn: '1', minWidth: 0 }}>
-              <span>Kod pocztowy</span>
-              <input value={form.postal_code} onChange={e => setForm({ ...form, postal_code: e.target.value })} required style={fullWidthInputStyle} />
+          <div style={{ display: 'grid', gridTemplateColumns: '120px minmax(0, 1fr) 120px', gap: 10 }}>
+            <label className="field" style={{ gridColumn: '1 / span 2', minWidth: 0, margin: 0, gap: 4 }}>
+              <span style={{ fontSize: '14px' }}>Ulica</span>
+              <input value={form.street} onChange={e => setForm({ ...form, street: e.target.value })} required style={{ ...fullWidthInputStyle, padding: '8px 10px', fontSize: '14px' }} />
             </label>
-            <label className="field" style={{ gridColumn: '2 / span 2', minWidth: 0 }}>
-              <span>Miasto</span>
-              <input value={form.city} onChange={e => setForm({ ...form, city: e.target.value })} required style={fullWidthInputStyle} />
+            <label className="field" style={{ gridColumn: '3', minWidth: 0, margin: 0, gap: 4 }}>
+              <span style={{ fontSize: '14px' }}>Nr mieszkania</span>
+              <input value={form.apartment_no ?? ''} onChange={e => setForm({ ...form, apartment_no: e.target.value })} style={{ ...fullWidthInputStyle, padding: '8px 10px', fontSize: '14px' }} />
             </label>
           </div>
-          <label className="field">
-            <span>Opis</span>
+          <div style={{ display: 'grid', gridTemplateColumns: '120px minmax(0, 1fr) 120px', gap: 10 }}>
+            <label className="field" style={{ gridColumn: '1', minWidth: 0, margin: 0, gap: 4 }}>
+              <span style={{ fontSize: '14px' }}>Kod pocztowy</span>
+              <input value={form.postal_code} onChange={e => setForm({ ...form, postal_code: e.target.value })} required style={{ ...fullWidthInputStyle, padding: '8px 10px', fontSize: '14px' }} />
+            </label>
+            <label className="field" style={{ gridColumn: '2 / span 2', minWidth: 0, margin: 0, gap: 4 }}>
+              <span style={{ fontSize: '14px' }}>Miasto</span>
+              <input value={form.city} onChange={e => setForm({ ...form, city: e.target.value })} required style={{ ...fullWidthInputStyle, padding: '8px 10px', fontSize: '14px' }} />
+            </label>
+          </div>
+          <label className="field" style={{ margin: 0, gap: 4 }}>
+            <span style={{ fontSize: '14px' }}>Opis</span>
             <textarea 
               value={form.description ?? ''} 
               onChange={e => setForm({ ...form, description: e.target.value })}
-              rows={3}
-              style={{ resize: 'vertical', minHeight: '60px' }}
+              rows={2}
+              style={{ resize: 'vertical', minHeight: '50px', padding: '8px 10px', fontSize: '14px' }}
               placeholder="Dodatkowe informacje o kontakcie..."
             />
           </label>
-          <label className="field" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+          <label className="field" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, margin: 0 }}>
             <input type="checkbox" checked={labelMarked} onChange={e => setLabelMarked(e.target.checked)} />
-            <span>Zaznaczony do etykiety</span>
+            <span style={{ fontSize: '14px' }}>Zaznaczony do etykiety</span>
           </label>
-          {error && <div className="error">{error}</div>}
-          <div className="dialog-footer" style={{ display: 'flex', gap: 12, justifyContent: 'flex-end' }}>
-            <button type="button" className="btn" onClick={onClose} disabled={loading}>Anuluj</button>
-            <button type="submit" className="btn primary" disabled={loading || !isValid}>{editing ? 'Zapisz' : 'Dodaj'}</button>
+          {error && <div className="error" style={{ fontSize: '13px', marginBottom: 0 }}>{error}</div>}
+          <div className="dialog-footer" style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', padding: '12px 16px', borderTop: '1px solid var(--border)', margin: '0 -16px -16px -16px', flexShrink: 0 }}>
+            <button type="button" className="btn" onClick={onClose} disabled={loading} style={{ padding: '8px 14px', fontSize: '14px', minHeight: 'unset' }}>Anuluj</button>
+            <button type="submit" className="btn primary" disabled={loading || !isValid} style={{ padding: '8px 14px', fontSize: '14px', minHeight: 'unset' }}>{editing ? 'Zapisz' : 'Dodaj'}</button>
           </div>
         </form>
       </div>

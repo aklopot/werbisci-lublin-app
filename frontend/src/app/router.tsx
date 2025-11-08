@@ -5,6 +5,7 @@ import { AppLayout } from './ui/AppLayout'
 import { useAuth } from './auth'
 import { UsersListPage } from '../modules/users/UsersListPage'
 import { ContactsListPage } from '../modules/contacts/ContactsListPage'
+import { InfoPage } from '../modules/InfoPage'
 
 type RequireAuthProps = { children: React.ReactNode }
 
@@ -32,6 +33,7 @@ export const router = createBrowserRouter([
       { index: true, element: <Navigate to="contacts" replace /> },
       { path: 'contacts', element: <ContactsPage /> },
       { path: 'users', element: <UsersListPage /> },
+      { path: 'info', element: <InfoPage /> },
     ],
   },
 ])

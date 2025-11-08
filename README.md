@@ -70,11 +70,23 @@ npm run dev
 Frontend dev: http://localhost:5173, Backend dev: http://localhost:8000
 
 ### Uruchomienie przez Docker Compose (zalecane)
-Po utworzeniu plików (w kolejnych etapach):
+
+**Lokalne środowisko deweloperskie:**
 ```bash
 docker compose up -d --build
 ```
-To polecenie buduje i uruchamia frontend oraz backend. SQLite będzie montowany jako wolumen.
+
+**Deployment na serwerze (z wersjonowaniem):**
+```bash
+# Linux/Mac
+./deploy.sh
+
+# Windows
+.\deploy.ps1
+```
+
+To polecenie buduje i uruchamia frontend oraz backend z odpowiednimi tagami wersji.
+SQLite będzie montowany jako wolumen. Zobacz `VERSIONING.md` dla szczegółów.
 
 ### Zmienne środowiskowe
 Backend (`.env`):
@@ -118,11 +130,14 @@ VITE_API_BASE_URL=http://localhost:8000
   - CRUD `/api/addresses`
   - GET `/api/addresses/search?firstName=&lastName=&city=&street=&labelMarked=`
   - GET `/api/addresses/export.csv|.ods|.pdf` (manager/admin)
+- System
+  - GET `/api/version` → informacje o wersji aplikacji
 
 ### UI (docelowo)
-- Po zalogowaniu: lewy panel nawigacji: „Baza kontaktów”, „Użytkownicy” (tylko admin)
+- Po zalogowaniu: górny panel nawigacji: „Baza kontaktów", „Użytkownicy" (tylko admin), „Informacje"
 - Duże, czytelne fonty, wysoki kontrast, responsywność, prosty język
 - Podglądy wydruku (koperta, etykiety) z opcjami formatowania i zapisu PDF
+- Zakładka "Informacje": informacje o aplikacji i wersji (backend, frontend, Docker image)
 
 ### Wdrożenie na VPS
 Rekomendowany Linux VPS (np. Ubuntu 22.04). Dostawcą może być `ZAP-Hosting` (`https://zap-hosting.com/`).
@@ -134,8 +149,23 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 2) Sklonuj repozytorium i skonfiguruj `.env` oraz `.env.frontend`
-3) Uruchom: `docker compose up -d --build`
-4) Upewnij się, że wolumen z SQLite (`/data/werbisci-app.db`) jest trwały i backupowany
+3) Nadaj uprawnienia wykonywania skryptom:
+```bash
+chmod +x build.sh deploy.sh
+```
+4) Uruchom deployment z wersjonowaniem:
+```bash
+./deploy.sh
+```
+5) Upewnij się, że wolumen z SQLite (`/data/werbisci-app.db`) jest trwały i backupowany
+
+**Aktualizacja wersji:**
+- Edytuj plik `VERSION` (np. zmień na `1.1.0`)
+- Commit i push zmian
+- Na serwerze uruchom `./deploy.sh`
+- Sprawdź wersję w zakładce "Informacje" w aplikacji
+
+Zobacz `VERSIONING.md` dla pełnej dokumentacji systemu wersjonowania.
 
 ### Rozwiązywanie problemów
 - Port zajęty: zmień porty w `docker-compose.yml` lub procesie dev

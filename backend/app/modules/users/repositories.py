@@ -39,6 +39,32 @@ class UserRepository:
         db.refresh(user)
         return user
 
+    def update(
+        self,
+        db: Session,
+        user: User,
+        *,
+        full_name: str | None = None,
+        login: str | None = None,
+        email: str | None = None,
+        password_hash: str | None = None,
+        role: UserRole | None = None,
+    ) -> User:
+        if full_name is not None:
+            user.full_name = full_name
+        if login is not None:
+            user.login = login
+        if email is not None:
+            user.email = email
+        if password_hash is not None:
+            user.password_hash = password_hash
+        if role is not None:
+            user.role = role
+        db.add(user)
+        db.commit()
+        db.refresh(user)
+        return user
+
     def set_role(self, db: Session, user: User, role: UserRole) -> User:
         user.role = role
         db.add(user)

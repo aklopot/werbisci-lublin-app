@@ -1,3 +1,6 @@
+import json
+import os
+from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
@@ -35,6 +38,30 @@ app.include_router(printing_router)
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok"}
+
+
+@app.get("/api/version")
+def get_version() -> dict:
+    """
+    Get application version information.
+    Returns version from version.json file if exists, otherwise from environment variables.
+    """
+    version_file = Path(__file__).parent / "version.json"
+    
+    # Try to read from version.json file
+    if version_file.exists():
+        try:
+            with open(version_file, "r") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    
+    # Fallback to environment variables
+    return {
+        "version": os.getenv("APP_VERSION", "dev"),
+        "commit": os.getenv("APP_COMMIT", "unknown"),
+        "buildDate": os.getenv("APP_BUILD_DATE", "unknown")
+    }
 
 
 @app.on_event("startup")

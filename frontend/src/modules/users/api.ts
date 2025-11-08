@@ -1,5 +1,5 @@
 import { fetchJson } from '../../app/api'
-import type { User, UserCreateInput, UserUpdateRoleInput } from './types'
+import type { User, UserCreateInput, UserUpdateInput, UserUpdateRoleInput } from './types'
 
 export async function listUsers(): Promise<User[]> {
   return fetchJson<User[]>('/api/users')
@@ -7,6 +7,10 @@ export async function listUsers(): Promise<User[]> {
 
 export async function createUser(payload: UserCreateInput): Promise<User> {
   return fetchJson<User>('/api/users', { method: 'POST', body: payload })
+}
+
+export async function updateUser(userId: number, payload: UserUpdateInput): Promise<User> {
+  return fetchJson<User>(`/api/users/${userId}`, { method: 'PATCH', body: payload })
 }
 
 export async function updateUserRole(userId: number, payload: UserUpdateRoleInput): Promise<User> {

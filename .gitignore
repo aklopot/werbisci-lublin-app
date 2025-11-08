@@ -36,6 +36,10 @@ backend/*.db
 *.pem
 backend/login.json
 
+# Version files (generated during build)
+backend/app/version.json
+frontend/public/version.json
+
 # Logs
 logs/
 *.log

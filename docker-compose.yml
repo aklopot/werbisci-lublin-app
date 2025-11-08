@@ -1,6 +1,12 @@
 services:
   backend:
-    build: ./backend
+    image: werbisci-lublin-backend:${APP_VERSION:-latest}
+    build: 
+      context: ./backend
+      args:
+        VERSION: ${APP_VERSION:-dev}
+        GIT_COMMIT: ${GIT_COMMIT:-unknown}
+        BUILD_DATE: ${BUILD_DATE:-unknown}
     env_file:
       - ./.env
     environment:
@@ -9,13 +15,21 @@ services:
       - backend_data:/data
     ports:
       - "8000:8000"
+    restart: unless-stopped
   frontend:
-    build: ./frontend
+    image: werbisci-lublin-frontend:${APP_VERSION:-latest}
+    build: 
+      context: ./frontend
+      args:
+        VERSION: ${APP_VERSION:-dev}
+        GIT_COMMIT: ${GIT_COMMIT:-unknown}
+        BUILD_DATE: ${BUILD_DATE:-unknown}
     env_file:
       - ./.env.frontend
     ports:
       - "5173:80"
     depends_on:
       - backend
+    restart: unless-stopped
 volumes:
   backend_data:

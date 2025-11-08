@@ -16,6 +16,14 @@ export interface UserCreateInput {
   role: UserRole
 }
 
+export interface UserUpdateInput {
+  full_name?: string
+  login?: string
+  email?: string
+  password?: string
+  role?: UserRole
+}
+
 export interface UserUpdateRoleInput {
   role: UserRole
 }

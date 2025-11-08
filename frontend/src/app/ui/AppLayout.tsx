@@ -43,6 +43,7 @@ export const AppLayout: React.FC = () => {
               {currentUser?.role === 'admin' && (
                 <NavLink to="/app/users" className={({ isActive }) => isActive ? 'active' : ''}>Użytkownicy</NavLink>
               )}
+              <NavLink to="/app/info" className={({ isActive }) => isActive ? 'active' : ''}>Informacje</NavLink>
             </nav>
           </div>
           <div className="topbar-right" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

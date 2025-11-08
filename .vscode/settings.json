@@ -1,0 +1,6 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv_werbisci-lublin-app/Scripts/python.exe",
+  "python.terminal.activateEnvironment": true
+}
+
+

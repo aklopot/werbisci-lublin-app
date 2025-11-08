@@ -2,6 +2,20 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Generate Version Files",
+      "type": "shell",
+      "command": "powershell -ExecutionPolicy Bypass -File ${workspaceFolder}/.vscode/generate-version.ps1",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "Start Frontend",
       "type": "shell",
       "command": "Write-Host \"`e]0;Werbisci Lublin - Frontend`a\" -NoNewline; npm run dev",
@@ -17,7 +31,8 @@
         "clear": false
       },
       "isBackground": true,
-      "problemMatcher": []
+      "problemMatcher": [],
+      "dependsOn": ["Generate Version Files"]
     },
     {
       "label": "Start Backend",
@@ -38,7 +53,8 @@
         "clear": false
       },
       "isBackground": true,
-      "problemMatcher": []
+      "problemMatcher": [],
+      "dependsOn": ["Generate Version Files"]
     }
   ]
 }

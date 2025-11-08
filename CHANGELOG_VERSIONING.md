@@ -89,7 +89,6 @@ Format:
 ```json
 {
   "version": "1.0.0",
-  "commit": "abc123",
   "buildDate": "2024-11-08T12:00:00Z"
 }
 ```
@@ -105,13 +104,11 @@ Zawiera numer wersji w formacie SemVer: `MAJOR.MINOR.PATCH`
 ### 2. Skrypty budowania
 `build.sh` / `build.ps1`:
 - Odczytują wersję z pliku VERSION
-- Pobierają git commit hash
 - Generują timestamp
 - Tworzą pliki version.json
-- Budują Docker images z tagami:
+- Budują Docker images z pojedynczym tagiem wersji:
   - `werbisci-lublin-backend:1.0.0`
-  - `werbisci-lublin-backend:1.0.0-abc123`
-  - `werbisci-lublin-backend:latest`
+  - `werbisci-lublin-frontend:1.0.0`
 
 ### 3. Skrypty deployment
 `deploy.sh` / `deploy.ps1`:
@@ -134,10 +131,10 @@ Endpoint `/api/version`:
 
 ### 6. Frontend UI
 Zakładka "Informacje":
-- Pobiera wersję backendu z `/api/version`
-- Pobiera wersję frontendu z `/version.json`
-- Wyświetla obie wersje + tag Docker image
-- Pokazuje informacje o aplikacji
+- Pobiera wersję z backendu API (`/api/version`)
+- Wyświetla wersję w dużym, czytelnym formacie
+- Pokazuje datę budowy
+- Informacje o Misjonarzach Werbistach w Lublinie
 
 ## Migracja ze starego systemu
 

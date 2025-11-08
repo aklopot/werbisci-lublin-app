@@ -3,30 +3,21 @@ import { PageHeader } from '../app/ui/PageHeader'
 
 interface VersionInfo {
   version: string
-  commit: string
   buildDate: string
 }
 
 export const InfoPage: React.FC = () => {
-  const [backendVersion, setBackendVersion] = useState<VersionInfo | null>(null)
-  const [frontendVersion, setFrontendVersion] = useState<VersionInfo | null>(null)
+  const [versionInfo, setVersionInfo] = useState<VersionInfo | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const loadVersions = async () => {
+    const loadVersion = async () => {
       try {
-        // Load backend version
-        const backendRes = await fetch('/api/version')
-        if (backendRes.ok) {
-          const backendData = await backendRes.json()
-          setBackendVersion(backendData)
-        }
-
-        // Load frontend version
-        const frontendRes = await fetch('/version.json')
-        if (frontendRes.ok) {
-          const frontendData = await frontendRes.json()
-          setFrontendVersion(frontendData)
+        // Load version from backend API
+        const res = await fetch('/api/version')
+        if (res.ok) {
+          const data = await res.json()
+          setVersionInfo(data)
         }
       } catch (error) {
         console.error('Error loading version info:', error)
@@ -35,7 +26,7 @@ export const InfoPage: React.FC = () => {
       }
     }
 
-    loadVersions()
+    loadVersion()
   }, [])
 
   const formatDate = (dateString: string) => {
@@ -74,7 +65,7 @@ export const InfoPage: React.FC = () => {
               Baza Kontaktów
             </h3>
             <p style={{ lineHeight: 1.6, color: '#6c757d', marginBottom: 12 }}>
-              System zarządzania bazą kontaktów dla Misjonarzy Werbistów w Lublinie.
+              System zarządzania bazą kontaktów dla <strong>Misjonarzy Werbistów w Lublinie</strong>.
             </p>
             <p style={{ lineHeight: 1.6, color: '#6c757d' }}>
               Aplikacja umożliwia zarządzanie danymi kontaktowymi, generowanie etykiet 
@@ -86,120 +77,57 @@ export const InfoPage: React.FC = () => {
         {/* Version Information */}
         <section>
           <h2 style={{ fontSize: '1.5rem', marginBottom: 16, color: '#333' }}>
-            Informacje o wersji
+            Wersja aplikacji
           </h2>
           
           {loading ? (
             <div style={{ textAlign: 'center', padding: 40, color: '#6c757d' }}>
               Ładowanie...
             </div>
+          ) : versionInfo ? (
+            <div style={{ 
+              backgroundColor: '#fff', 
+              padding: 24, 
+              borderRadius: 8,
+              border: '1px solid #dee2e6',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            }}>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                marginBottom: 20 
+              }}>
+                <div style={{ 
+                  fontSize: '3rem', 
+                  fontWeight: 'bold', 
+                  color: '#007bff',
+                  fontFamily: 'monospace'
+                }}>
+                  v{versionInfo.version}
+                </div>
+              </div>
+              
+              <div style={{ 
+                textAlign: 'center',
+                paddingTop: 20,
+                borderTop: '1px solid #dee2e6'
+              }}>
+                <div style={{ color: '#6c757d', fontSize: '0.95em' }}>
+                  Data budowy: {formatDate(versionInfo.buildDate)}
+                </div>
+              </div>
+            </div>
           ) : (
-            <div style={{ display: 'grid', gap: 16 }}>
-              {/* Backend Version */}
-              {backendVersion && (
-                <div style={{ 
-                  backgroundColor: '#fff', 
-                  padding: 20, 
-                  borderRadius: 8,
-                  border: '1px solid #dee2e6',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
-                }}>
-                  <h3 style={{ 
-                    fontSize: '1.1rem', 
-                    marginBottom: 12, 
-                    color: '#495057',
-                    borderBottom: '2px solid #007bff',
-                    paddingBottom: 8
-                  }}>
-                    Backend
-                  </h3>
-                  <div style={{ display: 'grid', gap: 8 }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ fontWeight: 500, color: '#6c757d' }}>Wersja:</span>
-                      <span style={{ fontFamily: 'monospace', color: '#212529' }}>
-                        {backendVersion.version}
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ fontWeight: 500, color: '#6c757d' }}>Commit:</span>
-                      <span style={{ fontFamily: 'monospace', color: '#212529', fontSize: '0.9em' }}>
-                        {backendVersion.commit}
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ fontWeight: 500, color: '#6c757d' }}>Data budowy:</span>
-                      <span style={{ color: '#212529', fontSize: '0.9em' }}>
-                        {formatDate(backendVersion.buildDate)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Frontend Version */}
-              {frontendVersion && (
-                <div style={{ 
-                  backgroundColor: '#fff', 
-                  padding: 20, 
-                  borderRadius: 8,
-                  border: '1px solid #dee2e6',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
-                }}>
-                  <h3 style={{ 
-                    fontSize: '1.1rem', 
-                    marginBottom: 12, 
-                    color: '#495057',
-                    borderBottom: '2px solid #28a745',
-                    paddingBottom: 8
-                  }}>
-                    Frontend
-                  </h3>
-                  <div style={{ display: 'grid', gap: 8 }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ fontWeight: 500, color: '#6c757d' }}>Wersja:</span>
-                      <span style={{ fontFamily: 'monospace', color: '#212529' }}>
-                        {frontendVersion.version}
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ fontWeight: 500, color: '#6c757d' }}>Commit:</span>
-                      <span style={{ fontFamily: 'monospace', color: '#212529', fontSize: '0.9em' }}>
-                        {frontendVersion.commit}
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <span style={{ fontWeight: 500, color: '#6c757d' }}>Data budowy:</span>
-                      <span style={{ color: '#212529', fontSize: '0.9em' }}>
-                        {formatDate(frontendVersion.buildDate)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Docker Image Tag Info */}
-              {(backendVersion || frontendVersion) && (
-                <div style={{ 
-                  backgroundColor: '#e7f3ff', 
-                  padding: 16, 
-                  borderRadius: 8,
-                  border: '1px solid #b3d9ff',
-                  marginTop: 8
-                }}>
-                  <p style={{ margin: 0, fontSize: '0.9em', color: '#004085', lineHeight: 1.5 }}>
-                    <strong>Tag obrazu Docker:</strong>{' '}
-                    <code style={{ 
-                      backgroundColor: 'white', 
-                      padding: '2px 6px', 
-                      borderRadius: 4,
-                      fontFamily: 'monospace'
-                    }}>
-                      {backendVersion?.version || frontendVersion?.version}-
-                      {backendVersion?.commit || frontendVersion?.commit}
-                    </code>
-                  </p>
-                </div>
-              )}
+            <div style={{ 
+              textAlign: 'center', 
+              padding: 40, 
+              color: '#dc3545',
+              backgroundColor: '#f8d7da',
+              borderRadius: 8,
+              border: '1px solid #f5c6cb'
+            }}>
+              Nie udało się pobrać informacji o wersji
             </div>
           )}
         </section>

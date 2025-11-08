@@ -2,12 +2,10 @@ FROM python:3.13-slim
 
 # Build arguments for versioning
 ARG VERSION=dev
-ARG GIT_COMMIT=unknown
 ARG BUILD_DATE=unknown
 
 # Set environment variables for version info
 ENV APP_VERSION=${VERSION} \
-    APP_COMMIT=${GIT_COMMIT} \
     APP_BUILD_DATE=${BUILD_DATE}
 
 WORKDIR /app
@@ -24,7 +22,6 @@ COPY app ./app
 
 # Label the image with version information
 LABEL version="${VERSION}" \
-      commit="${GIT_COMMIT}" \
       buildDate="${BUILD_DATE}" \
       description="Werbisci Lublin App - Backend"
 

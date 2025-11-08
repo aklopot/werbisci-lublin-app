@@ -6,7 +6,8 @@
       "type": "node-terminal",
       "request": "launch",
       "cwd": "${workspaceFolder}/frontend",
-      "command": "Write-Host \"`e]0;Werbisci Lublin - Frontend`a\" -NoNewline; npm run dev"
+      "command": "Write-Host \"`e]0;Werbisci Lublin - Frontend`a\" -NoNewline; npm run dev",
+      "preLaunchTask": "Generate Version Files"
     },
     {
       "name": "Werbisci Lublin: Backend (Uvicorn)",
@@ -16,7 +17,8 @@
       "command": "Write-Host \"`e]0;Werbisci Lublin - Backend`a\" -NoNewline; .venv_werbisci-lublin-app/Scripts/python.exe -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
       "env": {
         "SQLITE_DB_PATH": "data/werbisci-app.db"
-      }
+      },
+      "preLaunchTask": "Generate Version Files"
     }
   ],
   "compounds": [
@@ -26,7 +28,8 @@
         "Werbisci Lublin: Frontend (Vite)",
         "Werbisci Lublin: Backend (Uvicorn)"
       ],
-      "stopAll": true
+      "stopAll": true,
+      "preLaunchTask": "Generate Version Files"
     }
   ]
 }

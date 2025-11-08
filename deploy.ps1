@@ -3,16 +3,10 @@
 $ErrorActionPreference = "Stop"
 
 $VERSION = (Get-Content VERSION -Raw).Trim()
-try {
-    $GIT_COMMIT = (git rev-parse --short HEAD 2>$null)
-} catch {
-    $GIT_COMMIT = "unknown"
-}
-$VERSION_COMMIT_TAG = "${VERSION}-${GIT_COMMIT}"
 
 Write-Host "======================================"
 Write-Host "Deploying Werbisci Lublin App"
-Write-Host "Version: ${VERSION_COMMIT_TAG}"
+Write-Host "Version: ${VERSION}"
 Write-Host "======================================"
 
 # Stop current containers
@@ -28,13 +22,13 @@ Write-Host "Building versioned images..."
 .\build.ps1
 
 # Start with versioned images
-Write-Host "Starting containers with version ${VERSION_COMMIT_TAG}..."
-$env:APP_VERSION = $VERSION_COMMIT_TAG
+Write-Host "Starting containers with version ${VERSION}..."
+$env:APP_VERSION = $VERSION
 docker compose up -d
 
 Write-Host ""
 Write-Host "======================================"
 Write-Host "Deployment completed!"
-Write-Host "Application version: ${VERSION_COMMIT_TAG}"
+Write-Host "Application version: ${VERSION}"
 Write-Host "======================================"
 

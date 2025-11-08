@@ -4,12 +4,10 @@
 set -e
 
 VERSION=$(cat VERSION | tr -d '[:space:]')
-GIT_COMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")
-VERSION_COMMIT_TAG="${VERSION}-${GIT_COMMIT}"
 
 echo "======================================"
 echo "Deploying Werbisci Lublin App"
-echo "Version: ${VERSION_COMMIT_TAG}"
+echo "Version: ${VERSION}"
 echo "======================================"
 
 # Stop current containers
@@ -25,13 +23,13 @@ echo "Building versioned images..."
 ./build.sh
 
 # Start with versioned images
-echo "Starting containers with version ${VERSION_COMMIT_TAG}..."
-export APP_VERSION=${VERSION_COMMIT_TAG}
+echo "Starting containers with version ${VERSION}..."
+export APP_VERSION=${VERSION}
 docker compose up -d
 
 echo ""
 echo "======================================"
 echo "Deployment completed!"
-echo "Application version: ${VERSION_COMMIT_TAG}"
+echo "Application version: ${VERSION}"
 echo "======================================"
 

@@ -5,18 +5,12 @@ set -e
 
 # Read version from VERSION file
 VERSION=$(cat VERSION | tr -d '[:space:]')
-GIT_COMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")
 BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-
-# Create version info
-VERSION_TAG="${VERSION}"
-VERSION_COMMIT_TAG="${VERSION}-${GIT_COMMIT}"
 
 echo "======================================"
 echo "Building Werbisci Lublin App"
 echo "======================================"
 echo "Version: ${VERSION}"
-echo "Git Commit: ${GIT_COMMIT}"
 echo "Build Date: ${BUILD_DATE}"
 echo "======================================"
 
@@ -24,7 +18,6 @@ echo "======================================"
 cat > backend/app/version.json <<EOF
 {
   "version": "${VERSION}",
-  "commit": "${GIT_COMMIT}",
   "buildDate": "${BUILD_DATE}"
 }
 EOF
@@ -33,29 +26,22 @@ EOF
 cat > frontend/public/version.json <<EOF
 {
   "version": "${VERSION}",
-  "commit": "${GIT_COMMIT}",
   "buildDate": "${BUILD_DATE}"
 }
 EOF
 
-# Build Docker images with version tags
+# Build Docker images with single version tag
 echo ""
 echo "Building backend image..."
-docker build -t werbisci-lublin-backend:${VERSION_TAG} \
-             -t werbisci-lublin-backend:${VERSION_COMMIT_TAG} \
-             -t werbisci-lublin-backend:latest \
+docker build -t werbisci-lublin-backend:${VERSION} \
              --build-arg VERSION=${VERSION} \
-             --build-arg GIT_COMMIT=${GIT_COMMIT} \
              --build-arg BUILD_DATE=${BUILD_DATE} \
              ./backend
 
 echo ""
 echo "Building frontend image..."
-docker build -t werbisci-lublin-frontend:${VERSION_TAG} \
-             -t werbisci-lublin-frontend:${VERSION_COMMIT_TAG} \
-             -t werbisci-lublin-frontend:latest \
+docker build -t werbisci-lublin-frontend:${VERSION} \
              --build-arg VERSION=${VERSION} \
-             --build-arg GIT_COMMIT=${GIT_COMMIT} \
              --build-arg BUILD_DATE=${BUILD_DATE} \
              ./frontend
 
@@ -64,9 +50,7 @@ echo "======================================"
 echo "Build completed successfully!"
 echo "======================================"
 echo "Images tagged as:"
-echo "  - werbisci-lublin-backend:${VERSION_TAG}"
-echo "  - werbisci-lublin-backend:${VERSION_COMMIT_TAG}"
-echo "  - werbisci-lublin-frontend:${VERSION_TAG}"
-echo "  - werbisci-lublin-frontend:${VERSION_COMMIT_TAG}"
+echo "  - werbisci-lublin-backend:${VERSION}"
+echo "  - werbisci-lublin-frontend:${VERSION}"
 echo "======================================"
 

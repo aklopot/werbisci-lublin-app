@@ -59,7 +59,6 @@ def get_version() -> dict:
     # Fallback to environment variables
     return {
         "version": os.getenv("APP_VERSION", "dev"),
-        "commit": os.getenv("APP_COMMIT", "unknown"),
         "buildDate": os.getenv("APP_BUILD_DATE", "unknown")
     }
 

@@ -1,34 +1,43 @@
-# Normalize all text files to LF in repo
-* text=auto eol=lf
+# Line ending normalization
+* text=auto
 
-# Explicit text files
+# Shell scripts should always have LF line endings
+*.sh text eol=lf
+
+# PowerShell scripts should have CRLF
+*.ps1 text eol=crlf
+
+# Batch files should have CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Python files should have LF
 *.py text eol=lf
-*.ts text eol=lf
-*.tsx text eol=lf
+
+# JavaScript/TypeScript should have LF
 *.js text eol=lf
 *.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
 *.json text eol=lf
-*.md text eol=lf
+
+# Config files
 *.yml text eol=lf
 *.yaml text eol=lf
-*.toml text eol=lf
-*.css text eol=lf
-*.scss text eol=lf
-*.html text eol=lf
-*.sh text eol=lf
 Dockerfile text eol=lf
-.gitignore text eol=lf
-.gitattributes text eol=lf
+*.conf text eol=lf
+*.config text eol=lf
 
-# Treat common binaries as binary
+# Markdown and text files
+*.md text eol=lf
+*.txt text eol=lf
+
+# Images and binaries
 *.png binary
 *.jpg binary
 *.jpeg binary
 *.gif binary
-*.bmp binary
 *.ico binary
-*.pdf binary
-
-# Prevent diff on built bundles if ever committed
-*.min.js -diff
-*.min.css -diff
+*.db binary
+*.sqlite binary
+*.sqlite3 binary

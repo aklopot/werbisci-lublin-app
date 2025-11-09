@@ -9,9 +9,9 @@ Write-Host "Deploying Werbisci Lublin App"
 Write-Host "Version: ${VERSION}"
 Write-Host "======================================"
 
-# Stop current containers
-Write-Host "Stopping current containers..."
-docker compose down
+# Stop and remove current containers
+Write-Host "Stopping and removing current containers..."
+docker compose down --remove-orphans
 
 # Pull latest changes
 Write-Host "Pulling latest changes from git..."
@@ -21,14 +21,21 @@ git pull
 Write-Host "Building versioned images..."
 .\build.ps1
 
-# Start with versioned images
+# Start with versioned images - force recreate to ensure new version
 Write-Host "Starting containers with version ${VERSION}..."
 $env:APP_VERSION = $VERSION
-docker compose up -d
+docker compose up -d --force-recreate --remove-orphans
+
+# Show running containers
+Write-Host ""
+Write-Host "Running containers:"
+docker compose ps
 
 Write-Host ""
 Write-Host "======================================"
 Write-Host "Deployment completed!"
 Write-Host "Application version: ${VERSION}"
 Write-Host "======================================"
+Write-Host ""
+Write-Host "Verify version at: http://localhost:5173/app/info"
 

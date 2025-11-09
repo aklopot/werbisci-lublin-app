@@ -3,13 +3,6 @@
 
 set -e
 
-VERSION=$(cat VERSION | tr -d '[:space:]')
-
-echo "======================================"
-echo "Deploying Werbisci Lublin App"
-echo "Version: ${VERSION}"
-echo "======================================"
-
 # Stop and remove current containers
 echo "Stopping and removing current containers..."
 docker compose down --remove-orphans
@@ -17,6 +10,14 @@ docker compose down --remove-orphans
 # Pull latest changes
 echo "Pulling latest changes from git..."
 git pull
+
+# Read version after git pull to ensure we have the latest version
+VERSION=$(cat VERSION | tr -d '[:space:]')
+
+echo "======================================"
+echo "Deploying Werbisci Lublin App"
+echo "Version: ${VERSION}"
+echo "======================================"
 
 # Build with version
 echo "Building versioned images..."

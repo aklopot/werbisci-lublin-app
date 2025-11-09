@@ -53,9 +53,9 @@ textarea:focus-visible {
 .topnav a.active { background: #e7efff; border-color: #b8ccff; }
 
 .topbar { height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--space-5); border-bottom: 1px solid var(--border); background: var(--panel); position: sticky; top: 0; z-index: 50; }
-.content { padding: var(--space-5); }
+.content { padding: var(--space-2) var(--space-5) var(--space-5) var(--space-5); }
 
-.btn { appearance: none; border: none; background: var(--primary); color: var(--primary-contrast); padding: 12px 18px; border-radius: 12px; cursor: pointer; min-height: 52px; font-weight: 700; font-size: var(--font-size-lg); }
+.btn { appearance: none; border: none; background: var(--primary); color: var(--primary-contrast); padding: 8px 14px; border-radius: 8px; cursor: pointer; height: 38px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; }
 .btn:hover { filter: brightness(0.97); }
 .btn:disabled { opacity: 0.6; cursor: not-allowed; }
 .btn.primary { background: var(--primary); color: var(--primary-contrast); }
@@ -88,9 +88,10 @@ textarea:focus-visible {
 
 .card { background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: var(--space-6); color: var(--text); box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08); }
 .field { display: grid; gap: 8px; margin: 14px 0; }
-.field input, .field select { background: #ffffff; color: var(--text); border: 1px solid var(--border); padding: 14px 16px; border-radius: 12px; font-size: var(--font-size-lg); }
-.field input::placeholder { color: #8a94a6; }
-.field input:focus-visible, .field select:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.field input, .field select { background: #ffffff; color: var(--text); border: 1px solid var(--border); padding: 8px 12px; border-radius: 8px; font-size: 14px; height: 38px; box-sizing: border-box; }
+.field textarea { background: #ffffff; color: var(--text); border: 1px solid var(--border); padding: 8px 12px; border-radius: 8px; font-size: 14px; min-height: 38px; box-sizing: border-box; }
+.field input::placeholder, .field textarea::placeholder { color: #8a94a6; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .error { color: #b3261e; margin-bottom: var(--space-3); }
 
 /* Tables */
@@ -104,12 +105,12 @@ textarea:focus-visible {
 .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-5); }
 .page-header h2 { margin: 0; font-size: var(--font-size-xl); }
 .page-header.pro { padding: 8px 0; }
-.page-actions .btn { height: 52px; }
+.page-actions .btn { height: 38px; }
 /* Buttons in page actions inherit global primary styles now */
 .menu-panel { backdrop-filter: saturate(120%) blur(6px); }
 .menu-item:hover { background: #f3f6ff !important; }
 .toolbar { display: flex; gap: var(--space-3); margin-bottom: var(--space-4); }
-.input { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; font-size: var(--font-size-lg); }
+.input { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 14px; height: 38px; box-sizing: border-box; }
 
 /* Dialog */
 .dialog-backdrop { position: fixed; inset: 0; background: rgba(10, 15, 25, .45); display: grid; place-items: center; padding: var(--space-6); z-index: 1000; }

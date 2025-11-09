@@ -8,7 +8,7 @@ interface PageHeaderProps {
 
 export const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, actions }) => {
   return (
-    <div className="page-header pro" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, marginBottom: 'var(--space-5)' }}>
+    <div className="page-header pro" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, marginBottom: 'var(--space-3)' }}>
       <div>
         <h2 style={{ margin: 0, fontSize: 'var(--font-size-xl)' }}>{title}</h2>
         {subtitle && (

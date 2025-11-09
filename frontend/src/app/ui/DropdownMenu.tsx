@@ -122,10 +122,10 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({ buttonLabel, buttonA
             <div key={gi} className="menu-group" style={{ padding: 6 }}>
               {group.label && (
                 <div className="menu-group-label" style={{
-                  fontWeight: 800,
-                  fontSize: '18px',
+                  fontWeight: 700,
+                  fontSize: '13px',
                   color: 'var(--muted)',
-                  padding: '6px 10px',
+                  padding: '4px 10px',
                 }}>{group.label}</div>
               )}
               <div>
@@ -145,10 +145,10 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({ buttonLabel, buttonA
                       textAlign: 'left',
                       background: 'transparent',
                       border: '1px solid transparent',
-                      padding: '14px 16px',
-                      borderRadius: 12,
-                      fontSize: '20px',
-                      minHeight: 52,
+                      padding: '10px 12px',
+                      borderRadius: 8,
+                      fontSize: '14px',
+                      minHeight: 38,
                       cursor: 'pointer',
                       ...item.style,
                     }}

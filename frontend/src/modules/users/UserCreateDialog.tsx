@@ -108,15 +108,15 @@ export const UserCreateDialog: React.FC<Props> = ({ onCreated, onUpdated, editin
         <form onSubmit={submit} className="dialog-body" style={{ display: 'grid', gap: 10, padding: '16px', overflowY: 'auto', flexGrow: 1, minHeight: 0 }}>
           <label className="field" style={{ margin: 0, gap: 4 }}>
             <span style={{ fontSize: '14px' }}>Imię i nazwisko</span>
-            <input value={form.full_name} onChange={e => setForm({ ...form, full_name: e.target.value })} required style={{ padding: '8px 10px', fontSize: '14px' }} />
+            <input value={form.full_name} onChange={e => setForm({ ...form, full_name: e.target.value })} required />
           </label>
           <label className="field" style={{ margin: 0, gap: 4 }}>
             <span style={{ fontSize: '14px' }}>Login</span>
-            <input value={form.login} onChange={e => setForm({ ...form, login: e.target.value })} required minLength={3} style={{ padding: '8px 10px', fontSize: '14px' }} />
+            <input value={form.login} onChange={e => setForm({ ...form, login: e.target.value })} required minLength={3} />
           </label>
           <label className="field" style={{ margin: 0, gap: 4 }}>
             <span style={{ fontSize: '14px' }}>Email</span>
-            <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required style={{ padding: '8px 10px', fontSize: '14px' }} />
+            <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required />
           </label>
           <label className="field" style={{ margin: 0, gap: 4 }}>
             <span style={{ fontSize: '14px' }}>Hasło {editing && '(pozostaw puste aby nie zmieniać)'}</span>
@@ -126,12 +126,11 @@ export const UserCreateDialog: React.FC<Props> = ({ onCreated, onUpdated, editin
               onChange={e => setForm({ ...form, password: e.target.value })} 
               required={!editing}
               minLength={8}
-              style={{ padding: '8px 10px', fontSize: '14px' }}
             />
           </label>
           <label className="field" style={{ margin: 0, gap: 4 }}>
             <span style={{ fontSize: '14px' }}>Rola</span>
-            <select value={form.role} onChange={e => setForm({ ...form, role: e.target.value as UserRole })} style={{ padding: '8px 10px', fontSize: '14px' }}>
+            <select value={form.role} onChange={e => setForm({ ...form, role: e.target.value as UserRole })}>
               <option value="user">user</option>
               <option value="manager">manager</option>
               <option value="admin">admin</option>

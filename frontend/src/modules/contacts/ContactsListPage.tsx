@@ -226,7 +226,7 @@ export const ContactsListPage: React.FC = () => {
   }, [refresh])
 
   return (
-    <div className="content">
+    <>
       <PageHeader
         title="Kontakty"
         actions={(
@@ -282,7 +282,7 @@ export const ContactsListPage: React.FC = () => {
           </>
         )}
       />
-      <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center', minHeight: '52px' }}>
+      <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center', minHeight: '38px' }}>
         <input className="input" placeholder="Szukaj (imię, nazwisko, adres)" value={search} onChange={e => { setSearch(e.target.value); setOffset(0) }} style={{ minWidth: '300px', width: '30%' }} />
         <select 
           className="input" 
@@ -479,7 +479,7 @@ export const ContactsListPage: React.FC = () => {
         open={labelsOpen}
         onClose={() => setLabelsOpen(false)}
       />
-    </div>
+    </>
   )
 }
 

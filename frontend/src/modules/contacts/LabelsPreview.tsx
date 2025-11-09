@@ -90,7 +90,7 @@ export const LabelsPreview: React.FC<Props> = ({ open, onClose }) => {
 
   return (
     <div className="dialog-backdrop" role="dialog" aria-modal="true" style={{ alignItems: 'center' }}>
-      <div className="dialog" style={{ width: 1200, maxWidth: '95vw', height: 'auto', maxHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
+      <div className="dialog" style={{ width: 1200, maxWidth: '95vw', height: '92vh', maxHeight: '92vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         {/* Header with title and close button */}
         <div className="dialog-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 16px', borderBottom: '1px solid #e0e0e0', flexShrink: 0 }}>
           <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>Podgląd wydruku - Etykiety 3×7</h3>

@@ -115,31 +115,31 @@ export const ContactForm: React.FC<Props> = ({ open, onClose, onSaved, editing }
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             <label className="field" style={{ margin: 0, gap: 4 }}>
               <span style={{ fontSize: '14px' }}>Imię</span>
-              <input value={form.first_name} onChange={e => setForm({ ...form, first_name: e.target.value })} required style={{ padding: '8px 10px', fontSize: '14px' }} />
+              <input value={form.first_name} onChange={e => setForm({ ...form, first_name: e.target.value })} required />
             </label>
             <label className="field" style={{ margin: 0, gap: 4 }}>
               <span style={{ fontSize: '14px' }}>Nazwisko</span>
-              <input value={form.last_name} onChange={e => setForm({ ...form, last_name: e.target.value })} required style={{ padding: '8px 10px', fontSize: '14px' }} />
+              <input value={form.last_name} onChange={e => setForm({ ...form, last_name: e.target.value })} required />
             </label>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '120px minmax(0, 1fr) 120px', gap: 10 }}>
             <label className="field" style={{ gridColumn: '1 / span 2', minWidth: 0, margin: 0, gap: 4 }}>
               <span style={{ fontSize: '14px' }}>Ulica</span>
-              <input value={form.street} onChange={e => setForm({ ...form, street: e.target.value })} required style={{ ...fullWidthInputStyle, padding: '8px 10px', fontSize: '14px' }} />
+              <input value={form.street} onChange={e => setForm({ ...form, street: e.target.value })} required style={{ ...fullWidthInputStyle }} />
             </label>
             <label className="field" style={{ gridColumn: '3', minWidth: 0, margin: 0, gap: 4 }}>
               <span style={{ fontSize: '14px' }}>Nr mieszkania</span>
-              <input value={form.apartment_no ?? ''} onChange={e => setForm({ ...form, apartment_no: e.target.value })} style={{ ...fullWidthInputStyle, padding: '8px 10px', fontSize: '14px' }} />
+              <input value={form.apartment_no ?? ''} onChange={e => setForm({ ...form, apartment_no: e.target.value })} style={{ ...fullWidthInputStyle }} />
             </label>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '120px minmax(0, 1fr) 120px', gap: 10 }}>
             <label className="field" style={{ gridColumn: '1', minWidth: 0, margin: 0, gap: 4 }}>
               <span style={{ fontSize: '14px' }}>Kod pocztowy</span>
-              <input value={form.postal_code} onChange={e => setForm({ ...form, postal_code: e.target.value })} required style={{ ...fullWidthInputStyle, padding: '8px 10px', fontSize: '14px' }} />
+              <input value={form.postal_code} onChange={e => setForm({ ...form, postal_code: e.target.value })} required style={{ ...fullWidthInputStyle }} />
             </label>
             <label className="field" style={{ gridColumn: '2 / span 2', minWidth: 0, margin: 0, gap: 4 }}>
               <span style={{ fontSize: '14px' }}>Miasto</span>
-              <input value={form.city} onChange={e => setForm({ ...form, city: e.target.value })} required style={{ ...fullWidthInputStyle, padding: '8px 10px', fontSize: '14px' }} />
+              <input value={form.city} onChange={e => setForm({ ...form, city: e.target.value })} required style={{ ...fullWidthInputStyle }} />
             </label>
           </div>
           <label className="field" style={{ margin: 0, gap: 4 }}>
@@ -148,7 +148,7 @@ export const ContactForm: React.FC<Props> = ({ open, onClose, onSaved, editing }
               value={form.description ?? ''} 
               onChange={e => setForm({ ...form, description: e.target.value })}
               rows={2}
-              style={{ resize: 'vertical', minHeight: '50px', padding: '8px 10px', fontSize: '14px' }}
+              style={{ resize: 'vertical', minHeight: '50px' }}
               placeholder="Dodatkowe informacje o kontakcie..."
             />
           </label>

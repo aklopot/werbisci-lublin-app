@@ -69,12 +69,12 @@ export const UsersListPage: React.FC = () => {
   }
 
   return (
-    <div className="content">
+    <>
       <PageHeader
         title="Użytkownicy"
         actions={<UserCreateDialog onCreated={onCreated} />}
       />
-      <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center', minHeight: '52px' }}>
+      <div className="toolbar" style={{ display: 'flex', gap: 12, alignItems: 'center', minHeight: '38px' }}>
         <input className="input" placeholder="Szukaj (imię, login, email)" value={search} onChange={e => setSearch(e.target.value)} />
         <button className="btn" onClick={refresh} disabled={loading}>Odśwież</button>
       </div>
@@ -149,7 +149,7 @@ export const UsersListPage: React.FC = () => {
         editing={editing}
         onUpdated={onUpdated}
       />
-    </div>
+    </>
   )
 }
 

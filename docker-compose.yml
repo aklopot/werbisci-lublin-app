@@ -9,6 +9,8 @@ services:
     labels:
       - "version=${APP_VERSION:-dev}"
       - "build.date=${BUILD_DATE:-unknown}"
+    env_file:
+      - .env
     environment:
       - SQLITE_DB_PATH=/data/werbisci-app.db
       - ADMIN_LOGIN=${ADMIN_LOGIN:-admin}

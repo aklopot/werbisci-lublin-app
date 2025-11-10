@@ -44,14 +44,15 @@ echo "3. Starting containers..."
 docker compose up -d
 
 # Wait for backend to be ready
-echo "4. Waiting for backend to initialize (10 seconds)..."
-sleep 10
+echo "4. Waiting for backend to initialize (15 seconds)..."
+sleep 15
 
-# Check if database was created
-if [ -f "data/werbisci-app.db" ]; then
-    echo "   ✓ New database created"
+# Check if database was created (using volume inspect, not host path)
+DB_EXISTS=$(docker compose exec -T backend test -f /data/werbisci-app.db && echo "yes" || echo "no")
+if [ "$DB_EXISTS" = "yes" ]; then
+    echo "   ✓ New database created in container"
 else
-    echo "   ⚠ Database file not found - check logs"
+    echo "   ⚠ Database file not found in container - check logs"
 fi
 
 # Show admin credentials - ALWAYS use defaults unless .env is loaded by docker-compose

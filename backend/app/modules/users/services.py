@@ -14,27 +14,34 @@ class UserService:
 
     # Admin bootstrap on startup
     def ensure_admin_exists(self, db: Session) -> Optional[User]:
+        """
+        Ensure admin user exists in database.
+        Creates admin user with default credentials if not found.
+        Default: login='admin', password='admin123', email='admin@werbisci.local'
+        Override with env vars: ADMIN_LOGIN, ADMIN_PASSWORD, ADMIN_EMAIL
+        """
         settings = get_settings()
-        if (
-            not settings.admin_login
-            or not settings.admin_password
-            or not settings.admin_email
-        ):
-            return None
-
+        
+        # Check if admin already exists
         existing = self.repo.get_by_login(db, settings.admin_login)
         if existing:
             return existing
 
-        admin = self.repo.create(
-            db,
-            full_name="Administrator",
-            login=settings.admin_login,
-            email=settings.admin_email,
-            password_hash=hash_password(settings.admin_password),
-            role=UserRole.admin,
-        )
-        return admin
+        # Create admin user with settings (defaults or env vars)
+        try:
+            admin = self.repo.create(
+                db,
+                full_name="Administrator",
+                login=settings.admin_login,
+                email=settings.admin_email,
+                password_hash=hash_password(settings.admin_password),
+                role=UserRole.admin,
+            )
+            print(f"Created admin user: {settings.admin_login}")
+            return admin
+        except Exception as e:
+            print(f"Warning: Could not create admin user: {e}")
+            return None
 
     def authenticate(
         self,

@@ -67,9 +67,22 @@ def get_version() -> dict:
 
 @app.on_event("startup")
 def startup_event() -> None:
+    """
+    Initialize database and ensure admin user exists on startup.
+    This runs every time the application starts.
+    """
+    # Create all tables if they don't exist
+    print("Initializing database tables...")
+    Base.metadata.create_all(bind=engine)
+    
     # Bootstrap admin user if missing
     db: Session = SessionLocal()
     try:
-        UserService().ensure_admin_exists(db)
+        print("Ensuring admin user exists...")
+        admin = UserService().ensure_admin_exists(db)
+        if admin:
+            print(f"Admin user ready: {admin.login}")
+    except Exception as e:
+        print(f"Error during startup: {e}")
     finally:
         db.close()

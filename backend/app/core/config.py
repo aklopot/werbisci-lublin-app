@@ -15,10 +15,10 @@ class Settings:
             os.environ.get("JWT_EXPIRES_MINUTES", "1440")
         )
 
-        # Admin bootstrap
-        self.admin_login: str | None = os.environ.get("ADMIN_LOGIN")
-        self.admin_email: str | None = os.environ.get("ADMIN_EMAIL")
-        self.admin_password: str | None = os.environ.get("ADMIN_PASSWORD")
+        # Admin bootstrap (with defaults for easy setup)
+        self.admin_login: str = os.environ.get("ADMIN_LOGIN", "admin")
+        self.admin_email: str = os.environ.get("ADMIN_EMAIL", "admin@werbisci.local")
+        self.admin_password: str = os.environ.get("ADMIN_PASSWORD", "admin123")
 
         # Database
         # Default to repo-relative path (resolved in db.py)

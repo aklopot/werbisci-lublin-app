@@ -64,7 +64,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [token, setToken] = useState<string | null>(null)
   const [currentUser, setCurrentUser] = useState<CurrentUser | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-  const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const inactivityTimerRef = useRef<number | null>(null)
 
   // Update last activity timestamp
   const updateLastActivity = useCallback(() => {

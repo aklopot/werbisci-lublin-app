@@ -12,9 +12,14 @@
 - **Dodano**: Funkcjonalność wyszukiwania i filtrowania logowań (po użytkowniku, statusie aktywności)
 - **Dodano**: Administracja bazą logowań (wyczyść dane, odtwórz schemat)
 - **Dodano**: Endpoint `/api/auth/logout` do rejestrowania wylogowań w bazie
+- **Dodano**: Skrypty resetowania bazy danych (`reset-db.sh`, `reset-db.ps1`)
+- **Dodano**: Automatyczne tworzenie użytkownika admin przy starcie aplikacji
+- **Dodano**: Domyślne dane logowania: `admin` / `admin123` (można zmienić przez `.env`)
 - **Zmieniono**: Integracja frontendu z backendem - automatyczne wysyłanie informacji o wylogowaniu
 - **Zmieniono**: Typ kolumny `id` w tabeli `login_sessions` na BIGINT (wspiera miliardy rekordów)
+- **Naprawiono**: Problem z TypeScript podczas buildu Dockera (`NodeJS.Timeout` → `number`)
 - **MIGRACJA**: Przy upgrade z wcześniejszej wersji zobacz `MIGRATION_0.6.0.md`
+- **RESET DB**: Jeśli baza się zepsuła lub zapomniałeś hasła, zobacz `DATABASE_RESET.md`
 
 ### 0.5.4 (2025-11-10)
 - **Naprawiono**: Problem z wylogowywaniem przy odświeżeniu strony (F5)
@@ -97,12 +102,35 @@ chmod +x build.sh deploy.sh
 ```
 
 Skrypt automatycznie:
-1. Zatrzyma działające kontenery
-2. Pobierze najnowszy kod z git
-3. Odczyta wersję z pliku VERSION
-4. Wygeneruje git commit hash
-5. Zbuduje image Docker z odpowiednimi tagami
-6. Uruchomi kontenery z wersjonowanymi image
+1. Pobierze najnowszy kod z git
+2. Odczyta wersję z pliku VERSION
+3. **Sprawdzi czy nie deployujesz tej samej wersji** (zabezpieczenie)
+4. Zatrzyma działające kontenery
+5. Wygeneruje git commit hash
+6. Zbuduje image Docker z odpowiednimi tagami i labelami
+7. Uruchomi kontenery z wersjonowanymi image
+
+### Zabezpieczenie wersji
+
+Jeśli spróbujesz uruchomić `./deploy.sh` bez zmiany wersji, zobaczysz:
+
+```
+❌ ERROR: Version conflict detected!
+
+Current running version: 0.6.0
+Version in VERSION file: 0.6.0
+
+You are trying to deploy the SAME version that is currently running.
+
+Please update the VERSION file before deploying:
+  1. Edit VERSION file and increment the version number
+  2. Example: 0.6.0 → 0.6.1 (patch) or 0.7.0 (minor) or 1.0.0 (major)
+  3. Commit the change: git add VERSION && git commit -m 'Bump version to X.Y.Z'
+  4. Push: git push
+  5. Run deploy.sh again
+```
+
+To zapobiega przypadkowemu wdrożeniu bez zmiany wersji.
 
 ### Ręczne budowanie
 

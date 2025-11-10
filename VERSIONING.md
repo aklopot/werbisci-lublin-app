@@ -1,5 +1,34 @@
 # System Wersjonowania Aplikacji
 
+## Historia Zmian
+
+### 0.6.0 (2025-11-10)
+- **Dodano**: Nowy moduł "Logowania" dla administratorów
+- **Dodano**: Śledzenie wszystkich logowań i wylogowań użytkowników w bazie danych
+- **Dodano**: Widok logowań w zakładce "Użytkownicy" (tylko dla administratorów)
+- **Dodano**: Rozróżnienie powodów wylogowania: ręczne, automatyczne (1h nieaktywności), wygaśnięcie tokenu
+- **Dodano**: Kaskadowe usuwanie sesji logowania przy usuwaniu użytkownika
+- **Dodano**: Licznik aktywnych sesji z ostrzeżeniem przed aktualizacją aplikacji
+- **Dodano**: Funkcjonalność wyszukiwania i filtrowania logowań (po użytkowniku, statusie aktywności)
+- **Dodano**: Administracja bazą logowań (wyczyść dane, odtwórz schemat)
+- **Dodano**: Endpoint `/api/auth/logout` do rejestrowania wylogowań w bazie
+- **Zmieniono**: Integracja frontendu z backendem - automatyczne wysyłanie informacji o wylogowaniu
+- **Zmieniono**: Typ kolumny `id` w tabeli `login_sessions` na BIGINT (wspiera miliardy rekordów)
+- **MIGRACJA**: Przy upgrade z wcześniejszej wersji zobacz `MIGRATION_0.6.0.md`
+
+### 0.5.4 (2025-11-10)
+- **Naprawiono**: Problem z wylogowywaniem przy odświeżeniu strony (F5)
+- **Naprawiono**: Problem z wylogowywaniem przy zmianie URL (np. usunięcie części adresu)
+- **Dodano**: Auto-logout po 1 godzinie nieaktywności użytkownika
+- **Dodano**: Sprawdzanie ważności JWT tokenu (exp)
+- **Dodano**: Tracking aktywności użytkownika (mousedown, keydown, scroll, touchstart, click)
+- **Dodano**: Stan `isLoading` w AuthProvider zapobiegający przedwczesnemu przekierowaniu
+- **Dodano**: Infrastruktura pod przyszły tracking sesji w bazie danych (komentarze TODO)
+- **Zmieniono**: Główny route `/` teraz inteligentnie przekierowuje do `/app` jeśli użytkownik jest zalogowany
+
+### 0.5.3
+- Poprzednie wersje (bez szczegółowej dokumentacji)
+
 ## Przegląd
 
 Aplikacja Werbisci Lublin wykorzystuje system wersjonowania semantycznego (SemVer) dla image Docker i aplikacji.

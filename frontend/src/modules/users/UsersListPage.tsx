@@ -5,6 +5,7 @@ import { UserCreateDialog } from './UserCreateDialog'
 import { useAuth } from '../../app/auth'
 import { Navigate } from 'react-router-dom'
 import { PageHeader } from '../../app/ui/PageHeader'
+import { LoginSessionsTable } from '../login-sessions/LoginSessionsTable'
 
 export const UsersListPage: React.FC = () => {
   const { currentUser } = useAuth()
@@ -149,6 +150,8 @@ export const UsersListPage: React.FC = () => {
         editing={editing}
         onUpdated={onUpdated}
       />
+
+      <LoginSessionsTable users={data} />
     </>
   )
 }

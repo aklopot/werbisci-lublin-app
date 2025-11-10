@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { loginApi } from '../app/api'
 import { useAuth } from '../app/auth'
 
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate()
-  const { loginWithToken } = useAuth()
+  const { loginWithToken, currentUser, isLoading } = useAuth()
   const [login, setLogin] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (!isLoading && currentUser) {
+      navigate('/app', { replace: true })
+    }
+  }, [currentUser, isLoading, navigate])
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault()

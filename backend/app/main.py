@@ -11,6 +11,7 @@ from app.modules.users.services import UserService
 from app.api.auth import router as auth_router
 from app.modules.users.api import router as users_router
 from app.modules.addresses.api import router as addresses_router
+from app.modules.login_sessions.api import router as login_sessions_router
 from app.modules.printing.api import router as printing_router
 
 app = FastAPI()
@@ -32,6 +33,7 @@ Base.metadata.create_all(bind=engine)
 app.include_router(auth_router)
 app.include_router(users_router)
 app.include_router(addresses_router)
+app.include_router(login_sessions_router)
 app.include_router(printing_router)
 
 

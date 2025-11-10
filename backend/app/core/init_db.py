@@ -9,6 +9,7 @@ from app.modules.users.models import User, UserRole
 from app.modules.users.repositories import UserRepository
 from app.core.security import hash_password
 from app.modules.addresses.models import Address
+from app.modules.login_sessions.models import LoginSession
 
 
 def _seed_admin(db: Session) -> None:
@@ -74,10 +75,12 @@ def main() -> None:
         # Print brief summary
         users_count = db.scalar(select(func.count()).select_from(User))
         addresses_count = db.scalar(select(func.count()).select_from(Address))
+        sessions_count = db.scalar(select(func.count()).select_from(LoginSession))
         msg_users = users_count if users_count is not None else "?"
         msg_addresses = addresses_count if addresses_count is not None else "?"
+        msg_sessions = sessions_count if sessions_count is not None else "?"
         print(
-            f"Initialized DB. Users: {msg_users}; Addresses: {msg_addresses}"
+            f"Initialized DB. Users: {msg_users}; Addresses: {msg_addresses}; Login Sessions: {msg_sessions}"
         )
     finally:
         db.close()

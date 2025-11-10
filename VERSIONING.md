@@ -2,6 +2,15 @@
 
 ## Historia Zmian
 
+### 0.6.6 (2025-11-10)
+- **Naprawiono**: KRYTYCZNY BUG - Logowanie sesji nie działało z BigInteger w SQLite
+- **Zmieniono**: Powrót do Integer (64-bit w SQLite = ten sam zakres co BIGINT)
+- **Naprawiono**: AUTOINCREMENT teraz działa poprawnie w SQLite
+
+### 0.6.5 (2025-11-10)
+- **Naprawiono**: Try-catch przy tworzeniu sesji aby nie blokować logowania
+- **Dodano**: Zabezpieczenie wersji w deploy.sh
+
 ### 0.6.0 (2025-11-10)
 - **Dodano**: Nowy moduł "Logowania" dla administratorów
 - **Dodano**: Śledzenie wszystkich logowań i wylogowań użytkowników w bazie danych

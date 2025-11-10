@@ -1,6 +1,6 @@
 from __future__ import annotations
 from datetime import datetime
-from sqlalchemy import BigInteger, DateTime, ForeignKey, Integer, String
+from sqlalchemy import DateTime, ForeignKey, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.core.db import Base
@@ -9,7 +9,9 @@ from app.core.db import Base
 class LoginSession(Base):
     __tablename__ = "login_sessions"
 
-    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True, index=True)
+    # Note: SQLite INTEGER is 64-bit (same range as BIGINT in other databases)
+    # Using Integer instead of BigInteger for SQLite AUTOINCREMENT compatibility
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True, index=True)
     user_id: Mapped[int] = mapped_column(
         Integer,
         ForeignKey("users.id", ondelete="CASCADE"),

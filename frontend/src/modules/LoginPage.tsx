@@ -29,7 +29,7 @@ export const LoginPage: React.FC = () => {
   return (
     <div className="content" style={{ display: 'grid', placeItems: 'center', minHeight: '100vh' }}>
       <form onSubmit={onSubmit} className="card" style={{ minWidth: 420 }}>
-        <h1 style={{ marginTop: 0 }}>Logowanie</h1>
+        <h1 style={{ marginTop: 0, fontSize: 'var(--font-size-xl)' }}>Logowanie</h1>
         <div aria-hidden="true" style={{ borderTop: '1px solid var(--border)', margin: '24px 0' }} />
         <label className="field">
           <span>Login</span>

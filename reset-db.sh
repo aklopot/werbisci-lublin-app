@@ -54,25 +54,23 @@ else
     echo "   ⚠ Database file not found - check logs"
 fi
 
-# Show admin credentials from .env or defaults
+# Show admin credentials - ALWAYS use defaults unless .env is loaded by docker-compose
 echo ""
 echo "======================================"
 echo "DATABASE RESET COMPLETE!"
 echo "======================================"
 echo ""
+echo "⚠️  IMPORTANT: Default credentials"
+echo ""
 echo "Admin credentials:"
-
-# Try to read from .env file
-if [ -f ".env" ]; then
-    ADMIN_LOGIN=$(grep ADMIN_LOGIN .env | cut -d '=' -f2 | tr -d '"' | tr -d "'" || echo "admin")
-    ADMIN_PASSWORD=$(grep ADMIN_PASSWORD .env | cut -d '=' -f2 | tr -d '"' | tr -d "'" || echo "admin123")
-    echo "  Login:    $ADMIN_LOGIN"
-    echo "  Password: $ADMIN_PASSWORD"
-else
-    echo "  Login:    admin"
-    echo "  Password: admin123"
-    echo "  (defaults - no .env file found)"
-fi
+echo "  Login:    admin"
+echo "  Password: admin123"
+echo ""
+echo "Note: .env file is NOT read by backend by default."
+echo "To use custom credentials, set them in docker-compose.yml:"
+echo "  environment:"
+echo "    - ADMIN_LOGIN=your-login"
+echo "    - ADMIN_PASSWORD=your-password"
 
 echo ""
 echo "Check backend logs:"
